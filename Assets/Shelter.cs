@@ -12,9 +12,6 @@ public class Shelter : MonoBehaviour
     public int nY;
     public bool full;
 
-    int appleNumber;
-    int woodNumber;
-
 	// Use this for initialization
 	void Start () {
         ResourcesCount = GameObject.Find("ResourcesManager");
@@ -39,14 +36,14 @@ public class Shelter : MonoBehaviour
 
         if (ressource.GetComponent<SpriteRenderer>().sprite.name == "100111_185")
         {
-            woodNumber++;
+            ResourcesCount.SendMessage("AddWood");
         }
         else if (ressource.GetComponent<SpriteRenderer>().sprite.name == "100111_162")
         {
-            appleNumber++;
+            ResourcesCount.SendMessage("AddApple");
         }
 
-        ResourcesCount.SendMessage("AddApple", appleNumber);
-        ResourcesCount.SendMessage("AddWood", woodNumber);
+        
+        
     }
 }

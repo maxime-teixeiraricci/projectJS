@@ -29,17 +29,15 @@ public class ResourcesCount : MonoBehaviour {
 		
 	}
 
-    public void AddApple(int value)
+    public void AddApple()
     {
-        //apple++;
-        apple = value;
-        //Debug.Log("Valeur ressources = " + value);
+        apple++;
         appleText.text = "" + apple;
     }
 
-    public void AddWood(int value)
+    public void AddWood()
     {
-        wood = value;
+        wood++;
         woodText.text = "" + wood;
     }
 
