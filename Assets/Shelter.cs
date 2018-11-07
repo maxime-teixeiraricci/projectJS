@@ -5,15 +5,19 @@ using UnityEngine;
 public class Shelter : MonoBehaviour
 {
     public List<GameObject> ressources;
+    public GameObject ResourcesCount;
     public float dX;
     public float dY;
     public int nX;
     public int nY;
     public bool full;
 
+    int appleNumber;
+    int woodNumber;
+
 	// Use this for initialization
 	void Start () {
-		
+        ResourcesCount = GameObject.Find("ResourcesManager");
 	}
 	
 	// Update is called once per frame
@@ -23,15 +27,26 @@ public class Shelter : MonoBehaviour
         {
             ressources[i].transform.position = new Vector3((i%nX) * dX/(nX-1) - dX*0.5f, 0.5f, (i / nX) * dY / (nY-1) - dY * 0.5f) + transform.position;
             full = (ressources.Count == nX * nY);
-        }
+        }   
 	}
 
     public void Add(GameObject ressource)
     {
         if (ressources.Count < nX*nY && !ressources.Contains(ressource))
         {
-            ressources.Add(ressource);
-            
+            ressources.Add(ressource);  
         }
+
+        if (ressource.GetComponent<SpriteRenderer>().sprite.name == "100111_185")
+        {
+            woodNumber++;
+        }
+        else if (ressource.GetComponent<SpriteRenderer>().sprite.name == "100111_162")
+        {
+            appleNumber++;
+        }
+
+        ResourcesCount.SendMessage("AddApple", appleNumber);
+        ResourcesCount.SendMessage("AddWood", woodNumber);
     }
 }
