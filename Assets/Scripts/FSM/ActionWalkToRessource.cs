@@ -9,7 +9,7 @@ public class ActionWalkToRessource : FSMAction
 
     public override void Act(FSMControler controler)
     {
-        if (!controler.target)
+        if (!controler.target || !controler.target.CompareTag("RessourceTank"))
         {
             FindRessource(controler);
         }
@@ -19,7 +19,10 @@ public class ActionWalkToRessource : FSMAction
 
     private void WalkTowardsRessource(FSMControler controler)
     {
-        controler.agent.SetDestination(controler.target.transform.position);
+        if (controler.target)
+        {
+            controler.agent.SetDestination(controler.target.transform.position);
+        }
     }
 
     private void FindRessource(FSMControler controler)

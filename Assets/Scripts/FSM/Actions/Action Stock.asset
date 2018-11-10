@@ -8,8 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dac8584869ee7c45a7e248b7b204f5e, type: 3}
-  m_Name: Citizen Settings
+  m_Script: {fileID: 11500000, guid: 9fe8e5fcbf0cb0345a5efa249652699c, type: 3}
+  m_Name: Action Stock
   m_EditorClassIdentifier: 
-  distanceNearTarget: 1.5
-  inventorySize: 3

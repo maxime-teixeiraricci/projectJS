@@ -16,7 +16,6 @@ public class DecisionNearTarget : FSMDecision
         if (!controler.target) return false;
         else
         {
-            Debug.Log(controler.agent.remainingDistance);
             return (controler.agent.remainingDistance <= controler.citizen.citizenSetting.distanceNearTarget && !controler.agent.pathPending);
         }
     }

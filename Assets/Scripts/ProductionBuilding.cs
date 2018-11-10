@@ -14,7 +14,7 @@ public class ProductionBuilding : Building {
 		
 	}
 
-    public override void addRessource(Ressource ressource, int quantite)
+    public override void addRessource(GameObject ressource, int quantite)
     {
         throw new System.NotImplementedException();
     }

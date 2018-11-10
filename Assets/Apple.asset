@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
-  m_Name: Recolt State
+  m_Script: {fileID: 11500000, guid: a5122e324b8927d4c8848bdfc2e816ea, type: 3}
+  m_Name: Apple
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
-  gizmoColor: {r: 1, g: 0.054431766, b: 0.0047169924, a: 1}
+  nom: Apple
+  tempsDeValidite: 30
+  image: {fileID: 21300324, guid: 0013243b34bcc1346b736fdbd496d615, type: 3}

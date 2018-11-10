@@ -8,11 +8,11 @@ public class Citizen : MonoBehaviour {
     enum Etats { Sain, Malade, Mort };
 
     Dictionary<Ressource, int> capacitesInventaire;
-    Dictionary<Ressource, int> inventaire;
+    Dictionary<Ressource, int> inventaire = new Dictionary<Ressource, int>();
 
     public List<GameObject> ressources;
 
-    public Dictionary<string, int> competences;
+    public Dictionary<string, int> competences = new Dictionary<string, int>();
 
     public float age;
 
@@ -36,11 +36,15 @@ public class Citizen : MonoBehaviour {
 
     void deposer(Ressource ressource, int quantite, Building building)
     {
+        foreach (GameObject r in ressources)
+        {
 
+        }
     }
 
     public void addRessource(GameObject ressource)
     {
+        
         if (ressources.Contains(ressource)) return;
         ressources.Add(ressource);
     }
@@ -61,11 +65,11 @@ public class Citizen : MonoBehaviour {
         {
             if (i == 0)
             {
-                ressources[i].transform.position += (transform.position - ressources[i].transform.position) * 0.4f;
+                ressources[i].transform.position += (transform.position - ressources[i].transform.position) * 0.25f;
             }
             else
             {
-                ressources[i].transform.position += (ressources[i-1].transform.position - ressources[i].transform.position) * 0.4f;
+                ressources[i].transform.position += (ressources[i-1].transform.position - ressources[i].transform.position) * 0.25f;
             }
         }
     }

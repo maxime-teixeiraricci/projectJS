@@ -23,6 +23,7 @@ public class FSMState : ScriptableObject
     {
         foreach (FSMAction action in actions){ action.Act(controler); }
     }
+
     public void TakeDecision(FSMControler controler)
     {
         foreach (FSMTransition transition in transitions)

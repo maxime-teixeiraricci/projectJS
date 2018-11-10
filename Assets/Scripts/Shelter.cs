@@ -2,20 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shelter : Building {
-    
-	void Start ()
-    {
-		
-	}
-	
-	void Update () {
-		
-	}
+public class Shelter : Building
+{
+    public int nX;
+    public int nY;
+    public float dX;
+    public float dY;
 
-    public override void addRessource(Ressource ressource, int quantite)
+    public void Update()
     {
-        throw new System.NotImplementedException();
+        int i = 0;
+        foreach(List<GameObject> listRessource in stock.Values)
+        {
+            foreach (GameObject r in listRessource)
+            {
+                r.transform.position = transform.position + new Vector3(dX / (nX - 1) * (i % nX) - dX * 0.5f, 0.5f, dY / (nY - 1) * (i / nY) - dY * 0.5f);
+                i++;
+            }
+        }
+    }
+    public override void addRessource(GameObject ressource, int quantite)
+    {
+        for (int i = 0; i < quantite; i++)
+        {
+            Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
+            if (!stock.ContainsKey(r))
+            {
+                stock.Add(r, new List<GameObject>());
+            }
+            stock[r].Add(ressource);
+        }
     }
 
     void contain(Ressource ressource)

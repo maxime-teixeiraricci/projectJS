@@ -6,4 +6,5 @@ using UnityEngine;
 public class CitizenSetting : ScriptableObject
 {
     public float distanceNearTarget = 1.0f;
+    public int inventorySize = 5;
 }

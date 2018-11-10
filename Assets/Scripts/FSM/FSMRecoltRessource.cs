@@ -14,6 +14,7 @@ public class ActionRecoltRessource : FSMAction
 
     private void Recolt(FSMControler controler)
     {
+        if (!controler.target) return;
         NaturalRessource naturalRessource = controler.target.GetComponent<NaturalRessource>();
         if (!naturalRessource) return;
 
@@ -24,10 +25,15 @@ public class ActionRecoltRessource : FSMAction
         }
         int level = controler.citizen.competences[naturalRessource.nameCompetence];
         float citizenFrequence = naturalRessource.recoltFrequence * bonusLevel(level);
-
+        Debug.Log(1f / citizenFrequence);
         if (controler.farmTimer > (1f/ citizenFrequence))
         {
-
+            naturalRessource.Recolt(controler.citizen);
+            controler.farmTimer = 0;
+        }
+        else
+        {
+            controler.farmTimer += Time.deltaTime;
         }
     }
 

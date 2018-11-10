@@ -4,11 +4,11 @@ using UnityEngine;
 
 public abstract class Building : MonoBehaviour {
 
-    Dictionary<Ressource, int> ressourcesNeeded;
-    Dictionary<Ressource, List<Ressource>> stock; //le arrayList prend pas la spé d'élément ArrayList<Ressource> pas possible...
+    public Dictionary<Ressource, int> ressourcesNeeded;
+    public Dictionary<Ressource, List<GameObject>> stock = new Dictionary<Ressource, List<GameObject>>(); //le arrayList prend pas la spé d'élément ArrayList<Ressource> pas possible...
 
     int niveau;
     List<Citizen> citizens;
 
-    abstract public void addRessource(Ressource ressource, int quantite);
+    abstract public void addRessource(GameObject ressource, int quantite);
 }
