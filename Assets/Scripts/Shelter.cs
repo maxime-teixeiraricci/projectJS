@@ -9,6 +9,8 @@ public class Shelter : Building
     public float dX;
     public float dY;
 
+    public GameObject res;
+
     public void Update()
     {
         int i = 0;
@@ -31,6 +33,7 @@ public class Shelter : Building
                 stock.Add(r, new List<GameObject>());
             }
             stock[r].Add(ressource);
+            res.GetComponent<ResourcesCount>().Add(r);
         }
     }
 

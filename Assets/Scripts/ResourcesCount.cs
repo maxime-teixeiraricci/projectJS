@@ -10,18 +10,24 @@ public class ResourcesCount : MonoBehaviour {
     GameObject canvasUI;
     Transform childApple;
     Transform childWood;
+    Transform childAppleContainer;
+    Transform childWoodContainer;
 
     int apple;
     int wood;
 
 	// Use this for initialization
 	void Start () {
-        canvasUI = GameObject.Find("Canvas");
-        childApple = canvasUI.transform.Find("AppleCount");  //le nom de votre objet UI Text
+
+        canvasUI = GameObject.Find("Banner");
+        childAppleContainer = canvasUI.transform.Find("AppleContainer");
+        childApple = childAppleContainer.transform.Find("AppleTotal");
         appleText = childApple.GetComponent<Text>();
 
-        childWood = canvasUI.transform.Find("WoodCount");  //le nom de votre objet UI Text
+        childWoodContainer = canvasUI.transform.Find("WoodContainer");
+        childWood = childWoodContainer.transform.Find("WoodTotal");  //le nom de votre objet UI Text
         woodText = childWood.GetComponent<Text>();
+
     }
 	
 	// Update is called once per frame
@@ -29,10 +35,15 @@ public class ResourcesCount : MonoBehaviour {
 		
 	}
 
-    public void AddApple()
+    public void Add(Ressource ressource)
     {
-        apple++;
-        appleText.text = "" + apple;
+        if(ressource.nom == "Apple")
+        {
+            wood++;
+            woodText.text = "" + wood;
+        }
+        //apple++;
+        //appleText.text = "" + apple;
     }
 
     public void AddWood()
