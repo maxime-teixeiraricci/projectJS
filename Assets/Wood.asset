@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nom: 
   tempsDeValidite: 0
-  image: {fileID: 0}
+  image: {fileID: 21300370, guid: 0013243b34bcc1346b736fdbd496d615, type: 3}
