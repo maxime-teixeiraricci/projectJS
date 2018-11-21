@@ -24,5 +24,6 @@ public class OptionsManager : MonoBehaviour {
         GetComponent<AudioSource>().volume = volumeSlider.value / 100;
         volumeValue.text = "" + volumeSlider.value;
         citizenValue.text = "" + citizenSlider.value;
+        WorldManager.citizenNumber = (int)citizenSlider.value;
 	}
 }
