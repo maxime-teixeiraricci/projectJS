@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,22 +16,24 @@ public class CameraManager : MonoBehaviour {
         float mousePosY = Input.mousePosition.y;
         int scrollDistance = 5;
         float scrollSpeed = 15;
-        if (mousePosX < scrollDistance)
+        Debug.Log("mouse = " + mousePosX);
+        if (mousePosX < scrollDistance && transform.position.x > -25)
         {
             transform.Translate(Vector3.right * -scrollSpeed * Time.deltaTime);
+           
         }
 
-        if (mousePosX >= Screen.width - scrollDistance)
+        if (mousePosX >= Screen.width - scrollDistance && transform.position.x < 25)
         {
             transform.Translate(Vector3.right * scrollSpeed * Time.deltaTime);
         }
 
-        if (mousePosY < scrollDistance)
+        if (mousePosY < scrollDistance && transform.position.y > 13)
         {
             transform.Translate(Vector3.up * -scrollSpeed * Time.deltaTime);
         }
 
-        if (mousePosY >= Screen.height - scrollDistance)
+        if (mousePosY >= Screen.height - scrollDistance && transform.position.y < 20)
         {
             transform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
         }
