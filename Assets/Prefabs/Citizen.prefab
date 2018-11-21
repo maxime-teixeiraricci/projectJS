@@ -277,6 +277,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   target: {fileID: 0}
   citizen: {fileID: 0}
+  farmTimer: 0
 --- !u!114 &114097836672405736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,6 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b164bf346e3476543a00cffed2a16592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ressources: []
   age: 0
   isFull: 0
   canWork: 0
