@@ -16,7 +16,7 @@ public class CameraManager : MonoBehaviour {
         float mousePosY = Input.mousePosition.y;
         int scrollDistance = 5;
         float scrollSpeed = 15;
-        Debug.Log("mouse = " + mousePosX);
+        //Debug.Log("mouse = " + mousePosX);
         if (mousePosX < scrollDistance && transform.position.x > -25)
         {
             transform.Translate(Vector3.right * -scrollSpeed * Time.deltaTime);

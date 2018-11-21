@@ -9,7 +9,12 @@ public class Shelter : Building
     public float dX;
     public float dY;
 
-    public GameObject res;
+    private GameObject res;
+
+    public void Start()
+    {
+        res = GameObject.Find("ResourcesManager");
+    }
 
     public void Update()
     {
