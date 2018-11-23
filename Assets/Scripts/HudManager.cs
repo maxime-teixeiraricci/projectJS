@@ -15,11 +15,15 @@ public class HudManager : MonoBehaviour {
 
     bool citizenPanelDisplayed = false;
 
+    GameObject popUpEnv;
+
     // Use this for initialization
     void Start () {
 
         appleImage.sprite = appleRessource.image;
         woodImage.sprite = woodRessource.image;
+
+        popUpEnv = GameObject.Find("PopUpTextEnv");
 
         //citizenPanel = GameObject.Find("ManageCitizenPanel");
 	}
@@ -30,17 +34,13 @@ public class HudManager : MonoBehaviour {
         
 	}
 
-    public void displayCitizenPanel()
+    public void displayText()
     {
-        if (!citizenPanelDisplayed)
-        {
-            citizenPanel.SetActive(true);
-        }
-        else
-        {
-            citizenPanel.SetActive(false);
-        }
+        popUpEnv.SetActive(true);
+    }
 
-        citizenPanelDisplayed = !citizenPanelDisplayed;
+    public void hideText()
+    {
+        popUpEnv.SetActive(false); 
     }
 }
