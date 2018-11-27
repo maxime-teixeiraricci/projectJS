@@ -11,6 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
   m_Name: Carrier TakeResources
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 0}
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: 6dcb4238bdda6664087f60c469877a20, type: 2}
+    nextState: {fileID: 11400000, guid: dd4139a169cd8654588bc9424955a85e, type: 2}
+  - decisions:
+    - {fileID: 11400000, guid: b3cc0270ec4c31544a066e8af0a460f6, type: 2}
+    nextState: {fileID: 11400000, guid: dd4139a169cd8654588bc9424955a85e, type: 2}
   gizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

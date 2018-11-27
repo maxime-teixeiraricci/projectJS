@@ -6,6 +6,7 @@ public abstract class Building : MonoBehaviour {
 
     public Dictionary<Ressource, int> ressourcesNeeded;
     public Dictionary<Ressource, List<GameObject>> stock = new Dictionary<Ressource, List<GameObject>>(); //le arrayList prend pas la spé d'élément ArrayList<Ressource> pas possible...
+
     public int tools;
 
     // Temps qu'il faut pour construire le batiment
