@@ -9,8 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
-  m_Name: New FSM State
+  m_Name: CrafterIdle
   m_EditorClassIdentifier: 
   actions: []
-  transitions: []
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: 9b525145fd152c6419db45383a97a76a, type: 2}
+    nextState: {fileID: 11400000, guid: 826aed4104431494b9b9bd8099ef94da, type: 2}
   gizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

@@ -11,6 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
   m_Name: Carrier GoToCamp
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 11400000, guid: f2cf6b3ecae2da940af71c593f229eb9, type: 2}
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: 8596fbbc4d76636419268c9d413984ad, type: 2}
+    nextState: {fileID: 0}
   gizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

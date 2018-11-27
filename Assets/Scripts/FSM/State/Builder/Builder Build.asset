@@ -11,6 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
   m_Name: Builder Build
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 11400000, guid: 0fa33d080b107a04aac681020c1bc0e9, type: 2}
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: daed43b194d031e4fbab2ec69828b73d, type: 2}
+    nextState: {fileID: 11400000, guid: 7f3a81737f437684682347168e7e2e24, type: 2}
+  - decisions:
+    - {fileID: 11400000, guid: 2adf4ecb216687c4083c58516023c9cb, type: 2}
+    nextState: {fileID: 11400000, guid: 78bc85b81c4a6fd41b23740e212d4ef1, type: 2}
   gizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

@@ -11,6 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
   m_Name: CrafterCraft
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 11400000, guid: 224b4cff009356b42a7169be6351bf33, type: 2}
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: 3a9cbcaaa331d6240b9a330755fb22ab, type: 2}
+    nextState: {fileID: 11400000, guid: 160119fcd9dc2ae4da072f8a85bb05e7, type: 2}
   gizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

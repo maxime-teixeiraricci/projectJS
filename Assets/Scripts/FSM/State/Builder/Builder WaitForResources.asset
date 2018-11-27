@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Name: Builder WaitForResources
   m_EditorClassIdentifier: 
   actions: []
-  transitions: []
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: 45600d814d546d744b56dbbfb5216af3, type: 2}
+    nextState: {fileID: 11400000, guid: 9897a7f39b2fae34baac78b166d269f7, type: 2}
   gizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
