@@ -11,6 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
   m_Name: Carrier GatherResources
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  actions:
+  - {fileID: 11400000, guid: 8770786a2c8c88a439b1b45939243ced, type: 2}
+  transitions:
+  - decisions:
+    - {fileID: 11400000, guid: c57505faec24a594f84d4c431762dce3, type: 2}
+    nextState: {fileID: 11400000, guid: d299ceec083a1234f93d0f6219d2ccf7, type: 2}
   gizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
