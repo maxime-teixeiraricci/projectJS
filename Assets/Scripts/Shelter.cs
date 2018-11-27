@@ -47,8 +47,17 @@ public class Shelter : Building
 
     }
 
-    void give(Ressource ressource)
+    void give(GameObject ressource, Citizen citizen)
     {
-
+        /*
+        Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
+        if (!citizen.inventaire.ContainsKey(r))
+        {
+            citizen.inventaire.Add(r, 1);
+        }
+        citizen.inventaire[r] += 1;
+        citizen.ressources.Add(ressource);
+        stock[r].RemoveAt(0);
+        */
     }
 }

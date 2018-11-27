@@ -25,7 +25,7 @@ public class RecolterActionRecoltRessource : FSMAction
         }
         int level = controler.citizen.competences[naturalRessource.nameCompetence];
         float citizenFrequence = naturalRessource.recoltFrequence * bonusLevel(level);
-        Debug.Log(1f / citizenFrequence);
+        //Debug.Log(1f / citizenFrequence);
         if (controler.farmTimer > (1f/ citizenFrequence))
         {
             naturalRessource.Recolt(controler.citizen);

@@ -8,7 +8,7 @@ public class Citizen : MonoBehaviour {
     enum Etats { Sain, Malade, Mort };
 
     Dictionary<Ressource, int> capacitesInventaire;
-    Dictionary<Ressource, int> inventaire = new Dictionary<Ressource, int>();
+    [HideInInspector] public Dictionary<Ressource, int> inventaire = new Dictionary<Ressource, int>();
 
     public List<GameObject> ressources;
 
