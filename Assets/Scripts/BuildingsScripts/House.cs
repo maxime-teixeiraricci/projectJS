@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProductionBuilding : Building {
-
+public class House : Building {
+    bool fait = false;
     public void start()
     {
         askSupplyToConstruct();
-        alphaColor = gameObject.GetComponent<MeshRenderer>().material.color;
-        alphaColor.a = 0;
+        Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
+        GetComponent<MeshRenderer>().material.color = alphaColor;
     }
-
-    public void Update()
-    {
+	
+	public void Update () {
+        if (!fait)
+        {
+            askSupplyToConstruct();
+            Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+            alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
+            GetComponent<MeshRenderer>().material.color = alphaColor;
+            fait = true;
+        }
+        
         if (!isConstruct)
         {
             if (!enoughtCostructToBuild)
@@ -43,12 +52,13 @@ public class ProductionBuilding : Building {
             stock[r].Add(ressource);
         }
     }
-
+    
     //Fading animation to represent building construction
     public override void construct()
     {
-        alphaColor = gameObject.GetComponent<MeshRenderer>().material.color;
-        alphaColor.a += 1.0f / timeToBuild;
+        Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + (1.0f/timeToBuild));
+        GetComponent<MeshRenderer>().material.color = alphaColor;
     }
 
     public override void askForConstructer()
@@ -68,12 +78,12 @@ public class ProductionBuilding : Building {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
         //S'il y a assez de constructions on le signal
         enoughtCostructToBuild = true;
-        foreach (Ressource r in ressourcesNeeded.Keys)
-        {
+        /*foreach (Ressource r in ressourcesNeeded.Keys)
+	    {
             if (stock[r].Count <= ressourcesNeeded[r])
             {
                 enoughtCostructToBuild = false;
             }
-        }
+	    }*/
     }
 }

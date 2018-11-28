@@ -13,8 +13,10 @@ public class BuilderDecisionBuildIsOver : FSMDecision
 
     private bool BuildIsOver(FSMControler controler)
     {
-        controler.target.GetComponent<Building>().progressBuild += 1;
-        // Si le temps passé à construire le batiment est égal au temps nécessaire pour la construction, on retourne True
-        return (controler.target.GetComponent<Building>().progressBuild == controler.target.GetComponent<Building>().timeToBuild);
+        if (!controler.target) return false;
+        Building building =  controler.target.GetComponent<Building>();
+        if (!building) return false;
+        if (building.isConstruct) controler.target = null;
+        return building.isConstruct;
     }
 }

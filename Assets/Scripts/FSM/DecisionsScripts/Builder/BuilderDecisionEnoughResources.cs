@@ -13,7 +13,9 @@ public class BuilderDecisionEnoughResources : FSMDecision
 
     public bool HaveEnoughResources(FSMControler controler)
     {
-        // TODO : Récupérer la taille de la liste Value associée à notre ressource
-        return (controler.target.GetComponent<Building>().stock.Count > 0);
+        if (!controler.target) return false;
+        Building building = controler.target.gameObject.GetComponent<Building>();
+        if (!building) return false;
+        return building.enoughtCostructToBuild;
     }
 }

@@ -60,4 +60,14 @@ public class Shelter : Building
         stock[r].RemoveAt(0);
         */
     }
+
+    public override void construct()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void askForConstructer()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -13,6 +13,7 @@ public class BuilderDecisionTargetWorkSite : FSMDecision
 
     public bool HaveTarget(FSMControler controler)
     {
-        return (controler.target.gameObject.tag == "Work Site");
+        if (!controler.target) return false;
+        return controler.target.gameObject.GetComponent<Building>();
     }
 }

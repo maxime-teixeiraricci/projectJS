@@ -8,9 +8,10 @@ public class FSMControler : MonoBehaviour
     public FSMState currentState;
 
     [HideInInspector] public NavMeshAgent agent;
-    public GameObject target;
     [HideInInspector] public Citizen citizen;
+    public GameObject target;
     public float farmTimer;
+    public float buildTimer;
 
     // Use this for initialization
     void Start () {
