@@ -13,6 +13,10 @@ public class CrafterDecisionTargetNull : FSMDecision
 
     public bool HaveTarget(FSMControler controler)
     {
+        if(controler.target == null)
+        {
+            controler.citizen.GetComponent<MeshRenderer>().enabled = true;
+        }
         return (controler.target == null);
     }
 }

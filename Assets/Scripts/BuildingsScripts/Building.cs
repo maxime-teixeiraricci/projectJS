@@ -10,13 +10,13 @@ public abstract class Building : MonoBehaviour {
     //isConstruct
     public bool isConstruct = false;
     //number of constructCall needed to be done
-    public bool enoughtCostructToBuild = false;
-    //building inventenry
+    public bool enoughConstructToBuild = false;
+
+    //building inventory
     public Dictionary<Ressource, List<GameObject>> stock = new Dictionary<Ressource, List<GameObject>>(); //le arrayList prend pas la spé d'élément ArrayList<Ressource> pas possible...
     //List of ressources needed to make the building work
     public Dictionary<Ressource, int> ressourcesNeededToWork;
 
-    public int tools;
     public float buildFrequence = 1.0f;
 
     public Color alphaColor;

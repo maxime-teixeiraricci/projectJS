@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PluggableAI/Decisions/Crafter/Enough Resources")]
-public class CrafterDecisionEnoughResources : FSMDecision {
+public class CrafterDecisionEnoughResources : FSMDecision
+{
 
     public override bool Decide(FSMControler controler)
     {
@@ -12,7 +13,9 @@ public class CrafterDecisionEnoughResources : FSMDecision {
 
     public bool HaveEnoughResources(FSMControler controler)
     {
-        // TODO : Récupérer la taille de la liste Value associée à notre ressource
-        return (controler.target.GetComponent<Building>().stock.Count > 0);
+        if (!controler.target) return false;
+        Camp building = controler.target.gameObject.GetComponent<Camp>();
+        if (!building) return false;
+        return building.enoughResourcesToCraft;
     }
 }

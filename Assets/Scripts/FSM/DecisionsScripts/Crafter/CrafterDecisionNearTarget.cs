@@ -16,7 +16,12 @@ public class CrafterDecisionNearTarget : FSMDecision
         if (!controler.target) return false;
         else
         {
-            return (controler.agent.remainingDistance <= controler.citizen.citizenSetting.distanceNearTarget && !controler.agent.pathPending);
+            bool distance = controler.agent.remainingDistance <= controler.citizen.citizenSetting.distanceNearTarget && !controler.agent.pathPending;
+            if (distance)
+            {
+                controler.citizen.GetComponent<MeshRenderer>().enabled = false;
+            }
+            return (distance);
         }
     }
 }

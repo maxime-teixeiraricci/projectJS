@@ -12,6 +12,7 @@ public class FSMControler : MonoBehaviour
     public GameObject target;
     public float farmTimer;
     public float buildTimer;
+    public float craftTimer;
 
     // Use this for initialization
     void Start () {

@@ -24,7 +24,7 @@ public class House : Building {
         
         if (!isConstruct)
         {
-            if (!enoughtCostructToBuild)
+            if (!enoughConstructToBuild)
             {
                 askSupplyToConstruct();
             }
@@ -77,7 +77,7 @@ public class House : Building {
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
         //S'il y a assez de constructions on le signal
-        enoughtCostructToBuild = true;
+        enoughConstructToBuild = true;
         /*foreach (Ressource r in ressourcesNeeded.Keys)
 	    {
             if (stock[r].Count <= ressourcesNeeded[r])

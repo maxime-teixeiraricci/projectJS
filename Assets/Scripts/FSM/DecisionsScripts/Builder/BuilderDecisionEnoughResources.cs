@@ -16,6 +16,6 @@ public class BuilderDecisionEnoughResources : FSMDecision
         if (!controler.target) return false;
         Building building = controler.target.gameObject.GetComponent<Building>();
         if (!building) return false;
-        return building.enoughtCostructToBuild;
+        return building.enoughConstructToBuild;
     }
 }

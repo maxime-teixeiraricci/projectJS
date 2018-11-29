@@ -2,17 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProductionBuilding : Building {
+public class Camp : Building
+{
+    bool done = false;
+    // Liste des outils craftable par le batiment
+    public Dictionary<Tool, int> toolsStock;
+
+    public bool enoughResourcesToCraft = false;
 
     public void start()
     {
         askSupplyToConstruct();
-        alphaColor = gameObject.GetComponent<MeshRenderer>().material.color;
-        alphaColor.a = 0;
+        Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
+        GetComponent<MeshRenderer>().material.color = alphaColor;
     }
 
     public void Update()
     {
+        if (!done)
+        {
+            askSupplyToConstruct();
+            Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+            alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
+            GetComponent<MeshRenderer>().material.color = alphaColor;
+            done = true;
+        }
+
         if (!isConstruct)
         {
             if (!enoughConstructToBuild)
@@ -27,6 +43,11 @@ public class ProductionBuilding : Building {
                     isConstruct = true;
                 }
             }
+        }
+
+        if (!enoughResourcesToCraft)
+        {
+            askSupplyToCraft();
         }
     }
 
@@ -47,8 +68,9 @@ public class ProductionBuilding : Building {
     //Fading animation to represent building construction
     public override void construct()
     {
-        alphaColor = gameObject.GetComponent<MeshRenderer>().material.color;
-        alphaColor.a += 1.0f / timeToBuild;
+        Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + (1.0f / timeToBuild));
+        GetComponent<MeshRenderer>().material.color = alphaColor;
     }
 
     public override void askForConstructer()
@@ -63,17 +85,25 @@ public class ProductionBuilding : Building {
         //Si il n'y a plus de nourriture pour tenir le jour suivant, on appel askSupply
     }
 
+    public void askSupplyToCraft()
+    {
+        // Demande la livrison de ressources, pour pouvoir construire des outils
+        // Possiblement, demander un stock supérieur au strict minimum 
+        // (Par exemple, demander 2x plus de ressources, pour éviter les changements incessants d'états)
+        enoughResourcesToCraft = true;
+    }
+
     public void askSupplyToConstruct()
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
         //S'il y a assez de constructions on le signal
         enoughConstructToBuild = true;
-        foreach (Ressource r in ressourcesNeeded.Keys)
-        {
+        /*foreach (Ressource r in ressourcesNeeded.Keys)
+	    {
             if (stock[r].Count <= ressourcesNeeded[r])
             {
-                enoughConstructToBuild = false;
+                enoughtCostructToBuild = false;
             }
-        }
+	    }*/
     }
 }

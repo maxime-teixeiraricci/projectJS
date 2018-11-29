@@ -13,6 +13,7 @@ public class CrafterDecisionTargetCamp : FSMDecision
 
     public bool HaveTarget(FSMControler controler)
     {
+        if (!controler.target) return false;
         return (controler.target.gameObject.tag == "Camp");
     }
 }
