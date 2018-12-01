@@ -8,12 +8,14 @@ public class CrafterDecisionNotEnoughResources : FSMDecision
 
     public override bool Decide(FSMControler controler)
     {
-        return HaveEnoughResources(controler);
+        return !HaveEnoughResources(controler);
     }
 
     public bool HaveEnoughResources(FSMControler controler)
     {
-        // TODO : Récupérer la taille de la liste Value associée à notre ressource
-        return (controler.target.GetComponent<Building>().stock.Count == 0);
+        if (!controler.target) return false;
+        Camp building = controler.target.gameObject.GetComponent<Camp>();
+        if (!building) return false;
+        return building.enoughResourcesToCraft;
     }
 }

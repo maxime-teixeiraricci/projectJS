@@ -18,7 +18,7 @@ public class Shelter : Building
 
     public void Update()
     {
-        int i = 0;
+        /*int i = 0;
         foreach(List<GameObject> listRessource in stock.Values)
         {
             foreach (GameObject r in listRessource)
@@ -26,18 +26,17 @@ public class Shelter : Building
                 r.transform.position = transform.position + new Vector3(dX / (nX - 1) * (i % nX) - dX * 0.5f, 0.5f, dY / (nY - 1) * (i / nY) - dY * 0.5f);
                 i++;
             }
-        }
+        }*/
     }
     public override void addRessource(GameObject ressource, int quantite)
     {
         for (int i = 0; i < quantite; i++)
         {
             Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
-            if (!stock.ContainsKey(r))
+            if (!stock.contain(r))
             {
-                stock.Add(r, new List<GameObject>());
+                stock.add(r);
             }
-            stock[r].Add(ressource);
             res.GetComponent<ResourcesCount>().Add(r);
         }
     }

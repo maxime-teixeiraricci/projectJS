@@ -10,6 +10,7 @@ TagManager:
   - RessourceTank
   - Camp
   - House
+  - Building
   layers:
   - Default
   - TransparentFX

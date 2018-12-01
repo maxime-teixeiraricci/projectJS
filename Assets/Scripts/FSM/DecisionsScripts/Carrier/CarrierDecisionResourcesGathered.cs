@@ -14,7 +14,7 @@ public class CarrierDecisionResourcesGathered : FSMDecision
     private bool ResourcesGathered(FSMControler controler)
     {
         Dictionary<Ressource, int> inv = controler.citizen.inventaire;
-        Dictionary<Ressource, int> invBuilding = controler.target.GetComponent<Building>().ressourcesNeeded;
+        //Dictionary<Ressource, int> invBuilding = controler.target.GetComponent<Building>().ressourcesNeeded;
         return true;
         // TODO
         // Comparer les deux dicos entre eux

@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-using UnityEngine;
-using System.Collections;
-
 public class PlayerController : MonoBehaviour
 {
     //to check ground and to have a jumpforce we can change in the editor

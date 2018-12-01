@@ -57,11 +57,10 @@ public class Camp : Building
         for (int i = 0; i < quantite; i++)
         {
             Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
-            if (!stock.ContainsKey(r))
+            if (!stock.contain(r))
             {
-                stock.Add(r, new List<GameObject>());
+                stock.add(r);
             }
-            stock[r].Add(ressource);
         }
     }
 

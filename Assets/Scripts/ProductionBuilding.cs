@@ -36,11 +36,10 @@ public class ProductionBuilding : Building {
         for (int i = 0; i < quantite; i++)
         {
             Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
-            if (!stock.ContainsKey(r))
+            if (!stock.contain(r))
             {
-                stock.Add(r, new List<GameObject>());
+                stock.add(r);
             }
-            stock[r].Add(ressource);
         }
     }
 
@@ -68,9 +67,10 @@ public class ProductionBuilding : Building {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
         //S'il y a assez de constructions on le signal
         enoughConstructToBuild = true;
-        foreach (Ressource r in ressourcesNeeded.Keys)
+        foreach (RessourceTank r in ressourcesNeededToConstruct.ressourcesList)
         {
-            if (stock[r].Count <= ressourcesNeeded[r])
+            RessourceTank rTStock = stock.getStruct(r.ressource);
+            if (!rTStock.Equals(null) && rTStock.number <= r.number)
             {
                 enoughConstructToBuild = false;
             }
