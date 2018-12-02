@@ -53,7 +53,7 @@ public class RessourceInventory : MonoBehaviour
             rT.ressource = ressource;
             rT.number = 1;
             rT.numberLimit = 99; // Limite le nombre de ressource à 99 par défaut
-
+            ressourcesList.Add(rT);
         }
     }
 

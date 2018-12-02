@@ -167,7 +167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &126449632
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -791,7 +791,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1487986925770250, guid: a3c1477e08642fa419c5bf2ed5b36c58, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1238348294588524, guid: a3c1477e08642fa419c5bf2ed5b36c58, type: 2}
       propertyPath: m_IsActive
@@ -801,6 +801,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114061383964702620, guid: a3c1477e08642fa419c5bf2ed5b36c58,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1130651825}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c1477e08642fa419c5bf2ed5b36c58, type: 2}
   m_IsPrefabAsset: 0
@@ -2717,12 +2722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ressourcesList:
-  - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
-    number: 1500
-    numberLimit: 5000
-    numberToConstruct: 5
-    neededToConstruct: 1
+  ressourcesList: []
 --- !u!114 &857803592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5417,7 +5417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1423916777
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6843,7 +6843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1776585229
 Rigidbody:
   m_ObjectHideFlags: 0
