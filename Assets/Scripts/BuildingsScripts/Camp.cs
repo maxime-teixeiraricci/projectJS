@@ -39,13 +39,17 @@ public class Camp : Building
                 if (alphaColor.a >= 1.0)
                 {
                     isConstruct = true;
+
+                    foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
+                    {
+                        for (int i = 0; i < r.numberToConstruct; i++)
+                        {
+                            inventory.remove(r.ressource);
+                        }
+
+                    }
                 }
             }
-        }
-
-        if (!enoughResourcesToCraft)
-        {
-            askSupplyToCraft();
         }
     }
 
@@ -90,9 +94,24 @@ public class Camp : Building
     public override void askSupplyToConstruct()
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
-        //S'il y a assez de constructions on le signal
+
+        // La liste des ressources qu'il faut pour construire le batiment
+        List<RessourceTank> ressourcesNeeded = inventory.getRessourcesNeededConstruct();
+
+        foreach(RessourceTank r in ressourcesNeeded)
+        {
+            if(r.number < r.numberToConstruct)
+            {
+                int need = r.numberToConstruct - r.number;
+                // TODO
+                // Le dispatcher envoie une requête 
+                //dispatcher.ask(Ressource, need);
+            }
+        }
+
+        //S'il y a assez de constructions, on le signal
         enoughConstructToBuild = true;
-        foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
+        foreach (RessourceTank r in ressourcesNeeded)
         {
             if (r.number < r.numberToConstruct)
             {

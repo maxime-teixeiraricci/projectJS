@@ -43,21 +43,32 @@ public class Shelter : Building
                 if (alphaColor.a >= 1.0)
                 {
                     isConstruct = true;
+
+                    foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
+                    {
+                        for (int i = 0; i < r.numberToConstruct; i++)
+                        {
+                            inventory.remove(r.ressource);
+                        }
+
+                    }
                 }
             }
         }
-
-        /*int i = 0;
-        foreach(List<GameObject> listRessource in stock.Values)
-        {
-            foreach (GameObject r in listRessource)
-            {
-                r.transform.position = transform.position + new Vector3(dX / (nX - 1) * (i % nX) - dX * 0.5f, 0.5f, dY / (nY - 1) * (i / nY) - dY * 0.5f);
-                i++;
-            }
-        }*/
-
     }
+    
+
+    /*int i = 0;
+    foreach(List<GameObject> listRessource in stock.Values)
+    {
+        foreach (GameObject r in listRessource)
+        {
+            r.transform.position = transform.position + new Vector3(dX / (nX - 1) * (i % nX) - dX * 0.5f, 0.5f, dY / (nY - 1) * (i / nY) - dY * 0.5f);
+            i++;
+        }
+    }*/
+
+
     public override void addRessource(GameObject ressource, int quantite)
     {
         for (int i = 0; i < quantite; i++)

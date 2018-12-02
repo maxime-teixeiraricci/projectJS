@@ -2722,7 +2722,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ressourcesList: []
+  ressourcesList:
+  - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 1
+    neededToConstruct: 1
 --- !u!114 &857803592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6097,6 +6102,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 857803583}
+    - target: {fileID: 1487986925770250, guid: a3c1477e08642fa419c5bf2ed5b36c58, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c1477e08642fa419c5bf2ed5b36c58, type: 2}
   m_IsPrefabAsset: 0

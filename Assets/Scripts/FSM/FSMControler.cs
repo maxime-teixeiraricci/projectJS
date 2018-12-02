@@ -10,6 +10,7 @@ public class FSMControler : MonoBehaviour
     [HideInInspector] public NavMeshAgent agent;
     [HideInInspector] public Citizen citizen;
     public GameObject target;
+    public GameObject finalTarget;
     public float farmTimer;
     public float buildTimer;
     public float craftTimer;

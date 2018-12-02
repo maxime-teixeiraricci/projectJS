@@ -13,6 +13,8 @@ public class CarrierActionGatherResources : FSMAction
 
     private void GatherResources(FSMControler controler)
     {
+
+
         //controler.citizen.addRessource(ressource)    Ajouter la ressource dans le sac du carrier
 
         //foreach(Ressource item in controler.target.GetComponent<Building>().ressourcesNeeded.Values)
