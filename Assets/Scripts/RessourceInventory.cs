@@ -6,13 +6,14 @@ public class RessourceInventory : MonoBehaviour
 {
 
     public static RessourceTank NULL = new RessourceTank();
+
     public List<RessourceTank> ressourcesList;
 
     public RessourceTank getStruct(Ressource ressource)
     {
         foreach (RessourceTank rT in ressourcesList)
         {
-            if (rT.ressource == ressource)
+            if (rT.ressource.Equals(ressource))
             {
                 return rT;
             }
@@ -43,22 +44,15 @@ public class RessourceInventory : MonoBehaviour
         RessourceTank rT = getStruct(ressource);
         if (!rT.Equals(RessourceInventory.NULL))
         {
-            rT.number++;
+            rT.number = rT.number + 1;
+            print(nbElementsTotal( ressource));
         }
         else
         {
             rT = new RessourceTank();
             rT.ressource = ressource;
             rT.number = 1;
-            int buildingLimit = gameObject.GetComponent<Building>().ressourcesLimitStock.getLimit(ressource);
-            if (buildingLimit != -1)
-            {
-                rT.limitNb = buildingLimit;
-            }
-            else
-            {
-                rT.limitNb = 99; // Limite le nombre de ressource à 99 par défaut
-            }
+            rT.numberLimit = 99; // Limite le nombre de ressource à 99 par défaut
 
         }
     }
@@ -70,7 +64,8 @@ public class RessourceInventory : MonoBehaviour
         {
             if (rT.number > 0)
             {
-                rT.number--;
+                rT.number = rT.number - 1;
+                print(rT.number);
                 return true;
             }
         }
@@ -82,9 +77,35 @@ public class RessourceInventory : MonoBehaviour
         RessourceTank rT = getStruct(ressource);
         if (!rT.Equals(RessourceInventory.NULL))
         {
-            return rT.limitNb;
+            return rT.numberLimit;
         }
         return -1;
+    }
+
+    public List<RessourceTank> getRessourcesNeededConstruct()
+    {
+        List<RessourceTank> res = new List<RessourceTank>();
+        foreach (RessourceTank rT in ressourcesList)
+        {
+            if (rT.neededToConstruct)
+            {
+                res.Add(rT);
+            }
+        }
+        return res;
+    }
+
+    public List<RessourceTank> getRessourcesNeededCraft()
+    {
+        List<RessourceTank> res = new List<RessourceTank>();
+        foreach (RessourceTank rT in ressourcesList)
+        {
+            if (rT.neededToCraft)
+            {
+                res.Add(rT);
+            }
+        }
+        return res;
     }
 }
 
@@ -94,5 +115,9 @@ public struct RessourceTank
 {
     public Ressource ressource;
     public int number;
-    public int limitNb;
+    public int numberLimit;
+    public int numberToConstruct;
+    public int numberToCraft;
+    public bool neededToConstruct;
+    public bool neededToCraft;
 }

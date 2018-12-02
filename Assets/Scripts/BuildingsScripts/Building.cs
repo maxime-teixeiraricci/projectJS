@@ -5,19 +5,11 @@ using UnityEngine;
 public abstract class Building : MonoBehaviour {
 
     //building inventory
-    public RessourceInventory stock = new RessourceInventory();
-    //List of ressources needed to make the building work (crafter)
-    public RessourceInventory ressourcesNeededToWork = new RessourceInventory();
-
-    //List of ressources needed to create the building
-    public RessourceInventory ressourcesNeededToConstruct = new RessourceInventory();
-    public RessourceInventory ressourcesLimitStock = new RessourceInventory();
+    public RessourceInventory inventory;
 
     //isConstruct
     public bool isConstruct = false;
     public bool enoughConstructToBuild = false;
-
-    
     
     public float buildFrequence = 1.0f;
 
@@ -33,5 +25,6 @@ public abstract class Building : MonoBehaviour {
     abstract public void addRessource(GameObject ressource, int quantite);
     abstract public void construct();
     abstract public void askForConstructer();
+    abstract public void askSupplyToConstruct();
 }
 

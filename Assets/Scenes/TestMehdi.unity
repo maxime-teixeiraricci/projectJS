@@ -1553,10 +1553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25caf18a0cd7e47a9778bee7c81fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stock: {fileID: 0}
-  ressourcesNeededToWork: {fileID: 0}
-  ressourcesNeededToConstruct: {fileID: 0}
-  ressourcesLimitStock: {fileID: 0}
+  inventory: {fileID: 0}
   isConstruct: 0
   enoughConstructToBuild: 0
   buildFrequence: 1
@@ -1884,10 +1881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25caf18a0cd7e47a9778bee7c81fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stock: {fileID: 0}
-  ressourcesNeededToWork: {fileID: 0}
-  ressourcesNeededToConstruct: {fileID: 0}
-  ressourcesLimitStock: {fileID: 0}
+  inventory: {fileID: 0}
   isConstruct: 0
   enoughConstructToBuild: 0
   buildFrequence: 1
@@ -2450,6 +2444,10 @@ GameObject:
   - component: {fileID: 591896821}
   - component: {fileID: 591896820}
   - component: {fileID: 591896819}
+  - component: {fileID: 591896829}
+  - component: {fileID: 591896828}
+  - component: {fileID: 591896827}
+  - component: {fileID: 591896826}
   m_Layer: 0
   m_Name: Camp
   m_TagString: Camp
@@ -2468,10 +2466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899a679f754708e41adba22320139e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stock: {fileID: 0}
-  ressourcesNeededToWork: {fileID: 0}
-  ressourcesNeededToConstruct: {fileID: 0}
-  ressourcesLimitStock: {fileID: 0}
+  inventory: {fileID: 0}
   isConstruct: 0
   enoughConstructToBuild: 0
   buildFrequence: 1
@@ -2572,6 +2567,124 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &591896826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591896818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressourcesList: []
+--- !u!114 &591896827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591896818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressourcesList: []
+--- !u!114 &591896828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591896818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressourcesList: []
+--- !u!114 &591896829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591896818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressourcesList:
+  - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
+  - ressource: {fileID: 0}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
+  - ressource: {fileID: 0}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
+  - ressource: {fileID: 0}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
+  - ressource: {fileID: 0}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
+  - ressource: {fileID: 0}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
+  - ressource: {fileID: 0}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
+  - ressource: {fileID: 0}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
+  - ressource: {fileID: 0}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
+  - ressource: {fileID: 0}
+    number: 0
+    numberLimit: 0
+    numberToConstruct: 0
+    numberToCraft: 0
+    neededToConstruct: 0
+    neededToCraft: 0
 --- !u!1 &649894762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,10 +2716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25caf18a0cd7e47a9778bee7c81fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stock: {fileID: 0}
-  ressourcesNeededToWork: {fileID: 0}
-  ressourcesNeededToConstruct: {fileID: 0}
-  ressourcesLimitStock: {fileID: 0}
+  inventory: {fileID: 0}
   isConstruct: 0
   enoughConstructToBuild: 0
   buildFrequence: 1
@@ -4264,6 +4374,7 @@ GameObject:
   - component: {fileID: 1024791199}
   - component: {fileID: 1024791198}
   - component: {fileID: 1024791197}
+  - component: {fileID: 1024791205}
   - component: {fileID: 1024791204}
   m_Layer: 0
   m_Name: House
@@ -4283,10 +4394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c9b6eb5e8461044ba565398ff00979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stock: {fileID: 0}
-  ressourcesNeededToWork: {fileID: 0}
-  ressourcesNeededToConstruct: {fileID: 0}
-  ressourcesLimitStock: {fileID: 0}
+  inventory: {fileID: 1024791205}
   isConstruct: 0
   enoughConstructToBuild: 0
   buildFrequence: 1
@@ -4401,6 +4509,25 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1024791205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1024791196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressourcesList:
+  - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
+    number: 0
+    numberLimit: 5
+    numberToConstruct: 2
+    numberToCraft: 0
+    neededToConstruct: 1
+    neededToCraft: 0
 --- !u!1 &1036283734
 GameObject:
   m_ObjectHideFlags: 0
@@ -7699,10 +7826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25caf18a0cd7e47a9778bee7c81fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stock: {fileID: 0}
-  ressourcesNeededToWork: {fileID: 0}
-  ressourcesNeededToConstruct: {fileID: 0}
-  ressourcesLimitStock: {fileID: 0}
+  inventory: {fileID: 0}
   isConstruct: 1
   enoughConstructToBuild: 0
   buildFrequence: 1

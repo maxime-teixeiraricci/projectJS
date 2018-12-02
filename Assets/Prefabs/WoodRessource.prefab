@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36589aa7bac85344d856a480b01b527e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ressource: {fileID: 11400000, guid: 234145f6d1a05ae408a196d00949d1e7, type: 2}
+  ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
   validityTime: 30
   phase: 0
   type: 0
@@ -99,6 +99,6 @@ SpriteRenderer:
   m_Size: {x: 0.24, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

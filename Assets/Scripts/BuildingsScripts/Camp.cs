@@ -57,10 +57,7 @@ public class Camp : Building
         for (int i = 0; i < quantite; i++)
         {
             Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
-            if (!stock.contain(r))
-            {
-                stock.add(r);
-            }
+            inventory.add(r);
         }
     }
 
@@ -92,17 +89,17 @@ public class Camp : Building
         enoughResourcesToCraft = true;
     }
 
-    public void askSupplyToConstruct()
+    public override void askSupplyToConstruct()
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
         //S'il y a assez de constructions on le signal
         enoughConstructToBuild = true;
-        /*foreach (Ressource r in ressourcesNeeded.Keys)
-	    {
-            if (stock[r].Count <= ressourcesNeeded[r])
+        foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
+        {
+            if (r.number < r.numberToConstruct)
             {
-                enoughtCostructToBuild = false;
+                enoughConstructToBuild = false;
             }
-	    }*/
+        }
     }
 }

@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5122e324b8927d4c8848bdfc2e816ea, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  nom: 
+  nom: Wood
   tempsDeValidite: 0
-  image: {fileID: 21300370, guid: 0013243b34bcc1346b736fdbd496d615, type: 3}
+  image: {fileID: 21300588, guid: 2b31544e07104fa469a57c9a4fdec116, type: 3}

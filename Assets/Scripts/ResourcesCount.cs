@@ -37,7 +37,7 @@ public class ResourcesCount : MonoBehaviour {
 
     public void Add(Ressource ressource)
     {
-        if(ressource.nom == "Apple")
+        if(ressource.nom == "Wood")
         {
             wood++;
             woodText.text = "" + wood;

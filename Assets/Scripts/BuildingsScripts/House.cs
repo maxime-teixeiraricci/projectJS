@@ -34,6 +34,15 @@ public class House : Building {
                 if (alphaColor.a >= 1.0)
                 {
                     isConstruct = true;
+
+                    foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
+                    {
+                        for(int i = 0; i < r.numberToConstruct; i++)
+                        {
+                            inventory.remove(r.ressource);
+                        }
+                        
+                    }
                 }
             }
         }
@@ -45,10 +54,7 @@ public class House : Building {
         for (int i = 0; i < quantite; i++)
         {
             Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
-            if (!stock.contain(r))
-            {
-                stock.add(r);
-            }
+            inventory.add(r);
         }
     }
     
@@ -72,15 +78,15 @@ public class House : Building {
         //Si il n'y a plus de nourriture pour tenir le jour suivant, on appel askSupply
     }
 
-    public void askSupplyToConstruct()
+    public override void askSupplyToConstruct()
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
+
         //S'il y a assez de constructions on le signal
         enoughConstructToBuild = true;
-        foreach (RessourceTank r in ressourcesNeededToConstruct.ressourcesList)
+        foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
 	    {
-            RessourceTank rTStock = stock.getStruct(r.ressource);
-            if (!rTStock.Equals(null) && rTStock.number <= r.number)
+            if (r.number < r.numberToConstruct)
             {
                 enoughConstructToBuild = false;
             }

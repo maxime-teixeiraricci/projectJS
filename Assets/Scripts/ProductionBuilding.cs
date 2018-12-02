@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProductionBuilding : Building {
-
+    bool fait = false;
     public void start()
     {
         askSupplyToConstruct();
@@ -13,6 +13,15 @@ public class ProductionBuilding : Building {
 
     public void Update()
     {
+        if (!fait)
+        {
+            askSupplyToConstruct();
+            Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+            alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
+            GetComponent<MeshRenderer>().material.color = alphaColor;
+            fait = true;
+        }
+
         if (!isConstruct)
         {
             if (!enoughConstructToBuild)
@@ -36,10 +45,7 @@ public class ProductionBuilding : Building {
         for (int i = 0; i < quantite; i++)
         {
             Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
-            if (!stock.contain(r))
-            {
-                stock.add(r);
-            }
+            inventory.add(r);
         }
     }
 
@@ -62,15 +68,15 @@ public class ProductionBuilding : Building {
         //Si il n'y a plus de nourriture pour tenir le jour suivant, on appel askSupply
     }
 
-    public void askSupplyToConstruct()
+    public override void askSupplyToConstruct()
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
+
         //S'il y a assez de constructions on le signal
         enoughConstructToBuild = true;
-        foreach (RessourceTank r in ressourcesNeededToConstruct.ressourcesList)
+        foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
         {
-            RessourceTank rTStock = stock.getStruct(r.ressource);
-            if (!rTStock.Equals(null) && rTStock.number <= r.number)
+            if (r.number < r.numberToConstruct)
             {
                 enoughConstructToBuild = false;
             }
