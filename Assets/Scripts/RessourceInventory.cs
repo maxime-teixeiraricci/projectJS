@@ -107,20 +107,19 @@ public class RessourceInventory : MonoBehaviour
         return res;
     }
 
-    /*
-    public List<RessourceTank> getRessourcesNeededCraft()
+    
+    public List<RessourceTank> getRessourcesNeededTransport()
     {
         List<RessourceTank> res = new List<RessourceTank>();
         foreach (RessourceTank rT in ressourcesList)
         {
-            if (rT.neededToCraft)
+            if (rT.neededToTransport)
             {
                 res.Add(rT);
             }
         }
         return res;
     }
-    */
 }
 
 
@@ -131,7 +130,9 @@ public class RessourceTank
     public int number;
     public int numberLimit;
     public int numberToConstruct;
+    public int numberToTransport;
     //public int numberToCraft;
+    public bool neededToTransport;
     public bool neededToConstruct;
     //public bool neededToCraft;
 }

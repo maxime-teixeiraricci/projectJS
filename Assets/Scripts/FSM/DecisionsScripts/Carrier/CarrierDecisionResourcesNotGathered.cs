@@ -13,10 +13,13 @@ public class CarrierDecisionResourcesNotGathered : FSMDecision
 
     private bool ResourcesNotGathered(FSMControler controler)
     {
-        Dictionary<Ressource, int> inv = controler.citizen.inventaire;
-        //Dictionary<Ressource, int> invBuilding = controler.target.GetComponent<Building>().ressourcesNeeded;
-        return true;
-        // TODO
-        // Comparer les deux dicos entre eux
+        Building target = controler.target.GetComponent<Building>();
+        Citizen citizen = controler.GetComponent<Citizen>();
+        foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
+        {
+            //s'il en reste renvoie true
+            if (target.inventory.nbElementsTotal(rT.ressource) > 0) return true;
+        }
+        return false;
     }
 }

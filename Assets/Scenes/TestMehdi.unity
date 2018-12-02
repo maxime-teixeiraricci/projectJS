@@ -2619,72 +2619,72 @@ MonoBehaviour:
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
   - ressource: {fileID: 0}
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
   - ressource: {fileID: 0}
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
   - ressource: {fileID: 0}
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
   - ressource: {fileID: 0}
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
   - ressource: {fileID: 0}
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
   - ressource: {fileID: 0}
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
   - ressource: {fileID: 0}
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
   - ressource: {fileID: 0}
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
   - ressource: {fileID: 0}
     number: 0
     numberLimit: 0
     numberToConstruct: 0
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 0
-    neededToCraft: 0
 --- !u!1 &649894762
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,12 +4522,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ressourcesList:
   - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
-    number: 2
+    number: 0
     numberLimit: 5
     numberToConstruct: 2
-    numberToCraft: 0
+    numberToTransport: 0
+    neededToTransport: 0
     neededToConstruct: 1
-    neededToCraft: 0
 --- !u!1 &1036283734
 GameObject:
   m_ObjectHideFlags: 0

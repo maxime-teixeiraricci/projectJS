@@ -6,7 +6,7 @@ public abstract class Building : MonoBehaviour {
 
     //building inventory
     public RessourceInventory inventory;
-
+    public bool needRessource;
     //isConstruct
     public bool isConstruct = false;
     public bool enoughConstructToBuild = false;
@@ -26,5 +26,7 @@ public abstract class Building : MonoBehaviour {
     abstract public void construct();
     abstract public void askForConstructer();
     abstract public void askSupplyToConstruct();
+    abstract public void give(Ressource ressource, Citizen citizen);
+    abstract public void take(Ressource ressource, Citizen citizen);
 }
 

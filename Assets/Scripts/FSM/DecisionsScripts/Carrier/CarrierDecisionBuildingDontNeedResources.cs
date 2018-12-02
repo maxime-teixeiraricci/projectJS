@@ -8,12 +8,12 @@ public class CarrierDecisionBuildingDontNeedResources : FSMDecision
 {
     public override bool Decide(FSMControler controler)
     {
-        return BuildingDontNeedResources(controler);
+        return BuildingNeedResources(controler);
     }
 
-    private bool BuildingDontNeedResources(FSMControler controler)
+    private bool BuildingNeedResources(FSMControler controler)
     {
-        // TODO
-        return true;
+        Building building = controler.target.GetComponent<Building>();
+        return building.needRessource != true;
     }
 }

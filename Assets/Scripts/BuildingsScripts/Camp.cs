@@ -119,4 +119,43 @@ public class Camp : Building
             }
         }
     }
+
+    public override void take(Ressource ressource, Citizen citizen)
+    {
+        if (inventory.nbElementsTotal(ressource) < inventory.getLimit(ressource))
+        {
+            citizen.ressourcesToTransport.remove(ressource);
+            inventory.add(ressource);
+        }
+    }
+
+    public override void give(Ressource ressource, Citizen citizen)
+    {
+        if (inventory.nbElementsTotal(ressource) > 0)
+        {
+            citizen.ressourcesToTransport.add(ressource);
+            inventory.remove(ressource);
+        }
+
+        if (enoughConstructToBuild)
+        {
+            needRessource = false;
+        }
+
+        // L'outil à construire
+        Tool tool = GetComponent<ToolInventory>().activeTool;
+        // La ressource qu'il faut pour le construire
+        Ressource resNeed = tool.ressourceNeeded;
+
+        // Le nombre de cette ressource qu'il faut
+        int nbrRessource = tool.numberRessourcesNeeded;
+
+        // Le nombre de la ressource contenu dans le batiment
+        int stockRessource = GetComponent<RessourceInventory>().nbElementsTotal(ressource);
+
+        if (stockRessource >= nbrRessource)
+        {
+            needRessource = false;
+        }
+    }
 }

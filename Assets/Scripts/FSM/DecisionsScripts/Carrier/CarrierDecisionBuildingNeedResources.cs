@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/Decisions/Carrier/Building Need Resources")]
+[CreateAssetMenu(menuName = "PluggableAI/Decisions/Carrier/Still resource to transport")]
 public class CarrierDecisionBuildingNeedResources : FSMDecision
 {
     public override bool Decide(FSMControler controler)
@@ -13,7 +13,7 @@ public class CarrierDecisionBuildingNeedResources : FSMDecision
 
     private bool BuildingNeedResources(FSMControler controler)
     {
-        // TODO
-        return true;
+        Building building = controler.target.GetComponent<Building>();
+        return building.needRessource == true;
     }
 }

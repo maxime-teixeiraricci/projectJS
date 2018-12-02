@@ -82,4 +82,14 @@ public class ProductionBuilding : Building {
             }
         }
     }
+
+    public override void give(Ressource ressource, Citizen citizen)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void take(Ressource ressource, Citizen citizen)
+    {
+        throw new System.NotImplementedException();
+    }
 }
