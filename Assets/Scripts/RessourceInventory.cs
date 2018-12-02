@@ -57,20 +57,28 @@ public class RessourceInventory : MonoBehaviour
         }
     }
 
-    public bool remove(Ressource ressource)
+    public void remove(Ressource ressource)
     {
-        print("IN REMOVE");
         RessourceTank rT = getStruct(ressource);
+        //numberRessources = rT.number;
         if (!rT.Equals(RessourceInventory.NULL))
         {
             if (rT.number > 0)
             {
                 rT.number = rT.number - 1;
+                print(nbElementsTotal(ressource));
+
+
+
+             
+
+                //numberRessources = numberRessources - 1;
+                //rT.number = numberRessources;
                 print(rT.number);
-                return true;
+                //return true;
             }
         }
-        return false;
+        //return false;
     }
 
     public int getLimit(Ressource ressource)
@@ -86,16 +94,20 @@ public class RessourceInventory : MonoBehaviour
     public List<RessourceTank> getRessourcesNeededConstruct()
     {
         List<RessourceTank> res = new List<RessourceTank>();
-        foreach (RessourceTank rT in ressourcesList)
+        if(!ressourcesList.Equals(new List<RessourceTank>()))
         {
-            if (rT.neededToConstruct)
+            foreach (RessourceTank rT in ressourcesList)
             {
-                res.Add(rT);
+                if (rT.neededToConstruct)
+                {
+                    res.Add(rT);
+                }
             }
         }
         return res;
     }
 
+    /*
     public List<RessourceTank> getRessourcesNeededCraft()
     {
         List<RessourceTank> res = new List<RessourceTank>();
@@ -108,17 +120,18 @@ public class RessourceInventory : MonoBehaviour
         }
         return res;
     }
+    */
 }
 
 
 [System.Serializable]
-public struct RessourceTank
+public class RessourceTank
 {
     public Ressource ressource;
     public int number;
     public int numberLimit;
     public int numberToConstruct;
-    public int numberToCraft;
+    //public int numberToCraft;
     public bool neededToConstruct;
-    public bool neededToCraft;
+    //public bool neededToCraft;
 }

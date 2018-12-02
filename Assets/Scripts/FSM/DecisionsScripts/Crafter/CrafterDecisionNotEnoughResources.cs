@@ -25,7 +25,6 @@ public class CrafterDecisionNotEnoughResources : FSMDecision
 
         // Le nombre de cette ressource qu'il faut
         int nbrRessource = tool.numberRessourcesNeeded;
-        Debug.Log("NOMBRE DE RESSOURCE NOT ENOUGH = " + nbrRessource);
 
         // Le nombre de la ressource contenu dans le batiment
         int stockRessource = controler.target.GetComponent<RessourceInventory>().nbElementsTotal(ressource);

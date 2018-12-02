@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 126449634}
   - component: {fileID: 126449632}
   - component: {fileID: 126449633}
+  - component: {fileID: 126449638}
   m_Layer: 9
   m_Name: Shelter (2)
   m_TagString: Batiment
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25caf18a0cd7e47a9778bee7c81fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 126449638}
   isConstruct: 0
   enoughConstructToBuild: 0
   buildFrequence: 1
@@ -271,6 +272,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &126449638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 126449631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressourcesList: []
 --- !u!1 &145526856
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,12 +2719,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ressourcesList:
   - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
-    number: 5
-    numberLimit: 20
+    number: 1500
+    numberLimit: 5000
     numberToConstruct: 5
-    numberToCraft: 0
     neededToConstruct: 1
-    neededToCraft: 0
 --- !u!114 &857803592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5399,6 +5410,7 @@ GameObject:
   - component: {fileID: 1423916779}
   - component: {fileID: 1423916777}
   - component: {fileID: 1423916778}
+  - component: {fileID: 1423916783}
   m_Layer: 9
   m_Name: Shelter (1)
   m_TagString: Batiment
@@ -5432,7 +5444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25caf18a0cd7e47a9778bee7c81fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 1423916783}
   isConstruct: 0
   enoughConstructToBuild: 0
   buildFrequence: 1
@@ -5510,6 +5522,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1423916783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1423916776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressourcesList: []
 --- !u!1 &1433618744
 GameObject:
   m_ObjectHideFlags: 0
@@ -6812,6 +6836,7 @@ GameObject:
   - component: {fileID: 1776585231}
   - component: {fileID: 1776585229}
   - component: {fileID: 1776585230}
+  - component: {fileID: 1776585235}
   m_Layer: 9
   m_Name: Shelter (3)
   m_TagString: Batiment
@@ -6845,7 +6870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25caf18a0cd7e47a9778bee7c81fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 1776585235}
   isConstruct: 0
   enoughConstructToBuild: 0
   buildFrequence: 1
@@ -6923,6 +6948,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776585235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776585228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressourcesList: []
 --- !u!1 &1784926547
 GameObject:
   m_ObjectHideFlags: 0

@@ -105,14 +105,20 @@ public class Shelter : Building
         //Demande au "camp de transporteurs" ou au dispacher des ressources
 
         //S'il y a assez de constructions on le signal
-        enoughConstructToBuild = true;
-        foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
+        
+        if(!inventory.getRessourcesNeededConstruct().Equals(new List<RessourceTank>()))
         {
-            if (r.number < r.numberToConstruct)
+            enoughConstructToBuild = true;
+
+            foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
             {
-                enoughConstructToBuild = false;
+                if (r.number < r.numberToConstruct)
+                {
+                    enoughConstructToBuild = false;
+                }
             }
         }
+        
     }
 
 }
