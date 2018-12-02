@@ -59,6 +59,7 @@ public class RessourceInventory : MonoBehaviour
 
     public bool remove(Ressource ressource)
     {
+        print("IN REMOVE");
         RessourceTank rT = getStruct(ressource);
         if (!rT.Equals(RessourceInventory.NULL))
         {

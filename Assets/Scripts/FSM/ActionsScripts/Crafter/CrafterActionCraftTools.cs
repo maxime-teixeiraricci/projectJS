@@ -15,28 +15,33 @@ public class CrafterActionCraftTools : FSMAction
     {
         if (!controler.target) return;
         Building building = controler.target.GetComponent<Building>();
+        if (!building) return;
+        Tool tool = building.GetComponent<ToolInventory>().activeTool;
         // TEMPORAIRE. Récupération du 1er outil dispo dans la liste
         //Tool tool = building.toolsStock.Keys.;
-        if (!building) return;
+        
 
         // Regarde le niveau de compétence du villageois
         if (!controler.citizen.competences.ContainsKey(building.nameCompetence))
         {
             controler.citizen.competences[building.nameCompetence] = 1;
         }
+        /*
         //Niveau du citoyen
         int level = controler.citizen.competences[building.nameCompetence];
         //Frequence de construction du citoyen
         float citizenFrequence = building.timeToBuild * bonusLevel(level);
         //si le temps passé à construire est 
-        if (controler.craftTimer > (1f / citizenFrequence))
+        */
+        if (!building.GetComponent<ToolInventory>().isCrafted())
         {
-            building.construct();
-            controler.buildTimer = 0;
+            building.GetComponent<ToolInventory>().isGettingCrafted();
         }
+
         else
         {
-            controler.buildTimer += Time.deltaTime;
+            building.GetComponent<ToolInventory>().addTool();
+            building.GetComponent<RessourceInventory>().remove(tool.ressourceNeeded);
         }
     }
 

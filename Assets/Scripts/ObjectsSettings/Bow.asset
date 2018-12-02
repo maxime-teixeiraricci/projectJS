@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   nom: 
-  timeToCraft: 0
+  timeToCraft: 15
+  ressourceNeeded: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
+  numberRessourcesNeeded: 15

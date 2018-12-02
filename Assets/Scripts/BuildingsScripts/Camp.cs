@@ -5,8 +5,6 @@ using UnityEngine;
 public class Camp : Building
 {
     bool done = false;
-    // Liste des outils craftable par le batiment
-    public Dictionary<Tool, int> toolsStock;
 
     public bool enoughResourcesToCraft = false;
 

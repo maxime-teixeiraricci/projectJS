@@ -4522,7 +4522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ressourcesList:
   - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
-    number: 0
+    number: 2
     numberLimit: 5
     numberToConstruct: 2
     numberToCraft: 0
@@ -6406,7 +6406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.015000001, y: 0.14525795}
   m_AnchorMax: {x: 0.16900001, y: 0.82745177}
-  m_AnchoredPosition: {x: -0.5175171, y: 0.4524994}
+  m_AnchoredPosition: {x: -0.5175781, y: 0.4524994}
   m_SizeDelta: {x: 1.035, y: -0.90497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1655729375

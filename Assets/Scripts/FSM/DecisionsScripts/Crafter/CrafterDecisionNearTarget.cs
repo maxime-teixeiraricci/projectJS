@@ -19,7 +19,8 @@ public class CrafterDecisionNearTarget : FSMDecision
             bool distance = controler.agent.remainingDistance <= controler.citizen.citizenSetting.distanceNearTarget && !controler.agent.pathPending;
             if (distance)
             {
-                controler.citizen.GetComponent<MeshRenderer>().enabled = false;
+                controler.citizen.GetComponentInChildren<MeshRenderer>().enabled = false;
+                //controler.citizen.GetComponent<MeshRenderer>().enabled = false;
             }
             return (distance);
         }

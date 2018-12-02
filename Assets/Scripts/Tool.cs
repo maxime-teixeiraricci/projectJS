@@ -13,4 +13,7 @@ public class Tool : ScriptableObject
 {
     public string nom;
     public float timeToCraft;
+
+    public Ressource ressourceNeeded;
+    public int numberRessourcesNeeded;
 }
