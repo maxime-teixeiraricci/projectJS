@@ -141,21 +141,23 @@ public class Camp : Building
         {
             needRessource = false;
         }
-
-        // L'outil à construire
-        Tool tool = GetComponent<ToolInventory>().activeTool;
-        // La ressource qu'il faut pour le construire
-        Ressource resNeed = tool.ressourceNeeded;
-
-        // Le nombre de cette ressource qu'il faut
-        int nbrRessource = tool.numberRessourcesNeeded;
-
-        // Le nombre de la ressource contenu dans le batiment
-        int stockRessource = GetComponent<RessourceInventory>().nbElementsTotal(ressource);
-
-        if (stockRessource >= nbrRessource)
+        if (GetComponent<ToolInventory>())
         {
-            needRessource = false;
+            // L'outil à construire
+            Tool tool = GetComponent<ToolInventory>().activeTool;
+            // La ressource qu'il faut pour le construire
+            Ressource resNeed = tool.ressourceNeeded;
+
+            // Le nombre de cette ressource qu'il faut
+            int nbrRessource = tool.numberRessourcesNeeded;
+
+            // Le nombre de la ressource contenu dans le batiment
+            int stockRessource = GetComponent<RessourceInventory>().nbElementsTotal(ressource);
+
+            if (stockRessource >= nbrRessource)
+            {
+                needRessource = false;
+            }
         }
     }
 }
