@@ -12,6 +12,8 @@ TagManager:
   - House
   - Building
   - Shelter
+  - Soil
+  - UI
   layers:
   - Default
   - TransparentFX
