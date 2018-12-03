@@ -14,6 +14,8 @@ public class DynamicBuild : MonoBehaviour
     GameObject spawnedObj;
     bool isPlaced = false;
 
+    Color originalColor;
+
     //string valueTag;
     // Use this for initialization
     void Start()
@@ -82,6 +84,8 @@ public class DynamicBuild : MonoBehaviour
     {
         //valueTag = "Shelter";
         spawnedObj = Instantiate(shelter, hit.point, Quaternion.identity) as GameObject;
+        originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
+        spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
         isPlaced = false;
     }
 
@@ -89,6 +93,8 @@ public class DynamicBuild : MonoBehaviour
     {
         //valueTag = "Camp";
         spawnedObj = Instantiate(camp, hit.point, Quaternion.identity) as GameObject;
+        originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
+        spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
         isPlaced = false;
     }
 
@@ -96,6 +102,8 @@ public class DynamicBuild : MonoBehaviour
     {
         //valueTag = "House";
         spawnedObj = Instantiate(house, hit.point, Quaternion.identity) as GameObject;
+        originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
+        spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
         isPlaced = false;
     }
     
@@ -112,6 +120,7 @@ public class DynamicBuild : MonoBehaviour
     {
         Debug.Log("in it");
         Instantiate(obj, hit.point, Quaternion.identity);
+        obj.GetComponent<MeshRenderer>().material.color = originalColor;
         isPlaced = true;
     }
 }
