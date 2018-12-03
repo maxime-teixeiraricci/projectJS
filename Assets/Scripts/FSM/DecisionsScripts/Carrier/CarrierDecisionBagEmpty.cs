@@ -21,7 +21,7 @@ public class CarrierDecisionBagEmpty : FSMDecision
 
         if (nbTotal == 0)
         {
-            controler.target = controler.finalTarget;
+            //controler.target = controler.finalTarget;
             return true;
         }
         else

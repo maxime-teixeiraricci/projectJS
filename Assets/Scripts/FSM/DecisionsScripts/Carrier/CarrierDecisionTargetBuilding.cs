@@ -13,7 +13,7 @@ public class CarrierDecisionTargetBuilding : FSMDecision
 
     public bool HaveTarget(FSMControler controler)
     {
-        if (!controler.target) return false;
+        if (!controler.finalTarget) return false;
         return (controler.finalTarget.gameObject.GetComponent<Building>());
     }
 }

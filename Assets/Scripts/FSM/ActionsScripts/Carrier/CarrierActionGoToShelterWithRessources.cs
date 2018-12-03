@@ -13,7 +13,8 @@ public class CarrierActionGoToShelterWithRessources : FSMAction
     private void FindRessource(FSMControler controler)
     {
         GameObject[] shelterList = GameObject.FindGameObjectsWithTag("Shelter");
-        if (shelterList.Length != 0)
+        controler.target = null;
+        if (shelterList.Length > 0)
         {
             foreach (GameObject gO in shelterList)
             {

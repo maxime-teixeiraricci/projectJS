@@ -18,7 +18,7 @@ public class CarrierDecisionResourcesGathered : FSMDecision
         foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
             //s'il en reste renvoie true
-            if (rT.number != rT.numberToTransport) return false;
+            if (rT.number < rT.numberToTransport) return false;
         }
         controler.target = controler.finalTarget;
         return true;

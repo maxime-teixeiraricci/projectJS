@@ -39,7 +39,7 @@ public class House : Building {
                     {
                         for(int i = 0; i < r.numberToConstruct; i++)
                         {
-                            inventory.remove(r.ressource);
+                            //inventory.remove(r.ressource);
                         }
                         
                     }
@@ -81,7 +81,7 @@ public class House : Building {
     public override void askSupplyToConstruct()
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
-
+        needRessource = true;
         //S'il y a assez de constructions on le signal
         enoughConstructToBuild = true;
         foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
@@ -95,21 +95,11 @@ public class House : Building {
 
     public override void take(Ressource ressource, Citizen citizen)
     {
-        if (inventory.nbElementsTotal(ressource) < inventory.getLimit(ressource))
+        if (inventory.nbElementsTotal(ressource) < inventory.getLimit(ressource) && citizen.ressourcesToTransport.getStruct(ressource).number>0)
         {
             citizen.ressourcesToTransport.remove(ressource);
             inventory.add(ressource);
         }
-    }
-
-    public override void give(Ressource ressource, Citizen citizen)
-    {
-        if (inventory.nbElementsTotal(ressource) > 0)
-        {
-            citizen.ressourcesToTransport.add(ressource);
-            inventory.remove(ressource);
-        }
-
         if (enoughConstructToBuild)
         {
             needRessource = false;
@@ -133,5 +123,15 @@ public class House : Building {
                 needRessource = false;
             }
         }
+    }
+
+    public override void give(Ressource ressource, Citizen citizen)
+    {
+        if (inventory.nbElementsTotal(ressource) > 0)
+        {
+            citizen.ressourcesToTransport.add(ressource);
+            inventory.remove(ressource);
+        }
+
     }
 }
