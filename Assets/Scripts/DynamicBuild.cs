@@ -11,8 +11,10 @@ public class DynamicBuild : MonoBehaviour
     public GameObject camp;
     public GameObject house;
 
-    string valueTag;
+    GameObject spawnedObj;
+    bool isPlaced = false;
 
+    //string valueTag;
     // Use this for initialization
     void Start()
     {
@@ -40,15 +42,25 @@ public class DynamicBuild : MonoBehaviour
     */
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && valueTag != null)
+        if(spawnedObj != null && !isPlaced)
         {
+            updatePos(spawnedObj);
+        }
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit = new RaycastHit();
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.tag == "Soil")
-                {
-                    if(valueTag == "Shelter")
+                
+                //if (hit.collider.gameObject.tag == "Soil")
+                //{
+                    //Debug.Log("hello?");
+                    validatePos(spawnedObj, hit);
+                    /*
+                    if (valueTag == "Shelter")
                     {
                         Instantiate(shelter, hit.point, Quaternion.identity);
                     }
@@ -59,25 +71,47 @@ public class DynamicBuild : MonoBehaviour
                     else
                     {
                         Instantiate(house, hit.point, Quaternion.identity);
-                    }
+                    }*/
                     
-                }
+                //}
             }
         }
     }
-
+    
     public void setPrefabShelter()
     {
-        valueTag = "Shelter";
+        //valueTag = "Shelter";
+        spawnedObj = Instantiate(shelter, hit.point, Quaternion.identity) as GameObject;
+        isPlaced = false;
     }
 
     public void setPrefabCamp()
     {
-        valueTag = "Camp";
+        //valueTag = "Camp";
+        spawnedObj = Instantiate(camp, hit.point, Quaternion.identity) as GameObject;
+        isPlaced = false;
     }
 
     public void setPrefabHouse()
     {
-        valueTag = "House";
+        //valueTag = "House";
+        spawnedObj = Instantiate(house, hit.point, Quaternion.identity) as GameObject;
+        isPlaced = false;
+    }
+    
+    public void updatePos(GameObject obj)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit = new RaycastHit();
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity)) {
+            obj.transform.localPosition = new Vector3(hit.point.x, obj.transform.position.y, hit.point.z);
+        }
+    }
+
+    public void validatePos(GameObject obj, RaycastHit hit)
+    {
+        Debug.Log("in it");
+        Instantiate(obj, hit.point, Quaternion.identity);
+        isPlaced = true;
     }
 }
