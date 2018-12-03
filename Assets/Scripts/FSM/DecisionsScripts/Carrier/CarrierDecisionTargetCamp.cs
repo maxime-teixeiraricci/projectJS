@@ -13,7 +13,9 @@ public class CarrierDecisionTargetCamp : FSMDecision
 
     public bool HaveTarget(FSMControler controler)
     {
-        if (!controler.target) return false;
-        return (controler.target.gameObject.tag == "Camp");
+        if (!controler.finalTarget) return false;
+        bool verify = (controler.finalTarget.gameObject.tag == "Camp");
+        if (verify) controler.target = controler.finalTarget;
+        return verify;
     }
 }
