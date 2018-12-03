@@ -39,7 +39,7 @@ public class House : Building {
                     {
                         for(int i = 0; i < r.numberToConstruct; i++)
                         {
-                            //inventory.remove(r.ressource);
+                            inventory.remove(r.ressource);
                         }
                         
                     }
@@ -91,6 +91,10 @@ public class House : Building {
                 enoughConstructToBuild = false;
             }
 	    }
+        if (enoughConstructToBuild)
+        {
+            needRessource = false;
+        }
     }
 
     public override void take(Ressource ressource, Citizen citizen)
@@ -132,6 +136,5 @@ public class House : Building {
             citizen.ressourcesToTransport.add(ressource);
             inventory.remove(ressource);
         }
-
     }
 }
