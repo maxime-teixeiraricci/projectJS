@@ -236,7 +236,7 @@ MonoBehaviour:
   isPlaced: 0
   goodPosition: 0
   buildFrequence: 1
-  alphaColor: {r: 0, g: 0, b: 0, a: 0}
+  alphaColor: {r: 0, g: 0.27284098, b: 1, a: 1}
   timeToBuild: 5
   nameCompetence: 
   nX: 10
