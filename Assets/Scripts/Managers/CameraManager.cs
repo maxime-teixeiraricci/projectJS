@@ -19,23 +19,26 @@ public class CameraManager : MonoBehaviour {
         //Debug.Log("mouse = " + mousePosX);
         if (mousePosX < scrollDistance && transform.position.x > -25)
         {
-            transform.Translate(Vector3.right * -scrollSpeed * Time.deltaTime);
-           
+            //transform.Translate(Vector3.right * -scrollSpeed * Time.deltaTime);
+            transform.position += Vector3.right * -scrollSpeed * Time.deltaTime;
         }
 
         if (mousePosX >= Screen.width - scrollDistance && transform.position.x < 25)
         {
-            transform.Translate(Vector3.right * scrollSpeed * Time.deltaTime);
+            transform.position += Vector3.right * scrollSpeed * Time.deltaTime;
+            //transform.Translate(Vector3.right * scrollSpeed * Time.deltaTime);
         }
 
-        if (mousePosY < scrollDistance && transform.position.y > 13)
+        if (mousePosY < scrollDistance && transform.position.z > -25)
         {
-            transform.Translate(Vector3.up * -scrollSpeed * Time.deltaTime);
+            transform.position += Vector3.forward * -scrollSpeed * Time.deltaTime;
+            //transform.Translate(Vector3.forward * -scrollSpeed * Time.deltaTime);
         }
 
-        if (mousePosY >= Screen.height - scrollDistance && transform.position.y < 20)
+        if (mousePosY >= Screen.height - scrollDistance && transform.position.z < 25)
         {
-            transform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
+            transform.position += Vector3.forward * scrollSpeed * Time.deltaTime;
+            //transform.Translate(Vector3.forward * scrollSpeed * Time.deltaTime);
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
