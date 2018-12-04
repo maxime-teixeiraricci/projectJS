@@ -23,7 +23,7 @@ public class RecolterDecisionBagFull : FSMDecision
 
     public void setTargetToCamp(FSMControler controler)
     {
-        GameObject camp = GameObject.FindGameObjectWithTag("Camp");
-        controler.target = camp;
+        //GameObject camp = GameObject.FindGameObjectWithTag("Camp");
+        controler.target = controler.citizen.workPlace.gameObject;
     }
 }
