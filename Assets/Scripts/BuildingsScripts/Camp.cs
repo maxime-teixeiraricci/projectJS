@@ -26,6 +26,7 @@ public class Camp : Building
         foreach (Citizen citizen in listWorkers)
         {
             if (citizen.group != Citizen.Group.Collect) FireWorker(citizen);
+            break;
         }
         if (!done)
         {
