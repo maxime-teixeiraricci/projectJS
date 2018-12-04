@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Citizen : MonoBehaviour {
 
-    enum Groupes { Recolteur, Transporteur, Producteur};
+    public enum Group {None, Transport, Collect, Product, Construct};
     enum Etats { Sain, Malade, Mort };
 
     public RessourceInventory ressourcesToTransport;
@@ -24,11 +24,14 @@ public class Citizen : MonoBehaviour {
     public int soifMax;
     public int faimMax;
     public int vieMax;
-
+    
     public int soifCourante;
     public int faimCourante;
     public int vieCourante;
     public CitizenSetting citizenSetting;
+    [Header("Group")]
+    public Group group = Group.None;
+    public MeshRenderer citizenShirt;
 
 
     void consommer(Ressource ressource)
@@ -61,6 +64,26 @@ public class Citizen : MonoBehaviour {
 
     }
 
+    public void ChangeGroup(Group newGroup)
+    {
+        if (newGroup != group)
+        {
+            group = newGroup;
+
+            foreach (GroupIdleState gis in citizenSetting.idleGroupState)
+            {
+                if (gis.group == group)
+                {
+                    GetComponent<FSMControler>().target = null;
+                    GetComponent<FSMControler>().agent.isStopped = false;
+                    GetComponent<FSMControler>().agent.destination = transform.position;
+                    GetComponent<FSMControler>().currentState = gis.idleState;
+                    return;
+                }
+            }
+        }
+    }
+
     private void Update()
     {
         for (int i=0; i < ressources.Count; i ++)
@@ -73,6 +96,25 @@ public class Citizen : MonoBehaviour {
             {
                 ressources[i].transform.position += (ressources[i-1].transform.position - ressources[i].transform.position) * 0.25f;
             }
+        }
+
+        switch(group)
+        {
+            case Group.None:
+                citizenShirt.material.color = Color.black;
+                break;
+            case Group.Transport:
+                citizenShirt.material.color = Color.blue;
+                break;
+            case Group.Collect:
+                citizenShirt.material.color = Color.green;
+                break;
+            case Group.Product:
+                citizenShirt.material.color = Color.red;
+                break;
+            case Group.Construct:
+                citizenShirt.material.color = Color.yellow;
+                break;
         }
     }
 }

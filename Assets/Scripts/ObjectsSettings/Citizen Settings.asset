@@ -13,3 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceNearTarget: 1.5
   inventorySize: 3
+  idleGroupState:
+  - group: 1
+    idleState: {fileID: 11400000, guid: f2ea27ff589342845add82dcf62559ee, type: 2}
+  - group: 2
+    idleState: {fileID: 11400000, guid: e9d1dbb2ae247d148aee9e578ee29bb8, type: 2}
+  - group: 3
+    idleState: {fileID: 0}
+  - group: 4
+    idleState: {fileID: 11400000, guid: 78bc85b81c4a6fd41b23740e212d4ef1, type: 2}
+  - group: 0
+    idleState: {fileID: 11400000, guid: d1d72a26ff4a9a54ebd82efcf391e20d, type: 2}

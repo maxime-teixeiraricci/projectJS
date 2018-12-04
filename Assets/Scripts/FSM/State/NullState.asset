@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
   m_Name: NullState
   m_EditorClassIdentifier: 
-  actions: []
+  actions:
+  - {fileID: 11400000, guid: 0bab78ff0fa287a4e905cd46334f7103, type: 2}
   transitions: []
   gizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

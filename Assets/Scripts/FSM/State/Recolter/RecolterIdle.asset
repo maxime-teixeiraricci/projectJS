@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
   m_Name: RecolterIdle
   m_EditorClassIdentifier: 
-  actions: []
+  actions:
+  - {fileID: 11400000, guid: 275596cba85a87c41a7fb2f633d673c8, type: 2}
   transitions:
   - decisions:
     - {fileID: 11400000, guid: a5d756787362e6e418cd5638fe85a82d, type: 2}

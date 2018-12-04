@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 195818781012460340}
   - component: {fileID: 114061383964702620}
   - component: {fileID: 114097836672405736}
+  - component: {fileID: 114900211541854268}
   m_Layer: 10
   m_Name: Citizen
   m_TagString: Untagged
@@ -58,7 +59,7 @@ GameObject:
   - component: {fileID: 33439901397552294}
   - component: {fileID: 23049693600453350}
   m_Layer: 10
-  m_Name: Cube (1)
+  m_Name: Shirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487986925770250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1, y: 0.878, z: 3.23}
+  m_LocalPosition: {x: -6.77, y: 0.5, z: 0.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4683617866707768}
@@ -186,7 +187,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 07e8d753b8b11194184847e517a95a5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -273,11 +274,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f836c2139e9cc2542a1d9b4cd313a466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: f54a2c45b7394ac4eb7f0f64e7a8f7c0, type: 2}
+  currentState: {fileID: 11400000, guid: d1d72a26ff4a9a54ebd82efcf391e20d, type: 2}
   agent: {fileID: 0}
-  target: {fileID: 0}
   citizen: {fileID: 0}
+  target: {fileID: 0}
+  finalTarget: {fileID: 0}
   farmTimer: 0
+  buildTimer: 0
+  craftTimer: 0
 --- !u!114 &114097836672405736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b164bf346e3476543a00cffed2a16592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ressourcesToTransport: {fileID: 0}
   ressources: []
   age: 0
   isFull: 0
@@ -300,6 +305,27 @@ MonoBehaviour:
   faimCourante: 0
   vieCourante: 0
   citizenSetting: {fileID: 11400000, guid: 0d7e287de2a3d2c48b9467ea9f5438df, type: 2}
+  group: 0
+  citizenShirt: {fileID: 23049693600453350}
+--- !u!114 &114900211541854268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487986925770250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2020821747, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnchorStage: {fileID: 0}
+  DuplicateStage: 1
+  OnContentPlaced:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Vuforia.ContentPlacedEvent, Vuforia.UnityExtensions, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  mDisplayAdvanced: 0
 --- !u!135 &135270340158506498
 SphereCollider:
   m_ObjectHideFlags: 1
