@@ -52,7 +52,7 @@ public class DispatcherManager : MonoBehaviour
         print(workPlaces.Length);
         foreach (Camp workPlace in workPlaces)
         {
-            if (! (workPlace.listWorkers.Count == workPlace.numberWorkers) && gatherersJobless.Count > 0)
+            if (! (workPlace.listWorkers.Count == workPlace.numberWorkers) && gatherersJobless.Count > 0 && workPlace.isConstruct)
             {
                 workPlace.HireWorker(gatherersJobless[0]);
                 gatherersJobless.RemoveAt(0);

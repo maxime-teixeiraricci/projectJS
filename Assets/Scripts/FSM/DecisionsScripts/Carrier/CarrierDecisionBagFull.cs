@@ -19,7 +19,7 @@ public class CarrierDecisionBagFull : FSMDecision
         //if(nbTotal >= citizen.citizenSetting.inventorySize)
         if (nbTotal >= nbTotalPossible)
         {
-            controler.target = controler.finalTarget;
+            //controler.target = controler.finalTarget;
             return true;
         }
         else

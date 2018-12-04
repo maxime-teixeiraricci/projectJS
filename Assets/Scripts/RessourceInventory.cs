@@ -7,7 +7,7 @@ public class RessourceInventory : MonoBehaviour
 
     public static RessourceTank NULL = new RessourceTank();
 
-    public List<RessourceTank> ressourcesList;
+    public List<RessourceTank> ressourcesList = new List<RessourceTank>();
 
     public RessourceTank getStruct(Ressource ressource)
     {
@@ -55,6 +55,27 @@ public class RessourceInventory : MonoBehaviour
             rT.numberLimit = 99; // Limite le nombre de ressource à 99 par défaut
             ressourcesList.Add(rT);
         }
+    }
+
+    public void addSpecific(Ressource ressource, int number)
+    {
+        RessourceTank rT = getStruct(ressource);
+        if (!rT.Equals(RessourceInventory.NULL))
+        {
+            rT.numberToTransport = number;
+            rT.neededToTransport = true;
+        }
+        else
+        {
+            rT = new RessourceTank();
+            rT.ressource = ressource;
+            rT.number = 0;
+            rT.numberToTransport = number;
+            rT.neededToTransport = true;
+            rT.numberLimit = 99; // Limite le nombre de ressource à 99 par défaut
+            ressourcesList.Add(rT);
+        }
+
     }
 
     public void remove(Ressource ressource)

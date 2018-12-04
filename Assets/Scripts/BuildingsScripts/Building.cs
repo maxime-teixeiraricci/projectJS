@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Building : MonoBehaviour {
 
     //building inventory
-    public RessourceInventory inventory;
+    public RessourceInventory inventory = new RessourceInventory();
     public bool needRessource;
     //isConstruct
     public bool isConstruct = false;
@@ -30,6 +30,7 @@ public abstract class Building : MonoBehaviour {
     abstract public void askSupplyToConstruct();
     abstract public void give(Ressource ressource, Citizen citizen);
     abstract public void take(Ressource ressource, Citizen citizen);
+    abstract public RessourceInventory getRessourcesNeeded();
 
 }
 

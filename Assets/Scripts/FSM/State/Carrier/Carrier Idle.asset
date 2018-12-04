@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70795eb2bb8fb2048ab19ead55c7c9d6, type: 3}
   m_Name: Carrier Idle
   m_EditorClassIdentifier: 
-  actions: []
+  actions:
+  - {fileID: 11400000, guid: 7feaf65cf7cfe304e94f8289edf565d7, type: 2}
   transitions:
   - decisions:
     - {fileID: 11400000, guid: 2c72f0999ab468c4cacf4ae2faeceb95, type: 2}

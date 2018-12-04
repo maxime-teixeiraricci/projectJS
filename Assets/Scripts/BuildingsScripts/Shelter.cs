@@ -140,6 +140,23 @@ public class Shelter : Building
         //Demande au "camp de constructeurs" ou au dispacher
     }
 
+    public override RessourceInventory getRessourcesNeeded()
+    {
+        List<RessourceTank> ressourcesNeeded = inventory.getRessourcesNeededConstruct();
+        RessourceInventory res = new RessourceInventory();
+
+        foreach (RessourceTank r in ressourcesNeeded)
+        {
+            if (r.number < r.numberToConstruct)
+            {
+                int need = r.numberToConstruct - r.number;
+                res.addSpecific(r.ressource, need);
+            }
+        }
+
+        return res;
+    }
+
     public override void askSupplyToConstruct()
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources

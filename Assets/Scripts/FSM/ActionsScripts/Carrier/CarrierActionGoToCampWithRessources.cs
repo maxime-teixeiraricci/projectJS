@@ -18,21 +18,24 @@ public class CarrierActionGoToCampWithRessources : FSMAction
         {
             foreach (GameObject gO in shelterList)
             {
-                Building building = gO.GetComponent<Building>();
-                foreach (RessourceTank rT in controler.GetComponent<Citizen>().ressourcesToTransport.ressourcesList)
+                if (gO.GetComponent<Building>().isConstruct)
                 {
-                    if (building.inventory.nbElementsTotal(rT.ressource) > 0)
+                    Building building = gO.GetComponent<Building>();
+                    foreach (RessourceTank rT in controler.GetComponent<Citizen>().ressourcesToTransport.ressourcesList)
                     {
-                        controler.target = gO;
-                        return;
+                        if (building.inventory.nbElementsTotal(rT.ressource) > 0)
+                        {
+                            controler.target = gO;
+                            return;
+                        }
                     }
                 }
+                
             }
         }
-        else
-        {
-            controler.target = null;
-        }
+
+        controler.target = null;
+
     }
 
 

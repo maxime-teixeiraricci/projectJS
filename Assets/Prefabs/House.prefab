@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 114103544263297618}
-  needRessource: 0
+  needRessource: 1
   isConstruct: 0
   enoughConstructToBuild: 0
   isPlaced: 0

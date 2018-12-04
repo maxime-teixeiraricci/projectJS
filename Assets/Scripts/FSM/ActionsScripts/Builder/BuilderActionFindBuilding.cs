@@ -22,6 +22,5 @@ public class BuilderActionFindBuilding : FSMAction
                 controler.target = building.gameObject;
             }
         }
-
     }
 }

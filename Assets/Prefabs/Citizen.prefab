@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 195818781012460340}
   - component: {fileID: 114061383964702620}
   - component: {fileID: 114097836672405736}
+  - component: {fileID: 114954946275052540}
   - component: {fileID: 114900211541854268}
   m_Layer: 10
   m_Name: Citizen
@@ -293,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b164bf346e3476543a00cffed2a16592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ressourcesToTransport: {fileID: 0}
+  ressourcesToTransport: {fileID: 114954946275052540}
   ressources: []
   age: 0
   isFull: 0
@@ -327,6 +328,18 @@ MonoBehaviour:
     m_TypeName: Vuforia.ContentPlacedEvent, Vuforia.UnityExtensions, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   mDisplayAdvanced: 0
+--- !u!114 &114954946275052540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487986925770250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ressourcesList: []
 --- !u!135 &135270340158506498
 SphereCollider:
   m_ObjectHideFlags: 1

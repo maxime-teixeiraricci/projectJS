@@ -78,37 +78,55 @@ public class House : Building {
         //Si il n'y a plus de nourriture pour tenir le jour suivant, on appel askSupply
     }
 
+    public override RessourceInventory getRessourcesNeeded()
+    {
+        List<RessourceTank> ressourcesNeeded = inventory.getRessourcesNeededConstruct();
+        RessourceInventory res = new RessourceInventory();
+
+        foreach (RessourceTank r in ressourcesNeeded)
+        {
+            if (r.number < r.numberToConstruct)
+            {
+
+                int need = r.numberToConstruct - r.number;
+                res.addSpecific(r.ressource, need);
+            }
+        }
+
+        return res;
+    }
+
     public override void askSupplyToConstruct()
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
-        needRessource = true;
-        //S'il y a assez de constructions on le signal
+
+        // La liste des ressources qu'il faut pour construire le batiment
+        List<RessourceTank> ressourcesNeeded = inventory.getRessourcesNeededConstruct();
+
+        //S'il y a assez de constructions, on le signal
         enoughConstructToBuild = true;
-        foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
-	    {
+        foreach (RessourceTank r in ressourcesNeeded)
+        {
             if (r.number < r.numberToConstruct)
             {
                 enoughConstructToBuild = false;
             }
-	    }
-        if (enoughConstructToBuild)
-        {
-            needRessource = false;
         }
     }
 
     public override void take(Ressource ressource, Citizen citizen)
     {
-        if (inventory.nbElementsTotal(ressource) < inventory.getLimit(ressource) && citizen.ressourcesToTransport.getStruct(ressource).number>0)
+        if (inventory.nbElementsTotal(ressource) < inventory.getLimit(ressource))
         {
             citizen.ressourcesToTransport.remove(ressource);
             inventory.add(ressource);
         }
+        askSupplyToConstruct();
+
         if (enoughConstructToBuild)
         {
             needRessource = false;
         }
-
         if (GetComponent<ToolInventory>())
         {
             // L'outil à construire

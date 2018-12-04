@@ -101,23 +101,30 @@ public class Camp : Building
         enoughResourcesToCraft = true;
     }
 
+    public override RessourceInventory getRessourcesNeeded()
+    {
+        List<RessourceTank> ressourcesNeeded = inventory.getRessourcesNeededConstruct();
+        RessourceInventory res = new RessourceInventory();
+
+        foreach (RessourceTank r in ressourcesNeeded)
+        {
+            if (r.number < r.numberToConstruct)
+            {
+                
+                int need = r.numberToConstruct - r.number;
+                res.addSpecific(r.ressource, need);
+            }
+        }
+
+        return res;
+    }
+
     public override void askSupplyToConstruct()
     {
         //Demande au "camp de transporteurs" ou au dispacher des ressources
 
         // La liste des ressources qu'il faut pour construire le batiment
         List<RessourceTank> ressourcesNeeded = inventory.getRessourcesNeededConstruct();
-
-        foreach(RessourceTank r in ressourcesNeeded)
-        {
-            if(r.number < r.numberToConstruct)
-            {
-                int need = r.numberToConstruct - r.number;
-                // TODO
-                // Le dispatcher envoie une requête 
-                //dispatcher.ask(Ressource, need);
-            }
-        }
 
         //S'il y a assez de constructions, on le signal
         enoughConstructToBuild = true;
@@ -136,6 +143,30 @@ public class Camp : Building
         {
             citizen.ressourcesToTransport.remove(ressource);
             inventory.add(ressource);
+        }
+        askSupplyToConstruct();
+
+        if (enoughConstructToBuild)
+        {
+            needRessource = false;
+        }
+        if (GetComponent<ToolInventory>())
+        {
+            // L'outil à construire
+            Tool tool = GetComponent<ToolInventory>().activeTool;
+            // La ressource qu'il faut pour le construire
+            Ressource resNeed = tool.ressourceNeeded;
+
+            // Le nombre de cette ressource qu'il faut
+            int nbrRessource = tool.numberRessourcesNeeded;
+
+            // Le nombre de la ressource contenu dans le batiment
+            int stockRessource = GetComponent<RessourceInventory>().nbElementsTotal(ressource);
+
+            if (stockRessource >= nbrRessource)
+            {
+                needRessource = false;
+            }
         }
     }
 
@@ -164,29 +195,6 @@ public class Camp : Building
         {
             citizen.ressourcesToTransport.add(ressource);
             inventory.remove(ressource);
-        }
-
-        if (enoughConstructToBuild)
-        {
-            needRessource = false;
-        }
-        if (GetComponent<ToolInventory>())
-        {
-            // L'outil à construire
-            Tool tool = GetComponent<ToolInventory>().activeTool;
-            // La ressource qu'il faut pour le construire
-            Ressource resNeed = tool.ressourceNeeded;
-
-            // Le nombre de cette ressource qu'il faut
-            int nbrRessource = tool.numberRessourcesNeeded;
-
-            // Le nombre de la ressource contenu dans le batiment
-            int stockRessource = GetComponent<RessourceInventory>().nbElementsTotal(ressource);
-
-            if (stockRessource >= nbrRessource)
-            {
-                needRessource = false;
-            }
         }
     }
 

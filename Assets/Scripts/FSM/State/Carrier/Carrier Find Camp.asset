@@ -12,12 +12,9 @@ MonoBehaviour:
   m_Name: Carrier Find Camp
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 22d394bb94a10614da603eadd704424b, type: 2}
   transitions:
   - decisions:
     - {fileID: 11400000, guid: 90015bda9aba5c14ebeafe062bfe3664, type: 2}
-    nextState: {fileID: 11400000, guid: 59c6c220b64f62c4a93a5b9234564515, type: 2}
-  - decisions:
-    - {fileID: 11400000, guid: 544ff4594cbb5624e91386ef9dfdc03a, type: 2}
-    nextState: {fileID: 11400000, guid: f2ea27ff589342845add82dcf62559ee, type: 2}
+    nextState: {fileID: 11400000, guid: b55d8c4d2e3cc264d8b7a22a59bc0f13, type: 2}
   gizmoColor: {r: 0.53061676, g: 0.40730688, b: 0.764151, a: 1}
