@@ -5,10 +5,15 @@ using UnityEngine;
 public class Camp : Building
 {
     bool done = false;
-
     public bool enoughResourcesToCraft = false;
 
-    public void start()
+    [Header("Work")]
+    public int numberWorkers;
+    public List<Citizen> listWorkers;
+
+    
+
+    public void Start()
     {
         askSupplyToConstruct();
         Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
@@ -128,6 +133,25 @@ public class Camp : Building
             inventory.add(ressource);
         }
     }
+
+    public void HireWorker(Citizen citizen)
+    {
+        if (numberWorkers < listWorkers.Count)
+        {
+            listWorkers.Add(citizen);
+            citizen.workPlace = this;
+        }
+    }
+
+    public void FireWorker(Citizen citizen)
+    {
+        if (listWorkers.Contains(citizen))
+        {
+            listWorkers.Remove(citizen);
+            citizen.workPlace = null;
+        }
+    }
+
 
     public override void give(Ressource ressource, Citizen citizen)
     {

@@ -28,6 +28,8 @@ public class Citizen : MonoBehaviour {
     public int soifCourante;
     public int faimCourante;
     public int vieCourante;
+
+    public Building workPlace;
     public CitizenSetting citizenSetting;
     [Header("Group")]
     public Group group = Group.None;
@@ -84,8 +86,20 @@ public class Citizen : MonoBehaviour {
         }
     }
 
+    public void SeekForJob()
+    {
+        if (group == Group.Collect && 
+            !workPlace &&
+            canWork && 
+            !DispatcherManager.instance.gatherersJobless.Contains(this))
+        {
+            DispatcherManager.instance.gatherersJobless.Add(this);
+        }
+    }
+
     private void Update()
     {
+        SeekForJob();
         for (int i=0; i < ressources.Count; i ++)
         {
             if (i == 0)

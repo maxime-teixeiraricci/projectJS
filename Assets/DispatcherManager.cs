@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DispatcherManager : MonoBehaviour
 {
+    public static DispatcherManager instance;
+
     public int product;
     public int collect;
     public int construct;
@@ -15,11 +17,19 @@ public class DispatcherManager : MonoBehaviour
     public List<Citizen> transportCitizens;
     public List<Citizen> noneCitizens;
 
-
+    public List<Citizen> gatherersJobless;
     public Citizen[] citizens;
-	// Use this for initialization
-	void Start ()
+
+    private void Awake()
     {
+        if (!instance) instance = this;
+    }
+
+
+    // Use this for initialization
+    void Start ()
+    {
+        
         citizens = FindObjectsOfType<Citizen>();
         foreach (Citizen c in citizens)
         {
@@ -31,6 +41,26 @@ public class DispatcherManager : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update ()
+    {
+        UpdateCitizen();
+        UpdateWorkPlace();
+    }
+
+    void UpdateWorkPlace()
+    {
+        Camp[] workPlaces = FindObjectsOfType<Camp>(); // A modifier et rendre générique
+        foreach (Camp workPlace in workPlaces)
+        {
+            if (! (workPlace.listWorkers.Count == workPlace.numberWorkers) && gatherersJobless.Count > 0)
+            {
+                workPlace.HireWorker(gatherersJobless[0]);
+                gatherersJobless.RemoveAt(0);
+            }
+        }
+    }
+
+
+    void UpdateCitizen()
     {
         product = Mathf.Max(0, Mathf.Min(citizens.Length, WorldManager.producers));
         collect = Mathf.Max(0, Mathf.Min(citizens.Length, WorldManager.gatherers));
@@ -48,7 +78,6 @@ public class DispatcherManager : MonoBehaviour
         foreach (Citizen c in transportCitizens) c.ChangeGroup(Citizen.Group.Transport);
         foreach (Citizen c in noneCitizens) c.ChangeGroup(Citizen.Group.None);
     }
-
 
     List<Citizen> UpdateList(List<Citizen> citizens, int number)
     {

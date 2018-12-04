@@ -30,5 +30,6 @@ public abstract class Building : MonoBehaviour {
     abstract public void askSupplyToConstruct();
     abstract public void give(Ressource ressource, Citizen citizen);
     abstract public void take(Ressource ressource, Citizen citizen);
+
 }
 

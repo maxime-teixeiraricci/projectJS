@@ -157,6 +157,8 @@ MonoBehaviour:
   timeToBuild: 5
   nameCompetence: 
   enoughResourcesToCraft: 0
+  numberWorkers: 2
+  listWorkers: []
 --- !u!114 &114955109312131878
 MonoBehaviour:
   m_ObjectHideFlags: 1
