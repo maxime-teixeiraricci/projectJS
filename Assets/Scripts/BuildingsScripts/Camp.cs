@@ -23,6 +23,10 @@ public class Camp : Building
 
     public void Update()
     {
+        foreach (Citizen citizen in listWorkers)
+        {
+            if (citizen.group != Citizen.Group.Collect) FireWorker(citizen);
+        }
         if (!done)
         {
             askSupplyToConstruct();
@@ -136,7 +140,7 @@ public class Camp : Building
 
     public void HireWorker(Citizen citizen)
     {
-        if (numberWorkers < listWorkers.Count)
+        if (numberWorkers > listWorkers.Count && !listWorkers.Contains(citizen))
         {
             listWorkers.Add(citizen);
             citizen.workPlace = this;

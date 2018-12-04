@@ -93,6 +93,7 @@ public class Citizen : MonoBehaviour {
             canWork && 
             !DispatcherManager.instance.gatherersJobless.Contains(this))
         {
+            print("A");
             DispatcherManager.instance.gatherersJobless.Add(this);
         }
     }

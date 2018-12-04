@@ -49,6 +49,7 @@ public class DispatcherManager : MonoBehaviour
     void UpdateWorkPlace()
     {
         Camp[] workPlaces = FindObjectsOfType<Camp>(); // A modifier et rendre générique
+        print(workPlaces.Length);
         foreach (Camp workPlace in workPlaces)
         {
             if (! (workPlace.listWorkers.Count == workPlace.numberWorkers) && gatherersJobless.Count > 0)

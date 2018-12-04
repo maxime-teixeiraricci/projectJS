@@ -297,13 +297,14 @@ MonoBehaviour:
   ressources: []
   age: 0
   isFull: 0
-  canWork: 0
+  canWork: 1
   soifMax: 0
   faimMax: 0
   vieMax: 0
   soifCourante: 0
   faimCourante: 0
   vieCourante: 0
+  workPlace: {fileID: 0}
   citizenSetting: {fileID: 11400000, guid: 0d7e287de2a3d2c48b9467ea9f5438df, type: 2}
   group: 0
   citizenShirt: {fileID: 23049693600453350}

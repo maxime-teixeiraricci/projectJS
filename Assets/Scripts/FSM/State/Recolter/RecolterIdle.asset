@@ -16,5 +16,6 @@ MonoBehaviour:
   transitions:
   - decisions:
     - {fileID: 11400000, guid: a5d756787362e6e418cd5638fe85a82d, type: 2}
+    - {fileID: 11400000, guid: ccae4485d73625441a4729efb7cdec80, type: 2}
     nextState: {fileID: 11400000, guid: 9df4985fe718da943b5a577c1316800e, type: 2}
   gizmoColor: {r: 0, g: 0, b: 0, a: 1}
