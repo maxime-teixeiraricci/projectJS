@@ -19,7 +19,7 @@ MonoBehaviour:
   - group: 2
     idleState: {fileID: 11400000, guid: e9d1dbb2ae247d148aee9e578ee29bb8, type: 2}
   - group: 3
-    idleState: {fileID: 0}
+    idleState: {fileID: 11400000, guid: 0edb4b99bcba1844aa0e2a39efceec15, type: 2}
   - group: 4
     idleState: {fileID: 11400000, guid: 78bc85b81c4a6fd41b23740e212d4ef1, type: 2}
   - group: 0
