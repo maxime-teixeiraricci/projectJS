@@ -140,19 +140,37 @@ public class House : Building {
 
     private void OnTriggerEnter(Collider other)
     {
+
+        // Mauvais collide : On entre en contact avec un item de la map
         if (!isPlaced)
         {
             GetComponent<MeshRenderer>().material.color = new Color(255, 0, 0, 155);
             goodPosition = false;
         }
+
+        // Good Collide : le poitneur de la souris entre sur le terrain
+        if (!isPlaced && other == GameObject.Find("Plane").GetComponent<MeshCollider>())
+        {
+            GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
+            goodPosition = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
+
+        // Bon exit : On sort de la collision genante
         if (!isPlaced)
         {
             GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
             goodPosition = true;
+        }
+
+        // Mauvais collide : On sort de la map
+        if (!isPlaced && other == GameObject.Find("Plane").GetComponent<MeshCollider>())
+        {
+            GetComponent<MeshRenderer>().material.color = new Color(255, 0, 0, 155);
+            goodPosition = false;
         }
     }
 }
