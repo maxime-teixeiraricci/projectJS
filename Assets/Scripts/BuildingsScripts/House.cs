@@ -173,4 +173,16 @@ public class House : Building {
             goodPosition = false;
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        // si lorsqu'on quitte un collider, on entre dans un autre collider, notre objet reste alors impossible à placer.
+        // On applique cette vérification uniquement aux batiments qui ne sont pas encore placés.
+        // On vérifie bien de ne pas prendre en compte la collision avec le terrain
+        if (!isPlaced && other != GameObject.Find("Plane").GetComponent<MeshCollider>())
+        {
+            GetComponent<MeshRenderer>().material.color = new Color(255, 0, 0, 155);
+            goodPosition = false;
+        }
+    }
 }
