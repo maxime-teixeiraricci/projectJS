@@ -63,6 +63,11 @@ public class DynamicBuild : MonoBehaviour
                 validatePos(hit);
             }
         }
+
+        if (Input.GetMouseButton(1))
+        {
+            Destroy(spawnedObj);
+        }
     }
     
     public void setPrefabShelter()
