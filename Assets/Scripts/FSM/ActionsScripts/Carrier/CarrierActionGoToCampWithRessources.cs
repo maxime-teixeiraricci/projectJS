@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/Actions/Carrier/Go To Shelter With Resources")]
-public class CarrierActionGoToShelterWithRessources : FSMAction
+[CreateAssetMenu(menuName = "PluggableAI/Actions/Carrier/Go To Camp With Resources")]
+public class CarrierActionGoToCampWithRessources : FSMAction
 {
     public override void Act(FSMControler controler)
     {
@@ -12,7 +12,7 @@ public class CarrierActionGoToShelterWithRessources : FSMAction
 
     private void FindRessource(FSMControler controler)
     {
-        GameObject[] shelterList = GameObject.FindGameObjectsWithTag("Shelter");
+        GameObject[] shelterList = GameObject.FindGameObjectsWithTag("Camp");
         controler.target = null;
         if (shelterList.Length > 0)
         {
