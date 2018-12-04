@@ -10,6 +10,8 @@ public abstract class Building : MonoBehaviour {
     //isConstruct
     public bool isConstruct = false;
     public bool enoughConstructToBuild = false;
+    public bool isPlaced = false;
+    public bool goodPosition;
     
     public float buildFrequence = 1.0f;
 

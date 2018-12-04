@@ -198,6 +198,8 @@ MonoBehaviour:
   needRessource: 0
   isConstruct: 0
   enoughConstructToBuild: 0
+  isPlaced: 0
+  goodPosition: 0
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5
@@ -2729,6 +2731,16 @@ Prefab:
       propertyPath: m_Name
       value: Shelter
       objectReference: {fileID: 0}
+    - target: {fileID: 114315935413935036, guid: 155c1a20ff16ea04facc853fb91ec624,
+        type: 2}
+      propertyPath: isPlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114315935413935036, guid: 155c1a20ff16ea04facc853fb91ec624,
+        type: 2}
+      propertyPath: goodPosition
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155c1a20ff16ea04facc853fb91ec624, type: 2}
   m_IsPrefabAsset: 0
@@ -3004,6 +3016,8 @@ MonoBehaviour:
   needRessource: 0
   isConstruct: 0
   enoughConstructToBuild: 0
+  isPlaced: 1
+  goodPosition: 1
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5
@@ -5466,6 +5480,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 65885629856374620, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: isPlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: goodPosition
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
   m_IsPrefabAsset: 0
@@ -6006,6 +6035,8 @@ MonoBehaviour:
   needRessource: 0
   isConstruct: 0
   enoughConstructToBuild: 0
+  isPlaced: 0
+  goodPosition: 0
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5
@@ -7560,6 +7591,8 @@ MonoBehaviour:
   needRessource: 0
   isConstruct: 0
   enoughConstructToBuild: 0
+  isPlaced: 0
+  goodPosition: 0
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5

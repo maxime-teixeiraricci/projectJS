@@ -12,7 +12,7 @@ public class DynamicBuild : MonoBehaviour
     public GameObject house;
 
     GameObject spawnedObj;
-    bool isPlaced = false;
+    //bool isPlaced = false;
 
     Color originalColor;
 
@@ -44,10 +44,14 @@ public class DynamicBuild : MonoBehaviour
     */
     void Update()
     {
-        if(spawnedObj != null && !isPlaced)
+        if (spawnedObj != null)
         {
-            updatePos(spawnedObj);
+           // if (!spawnedObj.GetComponent<Shelter>().isPlaced)
+           // {
+                updatePos(spawnedObj);
+            //}
         }
+
         
         if (Input.GetMouseButtonDown(0))
         {
@@ -56,26 +60,7 @@ public class DynamicBuild : MonoBehaviour
             RaycastHit hit = new RaycastHit();
             if (Physics.Raycast(ray, out hit))
             {
-                
-                //if (hit.collider.gameObject.tag == "Soil")
-                //{
-                    //Debug.Log("hello?");
-                    validatePos(spawnedObj, hit);
-                    /*
-                    if (valueTag == "Shelter")
-                    {
-                        Instantiate(shelter, hit.point, Quaternion.identity);
-                    }
-                    else if(valueTag == "Camp")
-                    {
-                        Instantiate(camp, hit.point, Quaternion.identity);
-                    }
-                    else
-                    {
-                        Instantiate(house, hit.point, Quaternion.identity);
-                    }*/
-                    
-                //}
+                validatePos(hit);
             }
         }
     }
@@ -85,8 +70,10 @@ public class DynamicBuild : MonoBehaviour
         //valueTag = "Shelter";
         spawnedObj = Instantiate(shelter, hit.point, Quaternion.identity) as GameObject;
         originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
-        spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
-        isPlaced = false;
+        spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
+        spawnedObj.GetComponent<Building>().goodPosition = true;
+        //spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(255, 0, 0, 155);
+        //isPlaced = false;
     }
 
     public void setPrefabCamp()
@@ -94,8 +81,10 @@ public class DynamicBuild : MonoBehaviour
         //valueTag = "Camp";
         spawnedObj = Instantiate(camp, hit.point, Quaternion.identity) as GameObject;
         originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
-        spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
-        isPlaced = false;
+        spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
+        spawnedObj.GetComponent<Building>().goodPosition = true;
+        //spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
+
     }
 
     public void setPrefabHouse()
@@ -103,8 +92,10 @@ public class DynamicBuild : MonoBehaviour
         //valueTag = "House";
         spawnedObj = Instantiate(house, hit.point, Quaternion.identity) as GameObject;
         originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
-        spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
-        isPlaced = false;
+        spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
+        spawnedObj.GetComponent<Building>().goodPosition = true;
+        //spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
+        //isPlaced = false;
     }
     
     public void updatePos(GameObject obj)
@@ -115,12 +106,20 @@ public class DynamicBuild : MonoBehaviour
             obj.transform.localPosition = new Vector3(hit.point.x, obj.transform.position.y, hit.point.z);
         }
     }
+    
+    
+    
 
-    public void validatePos(GameObject obj, RaycastHit hit)
+    public void validatePos(RaycastHit hit)
     {
-        Debug.Log("in it");
-        Instantiate(obj, hit.point, Quaternion.identity);
-        obj.GetComponent<MeshRenderer>().material.color = originalColor;
-        isPlaced = true;
+        //Debug.Log("in it");
+        //Instantiate(obj, hit.point, Quaternion.identity);
+        if (spawnedObj.GetComponent<Building>().goodPosition)
+        {
+            spawnedObj.GetComponent<MeshRenderer>().material.color = originalColor;
+            spawnedObj.GetComponent<Building>().isPlaced = true;
+            spawnedObj = null;
+        }
+        
     }
 }

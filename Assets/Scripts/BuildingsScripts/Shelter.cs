@@ -159,4 +159,22 @@ public class Shelter : Building
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isPlaced)
+        {
+            GetComponent<MeshRenderer>().material.color = new Color(255, 0, 0, 155);
+            goodPosition = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!isPlaced)
+        {
+            GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
+            goodPosition = true;
+        }
+    }
+
 }
