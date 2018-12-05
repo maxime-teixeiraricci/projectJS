@@ -14,12 +14,34 @@ public class BuilderActionFindBuilding : FSMAction
     public void FindBuildingNotConstruct(FSMControler controler)
     {
         Building[] buildings = FindObjectsOfType<Building>();
+        Citizen[] citizens = FindObjectsOfType<Citizen>();
+
+
+        // S'il y a un transporteur avec une cible, prendre sa cible
+        foreach(Citizen cit in citizens)
+        {
+            if(cit.GetComponent<Citizen>().group.ToString() == "Transport" && cit.GetComponent<FSMControler>().target != null)
+            {
+                controler.target = cit.GetComponent<FSMControler>().target;
+                return;
+            }
+        }
 
         foreach(Building building in buildings)
+        {
+            if (!building.isConstruct && building.enoughConstructToBuild)
+            {
+                controler.target = building.gameObject;
+                return;
+            }
+        }
+
+        foreach (Building building in buildings)
         {
             if (!building.isConstruct)
             {
                 controler.target = building.gameObject;
+                return;
             }
         }
     }

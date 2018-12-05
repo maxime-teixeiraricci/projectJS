@@ -45,7 +45,7 @@ public class RessourceInventory : MonoBehaviour
         if (!rT.Equals(RessourceInventory.NULL))
         {
             rT.number = rT.number + 1;
-            print(nbElementsTotal( ressource));
+            //print(nbElementsTotal( ressource));
         }
         else
         {
@@ -87,7 +87,7 @@ public class RessourceInventory : MonoBehaviour
             if (rT.number > 0)
             {
                 rT.number = rT.number - 1;
-                print(nbElementsTotal(ressource));
+                //print(nbElementsTotal(ressource));
 
 
 
@@ -95,7 +95,7 @@ public class RessourceInventory : MonoBehaviour
 
                 //numberRessources = numberRessources - 1;
                 //rT.number = numberRessources;
-                print(rT.number);
+                //print(rT.number);
                 //return true;
             }
         }

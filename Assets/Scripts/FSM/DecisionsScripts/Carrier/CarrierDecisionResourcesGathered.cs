@@ -18,9 +18,11 @@ public class CarrierDecisionResourcesGathered : FSMDecision
         foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
             //s'il en reste renvoie true
+            Debug.Log("JE retourne false, j'ai pas toutes les ressources");
             if (rT.number < rT.numberToTransport) return false;
         }
         //controler.target = controler.finalTarget;
+        Debug.Log("Je retourne true, j'ai récup toutes les ressources needed");
         return true;
     }
 }
