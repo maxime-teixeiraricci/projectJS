@@ -52,7 +52,7 @@ public class RessourceInventory : MonoBehaviour
             rT = new RessourceTank();
             rT.ressource = ressource;
             rT.number = 1;
-            rT.numberLimit = 99; // Limite le nombre de ressource à 99 par défaut
+            rT.numberLimit = 2; // Limite le nombre de ressource à 99 par défaut
             ressourcesList.Add(rT);
         }
     }
@@ -137,6 +137,8 @@ public class RessourceInventory : MonoBehaviour
             if (rT.neededToTransport)
             {
                 res.Add(rT);
+                Debug.Log("Value number new RT = " + rT.number);
+                Debug.Log("Value numberToTransport new RT = " + rT.numberToTransport);
             }
         }
         return res;

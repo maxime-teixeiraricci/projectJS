@@ -116,12 +116,15 @@ public class House : Building {
 
     public override void take(Ressource ressource, Citizen citizen)
     {
+        Debug.Log("INVENTORY = " + citizen.ressourcesToTransport.getStruct(ressource).number);
         if (inventory.nbElementsTotal(ressource) < inventory.getLimit(ressource))
         {
             citizen.ressourcesToTransport.remove(ressource);
             inventory.add(ressource);
         }
         askSupplyToConstruct();
+
+
 
         if (enoughConstructToBuild)
         {
