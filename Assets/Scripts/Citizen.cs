@@ -7,7 +7,7 @@ public class Citizen : MonoBehaviour {
     public enum Group {None, Transport, Collect, Product, Construct};
     enum Etats { Sain, Malade, Mort };
 
-    public RessourceInventory ressourcesToTransport = new RessourceInventory();
+    public RessourceInventory ressourcesToTransport;
 
     Dictionary<Ressource, int> capacitesInventaire;
     [HideInInspector] public Dictionary<Ressource, int> inventaire = new Dictionary<Ressource, int>();

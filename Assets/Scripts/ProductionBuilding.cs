@@ -39,23 +39,6 @@ public class ProductionBuilding : Building {
         }
     }
 
-    //Called when a citizen need to drop his ressources
-    public override void addRessource(GameObject ressource, int quantite)
-    {
-        for (int i = 0; i < quantite; i++)
-        {
-            Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
-            inventory.add(r);
-        }
-    }
-
-    //Fading animation to represent building construction
-    public override void construct()
-    {
-        alphaColor = gameObject.GetComponent<MeshRenderer>().material.color;
-        alphaColor.a += 1.0f / timeToBuild;
-    }
-
     public override void askForConstructer()
     {
         //Lors du placement du batiment il demande a être construit jusqu'à ce qu'il le soit
@@ -68,45 +51,4 @@ public class ProductionBuilding : Building {
         //Si il n'y a plus de nourriture pour tenir le jour suivant, on appel askSupply
     }
 
-    public override RessourceInventory getRessourcesNeeded()
-    {
-        List<RessourceTank> ressourcesNeeded = inventory.getRessourcesNeededConstruct();
-        RessourceInventory res = new RessourceInventory();
-
-        foreach (RessourceTank r in ressourcesNeeded)
-        {
-            if (r.number < r.numberToConstruct)
-            {
-                int need = r.numberToConstruct - r.number;
-                res.addSpecific(r.ressource, need);
-            }
-        }
-
-        return res;
-    }
-
-    public override void askSupplyToConstruct()
-    {
-        //Demande au "camp de transporteurs" ou au dispacher des ressources
-
-        //S'il y a assez de constructions on le signal
-        enoughConstructToBuild = true;
-        foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
-        {
-            if (r.number < r.numberToConstruct)
-            {
-                enoughConstructToBuild = false;
-            }
-        }
-    }
-
-    public override void give(Ressource ressource, Citizen citizen)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void take(Ressource ressource, Citizen citizen)
-    {
-        throw new System.NotImplementedException();
-    }
 }

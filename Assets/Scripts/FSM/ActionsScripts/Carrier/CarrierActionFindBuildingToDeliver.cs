@@ -20,7 +20,11 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
             if (building.needRessource)
             {
                 controler.finalTarget = building.gameObject;
-                controler.GetComponent<Citizen>().ressourcesToTransport = building.getRessourcesNeeded();
+                foreach (RessourceTank rt in building.getRessourcesNeeded())
+                {
+                    
+                    controler.GetComponent<Citizen>().ressourcesToTransport.add(rt);
+                }
                 return;
             }
         }

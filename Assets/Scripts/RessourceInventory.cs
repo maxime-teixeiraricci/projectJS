@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class RessourceInventory : MonoBehaviour
 {
 
     public static RessourceTank NULL = new RessourceTank();
 
-    public List<RessourceTank> ressourcesList = new List<RessourceTank>();
+    public List<RessourceTank> ressourcesList;
 
     public RessourceTank getStruct(Ressource ressource)
     {
+        print(ressourcesList.Count);
         foreach (RessourceTank rT in ressourcesList)
         {
+            //print(ressource.name + " - " + rT.ressource.name);
             if (rT.ressource.Equals(ressource))
             {
                 return rT;
@@ -39,13 +42,35 @@ public class RessourceInventory : MonoBehaviour
         }
     }
 
+
+    public void add(RessourceTank ressourceTank)
+    {
+        RessourceTank rT = getStruct(ressourceTank.ressource);
+        if (!rT.Equals(RessourceInventory.NULL))
+        {
+            rT.number = rT.number + 1;
+            print("A");
+        }
+        else
+        {
+            RessourceTank res = ressourceTank.copy();
+            res.neededToTransport = true;
+            res.numberToTransport = ressourceTank.numberToConstruct;
+            res.number = 0;
+            res.ressource = ressourceTank.ressource;
+            res.numberLimit = ressourceTank.numberToConstruct; // Limite le nombre de ressource à 99 par défaut
+            ressourcesList.Add(res);
+            print("B");
+        }
+    }
+
     public void add(Ressource ressource)
     {
         RessourceTank rT = getStruct(ressource);
         if (!rT.Equals(RessourceInventory.NULL))
         {
             rT.number = rT.number + 1;
-            //print(nbElementsTotal( ressource));
+            print("A");
         }
         else
         {
@@ -54,6 +79,7 @@ public class RessourceInventory : MonoBehaviour
             rT.number = 1;
             rT.numberLimit = 2; // Limite le nombre de ressource à 99 par défaut
             ressourcesList.Add(rT);
+            print("B");
         }
     }
 
@@ -158,4 +184,22 @@ public class RessourceTank
     public bool neededToTransport;
     public bool neededToConstruct;
     //public bool neededToCraft;
+
+    public bool sameRessource(RessourceTank ressourceTank)
+    {
+        return ressourceTank.ressource == ressource;
+    }
+
+    public RessourceTank copy()
+    {
+        RessourceTank rt = new RessourceTank();
+        rt.ressource = ressource;
+        rt.number = number;
+        rt.numberLimit = numberLimit;
+        rt.numberToConstruct = numberToConstruct;
+        rt.numberToTransport = numberToTransport;
+        rt.neededToTransport = neededToTransport;
+        rt.neededToConstruct = neededToConstruct;
+        return rt;
+    }
 }

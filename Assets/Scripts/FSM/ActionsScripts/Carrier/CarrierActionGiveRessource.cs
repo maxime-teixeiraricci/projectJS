@@ -17,7 +17,10 @@ public class CarrierActionGiveRessource : FSMAction
         Citizen citizen = controler.GetComponent<Citizen>();
         foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
-            target.take(rT.ressource, citizen);
+            if (target.needRessource)
+            {
+                target.take(rT.ressource, citizen);
+            }
         }
     }
 }
