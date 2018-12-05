@@ -157,7 +157,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: dbc1c4c06cd876e499d572eb2738fc95, type: 3}
+  - {fileID: 2100000, guid: 16791de083d6b6f4dbdab088c5d01b74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -252,8 +252,8 @@ MonoBehaviour:
   needRessource: 1
   isConstruct: 0
   enoughConstructToBuild: 0
-  isPlaced: 0
-  goodPosition: 0
+  isPlaced: 1
+  goodPosition: 1
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5
@@ -283,7 +283,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
