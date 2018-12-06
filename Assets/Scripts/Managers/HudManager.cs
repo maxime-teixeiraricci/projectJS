@@ -11,6 +11,8 @@ public class HudManager : MonoBehaviour {
     public Image appleImage;
     public Image woodImage;
 
+    public Text nbrCitizens;
+
     // Use this for initialization
     void Start ()
     {
@@ -21,7 +23,13 @@ public class HudManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        
+        calculateCitizens();
 	}
+
+    public void calculateCitizens()
+    {
+        Citizen[] citizen = FindObjectsOfType<Citizen>();
+        nbrCitizens.text = "x  " + citizen.Length.ToString();
+    }
 
 }

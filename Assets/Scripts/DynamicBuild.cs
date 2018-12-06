@@ -48,8 +48,8 @@ public class DynamicBuild : MonoBehaviour
     public void setPrefabCamp()
     {
         spawnedObj = Instantiate(camp, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity) as GameObject;
-        originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
-        spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
+        originalColor = spawnedObj.GetComponent<Building>().mesh.material.color;
+        spawnedObj.GetComponent<Building>().mesh.material.color = new Color(0, 255, 0, 155);
         spawnedObj.GetComponent<Building>().goodPosition = true;
         spawnedObj.GetComponent<NavMeshObstacle>().enabled = false;
     }
@@ -57,8 +57,8 @@ public class DynamicBuild : MonoBehaviour
     public void setPrefabHouse()
     {
         spawnedObj = Instantiate(house, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity) as GameObject;
-        originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
-        spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
+        originalColor = spawnedObj.GetComponent<Building>().mesh.material.color;
+        spawnedObj.GetComponent<Building>().mesh.material.color = new Color(0, 255, 0, 155);
         spawnedObj.GetComponent<Building>().goodPosition = true;
         spawnedObj.GetComponent<NavMeshObstacle>().enabled = false;
     }
@@ -78,7 +78,7 @@ public class DynamicBuild : MonoBehaviour
     {
         if (spawnedObj.GetComponent<Building>().goodPosition)
         {
-            spawnedObj.GetComponent<MeshRenderer>().material.color = originalColor;
+            spawnedObj.GetComponent<Building>().mesh.material.color = originalColor;
             spawnedObj.GetComponent<Building>().isPlaced = true;
             spawnedObj.GetComponent<NavMeshObstacle>().enabled = true;
             spawnedObj = null;
