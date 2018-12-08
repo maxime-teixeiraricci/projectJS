@@ -31,7 +31,7 @@ public class House : Building {
             else
             {
                 askForConstructer();
-                if (alphaColor.a >= 1.0)
+                if (timeToBuild <= passedTimedBuild)
                 {
                     isConstruct = true;
 

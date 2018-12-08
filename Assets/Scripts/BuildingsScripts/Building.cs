@@ -18,6 +18,7 @@ public abstract class Building : MonoBehaviour {
     public Color alphaColor;
     // Temps qu'il faut pour construire le batiment
     public float timeToBuild = 5.0f;
+    public float passedTimedBuild;
     //building level
     int niveau;
     //building attached citizens list
@@ -48,10 +49,11 @@ public abstract class Building : MonoBehaviour {
     }
 
     //Fading animation to represent building construction
-    public void construct()
+    public void construct(Citizen citizen)
     {
         Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
-        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + (1.0f / timeToBuild));
+        passedTimedBuild += Time.deltaTime;
+        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + citizen.coefBuild* Time.deltaTime);
         GetComponent<MeshRenderer>().material.color = alphaColor;
     }
 

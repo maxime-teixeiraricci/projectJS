@@ -18,7 +18,26 @@ public class RecolterDecisionBagFull : FSMDecision
 
     public bool bagFull(FSMControler controler)
     {
-        return controler.citizen.ressources.Count == controler.citizen.citizenSetting.inventorySize;
+        int nbTotal = 0;
+        int nbTotalPossible = 0;
+        Citizen citizen = controler.GetComponent<Citizen>();
+        if (citizen.ressourcesToTransport.ressourcesList.Count == 0) return false;
+        foreach (RessourceTank rT in citizen.ressourcesToTransport.ressourcesList)
+        {
+            nbTotal += rT.number;
+            nbTotalPossible += rT.numberLimit;
+        }
+
+        //if(nbTotal >= citizen.citizenSetting.inventorySize)
+        if (nbTotal >= nbTotalPossible)
+        {
+            //controler.target = controler.finalTarget;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void setTargetToCamp(FSMControler controler)

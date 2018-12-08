@@ -8,19 +8,37 @@ public class NaturalRessource : MonoBehaviour
     public int numberRessource;
     public string nameCompetence;
     public GameObject ressource;
+    public RessourceTank structRessource;
+    public Ressource ressou;
 
     public void Recolt(Citizen citizen)
     {
-        if (citizen.ressources.Count != citizen.citizenSetting.inventorySize)
+        // if (citizen.ressources.Count != citizen.citizenSetting.inventorySize)
+        //{
+        //citizen.addRessource(Instantiate(ressource));
+        RessourceTank rt = citizen.ressourcesToTransport.getStruct(structRessource.ressource);
+        if (!rt.Equals(RessourceInventory.NULL))
         {
-            citizen.addRessource(Instantiate(ressource));
+            if (rt.number < rt.numberLimit)
+            {
+                citizen.ressourcesToTransport.add(structRessource);
+                numberRessource--;
+                if (numberRessource <= 0)
+                {
+                    Destroy(gameObject);
+                }
+
+            }
+        }
+        else{
+            citizen.ressourcesToTransport.add(structRessource);
             numberRessource--;
             if (numberRessource <= 0)
             {
                 Destroy(gameObject);
             }
-
         }
+        //numberRessource--;
     }
 
 

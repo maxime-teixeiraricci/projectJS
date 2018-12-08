@@ -11,7 +11,7 @@ public class RecolterActionStock : FSMAction
         Stock(controler);
     }
 
-    private void Stock(FSMControler controler)
+   /* private void Stock(FSMControler controler)
     {
         if (controler.target.GetComponent<Building>() && controler.citizen.ressources.Count != 0)
         {
@@ -19,5 +19,18 @@ public class RecolterActionStock : FSMAction
             controler.citizen.ressources.RemoveAt(0);
         }
     }
+    */
+    private void Stock(FSMControler controler)
+    {
+        Building target = controler.citizen.workPlace.GetComponent<Building>();
+        Citizen citizen = controler.GetComponent<Citizen>();
+        foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
+        {
 
+            
+                target.take(rT.ressource, citizen);
+            
+
+        }
+    }
 }

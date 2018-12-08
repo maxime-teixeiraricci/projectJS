@@ -29,7 +29,7 @@ public class BuilderActionBuild : FSMAction
         //si le temps passé à construire est 
         if (controler.buildTimer > (1f / citizenFrequence))
         {
-            building.construct();
+            building.construct(controler.citizen);
             controler.buildTimer = 0;
         }
         else

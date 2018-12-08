@@ -49,18 +49,24 @@ public class RessourceInventory : MonoBehaviour
         if (!rT.Equals(RessourceInventory.NULL))
         {
             rT.number = rT.number + 1;
-            print("A");
         }
         else
         {
-            RessourceTank res = ressourceTank.copy();
+            RessourceTank res = new RessourceTank();
+            ressourceTank.copy(res);
             res.neededToTransport = true;
-            res.numberToTransport = ressourceTank.numberToConstruct;
-            res.number = 0;
             res.ressource = ressourceTank.ressource;
-            res.numberLimit = ressourceTank.numberToConstruct; // Limite le nombre de ressource à 99 par défaut
+            res.numberToTransport = 1;
+            res.numberLimit = 10; // Limite le nombre de ressource à 99 par défaut
+            res.number = 1;
+            if (ressourceTank.numberToConstruct != -1)
+            {
+                res.numberToTransport = ressourceTank.numberToConstruct;
+                res.numberLimit = ressourceTank.numberToConstruct; // Limite le nombre de ressource à 99 par défaut
+                res.number = 0;
+            }
+            Debug.Log(res.ressource);
             ressourcesList.Add(res);
-            print("B");
         }
     }
 
@@ -70,7 +76,6 @@ public class RessourceInventory : MonoBehaviour
         if (!rT.Equals(RessourceInventory.NULL))
         {
             rT.number = rT.number + 1;
-            print("A");
         }
         else
         {
@@ -79,7 +84,6 @@ public class RessourceInventory : MonoBehaviour
             rT.number = 1;
             rT.numberLimit = 2; // Limite le nombre de ressource à 99 par défaut
             ressourcesList.Add(rT);
-            print("B");
         }
     }
 
@@ -201,5 +205,16 @@ public class RessourceTank
         rt.neededToTransport = neededToTransport;
         rt.neededToConstruct = neededToConstruct;
         return rt;
+    }
+
+    public void copy(RessourceTank rt)
+    {
+        rt.ressource = ressource;
+        rt.number = number;
+        rt.numberLimit = numberLimit;
+        rt.numberToConstruct = numberToConstruct;
+        rt.numberToTransport = numberToTransport;
+        rt.neededToTransport = neededToTransport;
+        rt.neededToConstruct = neededToConstruct;
     }
 }
