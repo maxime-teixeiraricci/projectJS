@@ -16,8 +16,8 @@ public class BuilderActionBuild : FSMAction
         if (!controler.target) return;
         Building building = controler.target.GetComponent<Building>();
         if (!building) return;
-
-        // Regarde le niveau de compétence du villageois
+        building.construct(controler.citizen);
+        /*// Regarde le niveau de compétence du villageois
         if (!controler.citizen.competences.ContainsKey(building.nameCompetence))
         {
             controler.citizen.competences[building.nameCompetence] = 1;
@@ -35,7 +35,7 @@ public class BuilderActionBuild : FSMAction
         else
         {
             controler.buildTimer += Time.deltaTime;
-        }
+        }*/
     }
 
     public float bonusLevel(int level)
