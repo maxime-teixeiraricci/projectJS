@@ -17,4 +17,7 @@ MonoBehaviour:
   - decisions:
     - {fileID: 11400000, guid: 1b3c353dbcea39b4bbed599377b7038e, type: 2}
     nextState: {fileID: 11400000, guid: c1d2590f21d335b4ba6160a97c6185a6, type: 2}
+  - decisions:
+    - {fileID: 11400000, guid: 1b3c353dbcea39b4bbed599377b7038e, type: 2}
+    nextState: {fileID: 11400000, guid: c1d2590f21d335b4ba6160a97c6185a6, type: 2}
   gizmoColor: {r: 0.9716981, g: 0.1512549, b: 0.8551731, a: 1}

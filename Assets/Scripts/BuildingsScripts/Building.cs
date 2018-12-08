@@ -83,7 +83,7 @@ public abstract class Building : MonoBehaviour {
 
     public void take(Ressource ressource, Citizen citizen)
     {
-        if (inventory.nbElementsTotal(ressource) < inventory.getLimit(ressource))
+        if (inventory.nbElementsTotal(ressource) < inventory.getLimit(ressource) && citizen.ressourcesToTransport.nbElementsTotal(ressource)>0)
         {
             citizen.ressourcesToTransport.remove(ressource);
             inventory.add(ressource);
