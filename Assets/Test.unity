@@ -1861,6 +1861,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114041258337001482, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: woodText
+      value: 
+      objectReference: {fileID: 292561179}
     - target: {fileID: 1167221350444018, guid: 170075a68e3327a4cae16129c78a1590, type: 2}
       propertyPath: m_Name
       value: House (1)
@@ -4538,6 +4543,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114955109312131878, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: woodText
+      value: 
+      objectReference: {fileID: 292561179}
     - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
         type: 2}
       propertyPath: needRessource
@@ -5430,6 +5440,11 @@ Prefab:
       propertyPath: isConstruct
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114955109312131878, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: woodText
+      value: 
+      objectReference: {fileID: 292561179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
   m_IsPrefabAsset: 0
@@ -6639,6 +6654,7 @@ MonoBehaviour:
   appleImage: {fileID: 1509264686}
   woodImage: {fileID: 998496827}
   nbrCitizens: {fileID: 1684495639}
+  nbrWood: {fileID: 292561179}
 --- !u!1001 &1900362023
 Prefab:
   m_ObjectHideFlags: 0
