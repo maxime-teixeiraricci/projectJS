@@ -40,6 +40,7 @@ public class House : Building {
                         for(int i = 0; i < r.numberToConstruct; i++)
                         {
                             inventory.remove(r.ressource);
+                            totalNbr.Remove(r.ressource);
                         }
                         
                     }

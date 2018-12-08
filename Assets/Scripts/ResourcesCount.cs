@@ -6,51 +6,55 @@ using UnityEngine.UI;
 public class ResourcesCount : MonoBehaviour {
 
     Text appleText;
-    Text woodText;
+    public Text woodText;
+    /*
     GameObject canvasUI;
     Transform childApple;
     Transform childWood;
     Transform childAppleContainer;
     Transform childWoodContainer;
-
+    */
     int apple;
-    int wood;
+    int wood = 0;
 
 	// Use this for initialization
 	void Start () {
-
+        wood = int.Parse(woodText.text);
+        /*
         canvasUI = GameObject.Find("Banner");
         childAppleContainer = canvasUI.transform.Find("AppleContainer");
         childApple = childAppleContainer.transform.Find("AppleTotal");
         appleText = childApple.GetComponent<Text>();
 
         childWoodContainer = canvasUI.transform.Find("WoodContainer");
-        childWood = childWoodContainer.transform.Find("WoodTotal");  //le nom de votre objet UI Text
-        woodText = childWood.GetComponent<Text>();
+        childWood = childWoodContainer.transform.Find("WoodTotal");  //le nom de votre objet UI Text*/
+        //woodText = childWood.GetComponent<Text>();
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        wood = int.Parse(woodText.text);
+    }
 
     public void Add(Ressource ressource)
     {
         if(ressource.nom == "Wood")
         {
             wood++;
-            woodText.text = "" + wood;
+            woodText.text = (int.Parse(woodText.text) + 1).ToString();
         }
-        //apple++;
-        //appleText.text = "" + apple;
     }
 
-    public void AddWood()
+    public void Remove(Ressource ressource)
     {
-        wood++;
-        woodText.text = "" + wood;
+        if (ressource.nom == "Wood")
+        {
+            wood--;
+            woodText.text = (int.Parse(woodText.text) - 1).ToString();
+        }
     }
+
 
 }
 

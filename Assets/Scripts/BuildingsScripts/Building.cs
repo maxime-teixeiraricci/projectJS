@@ -14,6 +14,8 @@ public abstract class Building : MonoBehaviour {
     public bool goodPosition;
 
     public MeshRenderer mesh;
+
+    public ResourcesCount totalNbr;
     
     public float buildFrequence = 1.0f;
 
@@ -28,6 +30,7 @@ public abstract class Building : MonoBehaviour {
     public string nameCompetence;
     abstract public void askForConstructer();
     //abstract public List<RessourceTank> getRessourcesNeeded();
+
 
     public List<RessourceTank> resosurcesNeededForConstruct()
     {
@@ -46,6 +49,7 @@ public abstract class Building : MonoBehaviour {
         {
             Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
             inventory.add(r);
+            totalNbr.Add(r);
         }
     }
 
@@ -81,6 +85,7 @@ public abstract class Building : MonoBehaviour {
         {
             citizen.ressourcesToTransport.remove(ressource);
             inventory.add(ressource);
+            totalNbr.Add(ressource);
         }
         askSupplyToConstruct();
 
@@ -114,6 +119,8 @@ public abstract class Building : MonoBehaviour {
         {
             citizen.ressourcesToTransport.add(ressource);
             inventory.remove(ressource);
+            //totalNbr.Remove(ressource);
+            totalNbr.Remove(ressource);
         }
     }
 

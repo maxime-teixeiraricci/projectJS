@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e75c10c8ec83648a3f62684ba75fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodText: {fileID: 0}
 --- !u!114 &114103544263297618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,6 +267,7 @@ MonoBehaviour:
   isPlaced: 0
   goodPosition: 1
   mesh: {fileID: 23497484724911888}
+  totalNbr: {fileID: 114041258337001482}
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5
