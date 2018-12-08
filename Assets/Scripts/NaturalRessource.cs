@@ -5,11 +5,22 @@ using UnityEngine;
 public class NaturalRessource : MonoBehaviour
 {
     public float recoltFrequence = 1.0f; // Nombre de ressource par seconde;
-    public int numberRessource;
+    public float numberRessource;
+    public int maxRessource;
     public string nameCompetence;
     public GameObject ressource;
     public RessourceTank structRessource;
     public Ressource ressou;
+
+    float timetoGrow = 1000.0f;
+
+    float timePassed;
+
+    private void Update()
+    {
+        Growth();
+        //Debug.Log("Nb ressources = " + 1.0f / timetoGrow);
+    }
 
     public void Recolt(Citizen citizen)
     {
@@ -39,6 +50,14 @@ public class NaturalRessource : MonoBehaviour
             }
         }
         //numberRessource--;
+    }
+
+    public void Growth()
+    {
+        if(numberRessource < maxRessource)
+        {
+            numberRessource += 1.0f / timetoGrow;
+        }
     }
 
 

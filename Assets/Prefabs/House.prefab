@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1167221350444018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23970209, y: 1, z: -6.6987863}
+  m_LocalPosition: {x: -6.89, y: 1, z: 5.57}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4594280150552682}
@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e75c10c8ec83648a3f62684ba75fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodText: {fileID: 0}
 --- !u!114 &114103544263297618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,7 +245,7 @@ MonoBehaviour:
   - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
     number: 0
     numberLimit: 5
-    numberToConstruct: 4
+    numberToConstruct: 3
     numberToTransport: 0
     neededToTransport: 0
     neededToConstruct: 1
@@ -264,7 +265,9 @@ MonoBehaviour:
   isConstruct: 0
   enoughConstructToBuild: 0
   isPlaced: 0
-  goodPosition: 0
+  goodPosition: 1
+  mesh: {fileID: 23497484724911888}
+  totalNbr: {fileID: 114041258337001482}
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5
