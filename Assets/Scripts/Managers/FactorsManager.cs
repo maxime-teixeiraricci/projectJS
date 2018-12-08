@@ -11,7 +11,10 @@ public class FactorsManager : MonoBehaviour {
     float value;
     public int nbrTrees;
 
+    public GameObject sliderColor;
+
     float maxRessources;
+    Color color;
 
 
     private void Start()
@@ -24,6 +27,7 @@ public class FactorsManager : MonoBehaviour {
     {
         res = environmentShape();
         slider.value = res / maxRessources * 100;
+        updateColor();  
 	}
 
     public float environmentShape()
@@ -37,5 +41,23 @@ public class FactorsManager : MonoBehaviour {
         }
 
         return res;
+    }
+
+    public void updateColor()
+    {
+        if (slider.value < 60 && slider.value > 30)
+        {
+            sliderColor.GetComponent<Image>().color = Color.yellow;
+        }
+
+        else if (slider.value < 30)
+        {
+            sliderColor.GetComponent<Image>().color = Color.red;
+        }
+
+        else
+        {
+            sliderColor.GetComponent<Image>().color = Color.green;
+        }
     }
 }
