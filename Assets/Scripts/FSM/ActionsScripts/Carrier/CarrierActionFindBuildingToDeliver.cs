@@ -17,7 +17,7 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
 
         foreach (Building building in buildings)
         {
-            if (building.needRessource)
+            if (building.needRessource && building.isPlaced)
             {
                 controler.finalTarget = building.gameObject;
                 foreach (RessourceTank rt in building.getRessourcesNeeded())

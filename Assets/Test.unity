@@ -1820,6 +1820,16 @@ Prefab:
       propertyPath: isPlaced
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114652098534679598, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: isConstruct
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652098534679598, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: needRessource
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170075a68e3327a4cae16129c78a1590, type: 2}
   m_IsPrefabAsset: 0

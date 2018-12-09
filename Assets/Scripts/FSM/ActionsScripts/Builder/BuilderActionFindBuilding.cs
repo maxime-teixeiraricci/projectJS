@@ -29,7 +29,7 @@ public class BuilderActionFindBuilding : FSMAction
 
         foreach(Building building in buildings)
         {
-            if (!building.isConstruct && building.enoughConstructToBuild)
+            if (!building.isConstruct && building.enoughConstructToBuild && building.isPlaced)
             {
                 controler.target = building.gameObject;
                 return;
@@ -38,7 +38,7 @@ public class BuilderActionFindBuilding : FSMAction
 
         foreach (Building building in buildings)
         {
-            if (!building.isConstruct)
+            if (!building.isConstruct && building.isPlaced)
             {
                 controler.target = building.gameObject;
                 return;
