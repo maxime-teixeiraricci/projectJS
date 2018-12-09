@@ -1841,7 +1841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &709632765
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2218,8 +2218,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: -1.8999977}
-  m_SizeDelta: {x: -0.0000076294, y: -20.17}
+  m_AnchoredPosition: {x: -0.000015258789, y: -5.9924965}
+  m_SizeDelta: {x: 0, y: -11.985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &850599661
 MonoBehaviour:
@@ -2242,7 +2242,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8e4bda75c5fd6e54e8b37d960945061c, type: 3}
-    m_FontSize: 13
+    m_FontSize: 16
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 5
@@ -2253,8 +2253,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Repr\xE9sente l'\xE9tat de l'environnement. Prend en compte les arbres,
-    l'eau, etc..."
+  m_Text: "Repr\xE9sente l'\xE9tat de l'environnement. Prend en compte les ressources
+    disponibles sur les arbres."
 --- !u!222 &850599662
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2800,9 +2800,9 @@ RectTransform:
   m_Father: {fileID: 1884144833}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.19100001, y: 0.14525795}
-  m_AnchorMax: {x: 0.342, y: 0.82745177}
-  m_AnchoredPosition: {x: 0.6000366, y: 0.5}
+  m_AnchorMin: {x: 0.038555324, y: 0.14525795}
+  m_AnchorMax: {x: 0.19037059, y: 0.82745177}
+  m_AnchoredPosition: {x: 0, y: 0.5}
   m_SizeDelta: {x: -0.33000183, y: -0.80999947}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035021210
@@ -2898,6 +2898,75 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1114099514}
+--- !u!1 &1048520229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1048520230}
+  - component: {fileID: 1048520232}
+  - component: {fileID: 1048520231}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1048520230
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048520229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1629491976}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -204, y: 269.55}
+  m_SizeDelta: {x: 39.9, y: 39.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1048520231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048520229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300562, guid: 2b31544e07104fa469a57c9a4fdec116, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1048520232
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048520229}
+  m_CullTransparentMesh: 0
 --- !u!1 &1077884586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3686,8 +3755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.630001, y: -61.239998}
-  m_SizeDelta: {x: 85.979996, y: 46.379997}
+  m_AnchoredPosition: {x: 46, y: -71}
+  m_SizeDelta: {x: 189.2, y: 57.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1220519135
 MonoBehaviour:
@@ -3754,10 +3823,10 @@ RectTransform:
   m_Father: {fileID: 1884144833}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.37625948, y: 0.9346751}
-  m_AnchorMax: {x: 0.6082217, y: 1}
-  m_AnchoredPosition: {x: 0.6000366, y: -19.644337}
-  m_SizeDelta: {x: 1.0599976, y: 34.022675}
+  m_AnchorMin: {x: 0.29900002, y: 0}
+  m_AnchorMax: {x: 0.532, y: 1}
+  m_AnchoredPosition: {x: 1, y: -0.013999939}
+  m_SizeDelta: {x: -0.94000244, y: -6.9773254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221388120
 MonoBehaviour:
@@ -5334,6 +5403,11 @@ Prefab:
       propertyPath: woodText
       value: 
       objectReference: {fileID: 292561179}
+    - target: {fileID: 102491919717130168, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
   m_IsPrefabAsset: 0
@@ -5896,6 +5970,7 @@ RectTransform:
   m_Children:
   - {fileID: 1884144833}
   - {fileID: 388361329}
+  - {fileID: 1048520230}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

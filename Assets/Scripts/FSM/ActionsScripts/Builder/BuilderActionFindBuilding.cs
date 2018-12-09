@@ -20,9 +20,9 @@ public class BuilderActionFindBuilding : FSMAction
         // S'il y a un transporteur avec une cible, prendre sa cible
         foreach(Citizen cit in citizens)
         {
-            if(cit.GetComponent<Citizen>().group.ToString() == "Transport" && cit.GetComponent<FSMControler>().target != null)
+            if(cit.GetComponent<Citizen>().group.ToString() == "Transport" && cit.GetComponent<FSMControler>().finalTarget != null)
             {
-                controler.target = cit.GetComponent<FSMControler>().target;
+                controler.target = cit.GetComponent<FSMControler>().finalTarget;
                 return;
             }
         }

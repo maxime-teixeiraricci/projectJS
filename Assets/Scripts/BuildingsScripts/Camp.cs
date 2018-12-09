@@ -25,6 +25,10 @@ public class Camp : Building
     {
         //progressionBuild.transform.rotation = Quaternion.LookRotation(progressionBuild.transform.position - Camera.main.transform.position);
         progressionBuild.transform.rotation = Camera.main.transform.rotation;
+        if(progressionBuild.text == "100%")
+        {
+            progressionBuild.text = "";
+        }
         foreach (Citizen citizen in listWorkers)
         {
             if (citizen.group != Citizen.Group.Collect) FireWorker(citizen);

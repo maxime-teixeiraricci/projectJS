@@ -64,7 +64,7 @@ public abstract class Building : MonoBehaviour {
         passedTimedBuild += Time.deltaTime;
         alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + Time.deltaTime);
         GetComponent<MeshRenderer>().material.color = alphaColor;
-        progressionBuild.text = ((int)(passedTimedBuild / timeToBuild * 100)).ToString();
+        progressionBuild.text = ((int)(passedTimedBuild / timeToBuild * 100)).ToString() + "%";
         //Debug.Log("value % alpha = " + passedTimedBuild / timeToBuild * 100);
     }
 
