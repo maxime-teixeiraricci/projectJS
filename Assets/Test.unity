@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e75c10c8ec83648a3f62684ba75fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodText: {fileID: 0}
+  woodText: {fileID: 292561179}
 --- !u!4 &373719661
 Transform:
   m_ObjectHideFlags: 0
@@ -1806,7 +1806,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114041258337001482, guid: 170075a68e3327a4cae16129c78a1590,
+    - target: {fileID: 114324036291535682, guid: 170075a68e3327a4cae16129c78a1590,
         type: 2}
       propertyPath: woodText
       value: 
@@ -3189,6 +3189,23 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1114099514}
   m_CullTransparentMesh: 0
+--- !u!1 &1121566076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1804228835214920, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1380608751}
+--- !u!114 &1121566080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1121566076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e75c10c8ec83648a3f62684ba75fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodText: {fileID: 292561179}
 --- !u!1 &1137530388
 GameObject:
   m_ObjectHideFlags: 0
@@ -4501,27 +4518,38 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114955109312131878, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: woodText
       value: 
       objectReference: {fileID: 292561179}
     - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
         type: 2}
       propertyPath: needRessource
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
         type: 2}
       propertyPath: isConstruct
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
         type: 2}
       propertyPath: isPlaced
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 102491919717130168, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: m_Text
+      value: 0%
+      objectReference: {fileID: 0}
+    - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: totalNbr
+      value: 
+      objectReference: {fileID: 1121566080}
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 114441182367042120, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1397741044
@@ -5366,27 +5394,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114441182367042120, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: woodText
+      value: 
+      objectReference: {fileID: 292561179}
     - target: {fileID: 1804228835214920, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
       propertyPath: m_Name
       value: Camp (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608418081573134, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608418081573134, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: isPlaced
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: goodPosition
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
         type: 2}
@@ -5398,15 +5413,10 @@ Prefab:
       propertyPath: isConstruct
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114955109312131878, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+    - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
         type: 2}
-      propertyPath: woodText
-      value: 
-      objectReference: {fileID: 292561179}
-    - target: {fileID: 102491919717130168, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: m_Text
-      value: 
+      propertyPath: isPlaced
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}

@@ -23,10 +23,10 @@ GameObject:
   - component: {fileID: 23894716505770262}
   - component: {fileID: 65559208702716084}
   - component: {fileID: 54942502511138888}
-  - component: {fileID: 114041258337001482}
   - component: {fileID: 114652098534679598}
   - component: {fileID: 114103544263297618}
   - component: {fileID: 208225296494752298}
+  - component: {fileID: 114324036291535682}
   m_Layer: 0
   m_Name: House
   m_TagString: House
@@ -291,7 +291,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347639760071612}
-  m_Text: 0
+  m_Text: 0%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -305,18 +305,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
---- !u!114 &114041258337001482
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1167221350444018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34e75c10c8ec83648a3f62684ba75fd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  woodText: {fileID: 0}
 --- !u!114 &114103544263297618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -336,6 +324,18 @@ MonoBehaviour:
     numberToTransport: 0
     neededToTransport: 0
     neededToConstruct: 1
+--- !u!114 &114324036291535682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167221350444018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e75c10c8ec83648a3f62684ba75fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodText: {fileID: 0}
 --- !u!114 &114652098534679598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,7 +354,7 @@ MonoBehaviour:
   isPlaced: 0
   goodPosition: 1
   mesh: {fileID: 23497484724911888}
-  totalNbr: {fileID: 114041258337001482}
+  totalNbr: {fileID: 114324036291535682}
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5

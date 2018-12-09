@@ -55,10 +55,10 @@ GameObject:
   - component: {fileID: 23498757126843800}
   - component: {fileID: 65885629856374620}
   - component: {fileID: 54593328481527314}
-  - component: {fileID: 114955109312131878}
   - component: {fileID: 114435022792874710}
   - component: {fileID: 114001324661397374}
   - component: {fileID: 208541965895005988}
+  - component: {fileID: 114441182367042120}
   m_Layer: 0
   m_Name: Camp
   m_TagString: Camp
@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804228835214920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 1, z: -5.82}
+  m_LocalPosition: {x: -4.26, y: 1, z: -7.62}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4997246891524238}
@@ -291,9 +291,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813906105463192}
-  m_Text: '0
-
-'
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -344,7 +342,7 @@ MonoBehaviour:
   isPlaced: 0
   goodPosition: 1
   mesh: {fileID: 23610477399464276}
-  totalNbr: {fileID: 114955109312131878}
+  totalNbr: {fileID: 114441182367042120}
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5
@@ -354,7 +352,7 @@ MonoBehaviour:
   enoughResourcesToCraft: 0
   numberWorkers: 2
   listWorkers: []
---- !u!114 &114955109312131878
+--- !u!114 &114441182367042120
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

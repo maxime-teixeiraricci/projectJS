@@ -2,6 +2,7 @@
 
 using System.Collections;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class DynamicBuild : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class DynamicBuild : MonoBehaviour
         spawnedObj.GetComponent<Building>().mesh.material.color = new Color(0, 255, 0, 155);
         spawnedObj.GetComponent<Building>().goodPosition = true;
         spawnedObj.GetComponent<NavMeshObstacle>().enabled = false;
+        spawnedObj.GetComponent<ResourcesCount>().woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
     }
 
     public void setPrefabHouse()
@@ -61,6 +63,7 @@ public class DynamicBuild : MonoBehaviour
         spawnedObj.GetComponent<Building>().mesh.material.color = new Color(0, 255, 0, 155);
         spawnedObj.GetComponent<Building>().goodPosition = true;
         spawnedObj.GetComponent<NavMeshObstacle>().enabled = false;
+        spawnedObj.GetComponent<ResourcesCount>().woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
     }
     
     public void updatePos(GameObject obj)

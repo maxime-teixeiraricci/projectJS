@@ -19,7 +19,15 @@ public class ResourcesCount : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        wood = int.Parse(woodText.text);
+        
+        if(woodText.text != null)
+        {
+            wood = int.Parse(woodText.text);
+        }
+
+        //woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
+        //woodText.text = "2";
+        
         /*
         canvasUI = GameObject.Find("Banner");
         childAppleContainer = canvasUI.transform.Find("AppleContainer");
@@ -34,7 +42,11 @@ public class ResourcesCount : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        wood = int.Parse(woodText.text);
+        if(woodText.text != null)
+        {
+            wood = int.Parse(woodText.text);
+        }
+        
     }
 
     public void Add(Ressource ressource)
