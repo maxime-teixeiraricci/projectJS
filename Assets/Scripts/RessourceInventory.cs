@@ -12,7 +12,7 @@ public class RessourceInventory : MonoBehaviour
 
     public RessourceTank getStruct(Ressource ressource)
     {
-        print(ressourcesList.Count);
+        //print(ressourcesList.Count);
         foreach (RessourceTank rT in ressourcesList)
         {
             //print(ressource.name + " - " + rT.ressource.name);
@@ -167,8 +167,8 @@ public class RessourceInventory : MonoBehaviour
             if (rT.neededToTransport)
             {
                 res.Add(rT);
-                Debug.Log("Value number new RT = " + rT.number);
-                Debug.Log("Value numberToTransport new RT = " + rT.numberToTransport);
+                //Debug.Log("Value number new RT = " + rT.number);
+                //Debug.Log("Value numberToTransport new RT = " + rT.numberToTransport);
             }
         }
         return res;

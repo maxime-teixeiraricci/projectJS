@@ -23,6 +23,8 @@ public class Camp : Building
 
     public void Update()
     {
+        //progressionBuild.transform.rotation = Quaternion.LookRotation(progressionBuild.transform.position - Camera.main.transform.position);
+        progressionBuild.transform.rotation = Camera.main.transform.rotation;
         foreach (Citizen citizen in listWorkers)
         {
             if (citizen.group != Citizen.Group.Collect) FireWorker(citizen);

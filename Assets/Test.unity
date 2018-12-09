@@ -690,6 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ressourcesToTransport: {fileID: 330196405}
+  coefBuild: 1
   ressources: []
   age: 0
   isFull: 0
@@ -4439,12 +4440,12 @@ Prefab:
     - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
         type: 2}
       propertyPath: needRessource
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
         type: 2}
       propertyPath: isConstruct
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
         type: 2}

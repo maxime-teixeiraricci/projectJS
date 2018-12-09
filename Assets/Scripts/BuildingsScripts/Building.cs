@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Building : MonoBehaviour {
 
@@ -32,6 +33,8 @@ public abstract class Building : MonoBehaviour {
     abstract public void askForConstructer();
     //abstract public List<RessourceTank> getRessourcesNeeded();
 
+    public TextMesh progressionBuild;
+
 
     public List<RessourceTank> resosurcesNeededForConstruct()
     {
@@ -59,8 +62,10 @@ public abstract class Building : MonoBehaviour {
     {
         Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
         passedTimedBuild += Time.deltaTime;
-        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + citizen.coefBuild* Time.deltaTime);
+        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + Time.deltaTime);
         GetComponent<MeshRenderer>().material.color = alphaColor;
+        progressionBuild.text = ((int)(passedTimedBuild / timeToBuild * 100)).ToString();
+        //Debug.Log("value % alpha = " + passedTimedBuild / timeToBuild * 100);
     }
 
     public void askSupplyToConstruct()
