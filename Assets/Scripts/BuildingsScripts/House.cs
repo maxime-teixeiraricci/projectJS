@@ -15,6 +15,10 @@ public class House : Building {
 	public void Update () {
         //progressionBuild.transform.rotation = Quaternion.LookRotation(progressionBuild.transform.position - Camera.main.transform.position);
         progressionBuild.transform.rotation = Camera.main.transform.rotation;
+        if (progressionBuild.text == "100%")
+        {
+            progressionBuild.text = "";
+        }
         if (!fait)
         {
             askSupplyToConstruct();
