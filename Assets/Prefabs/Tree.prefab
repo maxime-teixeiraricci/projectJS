@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 23946662970646458}
   - component: {fileID: 208840460096738026}
   - component: {fileID: 114477099589626934}
+  - component: {fileID: 65844974007573530}
   m_Layer: 0
   m_Name: Tree
   m_TagString: RessourceTank
@@ -96,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1569947679646468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.99, y: 1, z: -8.05}
+  m_LocalPosition: {x: -13.04, y: 1, z: -9.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4232964345737970}
@@ -187,6 +188,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1568269207228500}
   m_Mesh: {fileID: 4300000, guid: 2758819a16509514eb52b838d6172dab, type: 3}
+--- !u!65 &65844974007573530
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1569947679646468}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114477099589626934
 MonoBehaviour:
   m_ObjectHideFlags: 1
