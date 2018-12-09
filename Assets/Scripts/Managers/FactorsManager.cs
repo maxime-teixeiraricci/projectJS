@@ -19,7 +19,7 @@ public class FactorsManager : MonoBehaviour {
 
     private void Start()
     {
-        maxRessources = nbrTrees * 500;
+        maxRessources = nbrTrees * 200;
     }
 
     // Update is called once per frame

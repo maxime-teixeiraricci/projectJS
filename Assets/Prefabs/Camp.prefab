@@ -58,7 +58,8 @@ GameObject:
   - component: {fileID: 114435022792874710}
   - component: {fileID: 114001324661397374}
   - component: {fileID: 208541965895005988}
-  - component: {fileID: 114441182367042120}
+  - component: {fileID: 114944691377759886}
+  - component: {fileID: 114060348359974584}
   m_Layer: 0
   m_Name: Camp
   m_TagString: Camp
@@ -103,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804228835214920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.26, y: 1, z: -7.62}
+  m_LocalPosition: {x: 3.82, y: 1, z: -5.82}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4997246891524238}
@@ -324,6 +325,23 @@ MonoBehaviour:
     numberToTransport: 0
     neededToTransport: 0
     neededToConstruct: 1
+--- !u!114 &114060348359974584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804228835214920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f094645c789453b48921a02fe33fc58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolInventory:
+  - {fileID: 11400000, guid: d1d7246008bbed742a4e5319c745ffa3, type: 2}
+  - {fileID: 11400000, guid: 69deaa50f8bea904a8f4d82c8ae22f1b, type: 2}
+  activeTool: {fileID: 0}
+  nbrTools: 0
+  wood: {fileID: 0}
 --- !u!114 &114435022792874710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,7 +360,7 @@ MonoBehaviour:
   isPlaced: 0
   goodPosition: 1
   mesh: {fileID: 23610477399464276}
-  totalNbr: {fileID: 114441182367042120}
+  totalNbr: {fileID: 114944691377759886}
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}
   timeToBuild: 5
@@ -352,7 +370,7 @@ MonoBehaviour:
   enoughResourcesToCraft: 0
   numberWorkers: 2
   listWorkers: []
---- !u!114 &114441182367042120
+--- !u!114 &114944691377759886
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

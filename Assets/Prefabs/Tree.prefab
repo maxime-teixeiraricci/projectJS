@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1569947679646468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.72, y: 1, z: -4.5}
+  m_LocalPosition: {x: 7.99, y: 1, z: -8.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4232964345737970}
@@ -199,7 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recoltFrequence: 1
-  numberRessource: 500
+  numberRessource: 200
+  maxRessource: 200
   nameCompetence: WoodCut
   ressource: {fileID: 1231223557627298, guid: 865b8c7af2307504d843b939265c396d, type: 2}
   structRessource:

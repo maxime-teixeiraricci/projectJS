@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolInventory : MonoBehaviour {
 
@@ -12,6 +13,9 @@ public class ToolInventory : MonoBehaviour {
     public Tool activeTool;
 
     public int nbrTools = 0;
+
+    public Text wood;
+    public Text toolCount;
 
     float timeCrafted = 0;
 
@@ -64,6 +68,8 @@ public class ToolInventory : MonoBehaviour {
         if(timeCrafted >= activeTool.timeToCraft)
         {
             timeCrafted = 0;
+            wood.text = (int.Parse(wood.text) - activeTool.numberRessourcesNeeded).ToString();
+            toolCount.text = (int.Parse(toolCount.text) + 1).ToString();
             return true;
         }
         

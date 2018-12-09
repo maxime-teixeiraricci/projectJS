@@ -54,6 +54,8 @@ public class DynamicBuild : MonoBehaviour
         spawnedObj.GetComponent<Building>().goodPosition = true;
         spawnedObj.GetComponent<NavMeshObstacle>().enabled = false;
         spawnedObj.GetComponent<ResourcesCount>().woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
+        spawnedObj.GetComponent<ToolInventory>().wood = GameObject.Find("WoodTotal").GetComponent<Text>();
+        spawnedObj.GetComponent<ToolInventory>().toolCount = GameObject.Find("ToolTotal").GetComponent<Text>();
     }
 
     public void setPrefabHouse()

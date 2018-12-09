@@ -16,7 +16,7 @@ public class HudManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        appleImage.sprite = appleRessource.image;
+        //appleImage.sprite = appleRessource.image;
         woodImage.sprite = woodRessource.image;
 	}
 	
