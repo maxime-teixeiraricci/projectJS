@@ -29,7 +29,7 @@ public class DynamicBuild : MonoBehaviour
         }
 
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && spawnedObj != null)
         {
             
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -40,7 +40,7 @@ public class DynamicBuild : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && spawnedObj != null)
         {
             Destroy(spawnedObj);
         }
