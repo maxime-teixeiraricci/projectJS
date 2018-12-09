@@ -12,6 +12,8 @@ public class CitizenNumber : MonoBehaviour {
     public Slider s2;
     public Slider s3;
 
+    public Text maxValue;
+
     // Use this for initialization
     void Start ()
     {
@@ -22,11 +24,13 @@ public class CitizenNumber : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        s1.maxValue = WorldManager.citizenNumber - slider.value - s2.value - s3.value;
-        s2.maxValue = WorldManager.citizenNumber - slider.value -s1.value - s3.value;
-        s3.maxValue = WorldManager.citizenNumber - slider.value - s1.value - s2.value;
+        s1.maxValue = int.Parse(maxValue.text) - slider.value - s2.value - s3.value;
+        s2.maxValue = int.Parse(maxValue.text) - slider.value -s1.value - s3.value;
+        s3.maxValue = int.Parse(maxValue.text) - slider.value - s1.value - s2.value;
         text.text = "" + slider.value;
 
+        WorldManager.citizenNumber = int.Parse(maxValue.text);
+        //Debug.Log("value max =  " + WorldManager.citizenNumber);
         WorldManager.workers = (int)(slider.value + s1.value + s2.value + s3.value);
 
         WorldManager.gatherers = (int)GameObject.Find("GathererSlider").GetComponent<Slider>().value;

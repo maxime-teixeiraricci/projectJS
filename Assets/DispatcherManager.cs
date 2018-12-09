@@ -29,7 +29,6 @@ public class DispatcherManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        
         citizens = FindObjectsOfType<Citizen>();
         foreach (Citizen c in citizens)
         {
@@ -37,13 +36,29 @@ public class DispatcherManager : MonoBehaviour
         }
         WorldManager.citizenNumber = citizens.Length;
 
+
     }
 	
+    public void updateCitizenList(Citizen cit)
+    {
+        citizens = new Citizen[0];
+        citizens = FindObjectsOfType<Citizen>();
+        WorldManager.citizenNumber = citizens.Length;
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
+
+        updateWorkLess();
         UpdateCitizen();
         UpdateWorkPlace();
+    }
+
+    void updateWorkLess()
+    {
+
+        
     }
 
     void UpdateWorkPlace()

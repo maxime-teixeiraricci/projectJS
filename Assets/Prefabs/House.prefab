@@ -361,6 +361,7 @@ MonoBehaviour:
   passedTimedBuild: 0
   nameCompetence: builder
   progressionBuild: {fileID: 102311477020065816}
+  citizen: {fileID: 1487986925770250, guid: a3c1477e08642fa419c5bf2ed5b36c58, type: 2}
 --- !u!208 &208225296494752298
 NavMeshObstacle:
   m_ObjectHideFlags: 1
