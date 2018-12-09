@@ -49,6 +49,12 @@ public class RessourceInventory : MonoBehaviour
         if (!rT.Equals(RessourceInventory.NULL))
         {
             rT.number = rT.number + 1;
+            if (ressourceTank.numberToConstruct != -1)
+            {
+                rT.numberToTransport = ressourceTank.numberToConstruct;
+                rT.numberLimit = ressourceTank.numberToConstruct; // Limite le nombre de ressource à 99 par défaut
+                rT.number = 0;
+            }
         }
         else
         {
