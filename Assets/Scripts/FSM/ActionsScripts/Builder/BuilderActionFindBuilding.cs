@@ -17,6 +17,12 @@ public class BuilderActionFindBuilding : FSMAction
         Citizen[] citizens = FindObjectsOfType<Citizen>();
 
 
+        if(controler.manualTarget != null)
+        {
+            controler.target = controler.manualTarget;
+            return;
+        }
+
         // S'il y a un transporteur avec une cible, prendre sa cible
         foreach(Citizen cit in citizens)
         {

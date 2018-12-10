@@ -15,6 +15,12 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
     {
         Building[] buildings = FindObjectsOfType<Building>();
 
+        if (controler.manualTarget != null)
+        {
+            controler.target = controler.manualTarget;
+            return;
+        }
+
         foreach (Building building in buildings)
         {
             if (building.needRessource && building.isPlaced)
