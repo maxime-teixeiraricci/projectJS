@@ -35,7 +35,6 @@ public class Citizen : MonoBehaviour {
     public Group group = Group.None;
     public MeshRenderer citizenShirt;
 
-
     void consommer(Ressource ressource)
     {
 
