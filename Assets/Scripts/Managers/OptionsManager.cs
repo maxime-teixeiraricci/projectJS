@@ -6,24 +6,37 @@ using UnityEngine.UI;
 public class OptionsManager : MonoBehaviour {
 
     public Slider volumeSlider;
-    private Text volumeValue;
+    public Text volumeValue;
 
     private Text citizenValue;
     private Slider citizenSlider;
 
 	// Use this for initialization
 	void Start () {
-        volumeValue = GameObject.Find("VolumeValue").GetComponent<Text>();
+        
+        if(GameObject.Find("CitizenValue") != null){
+            citizenValue = GameObject.Find("CitizenValue").GetComponent<Text>();
+        }
 
-        citizenValue = GameObject.Find("CitizenValue").GetComponent<Text>();
-        citizenSlider = GameObject.Find("CitizenSlider").GetComponent<Slider>();
+        if (GameObject.Find("CitizenSlider") != null)
+        {
+            citizenValue = GameObject.Find("CitizenSlider").GetComponent<Text>();
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
         GetComponent<AudioSource>().volume = volumeSlider.value / 100;
-        volumeValue.text = "" + volumeSlider.value;
-        citizenValue.text = "" + citizenSlider.value;
-        WorldManager.citizenNumber = (int)citizenSlider.value;
+        if(volumeValue != null)
+        {
+            volumeValue.text = "" + volumeSlider.value;
+        }
+        
+        if(citizenValue != null)
+        {
+            citizenValue.text = "" + citizenSlider.value;
+        }
+        
+        //WorldManager.citizenNumber = (int)citizenSlider.value;
 	}
 }
