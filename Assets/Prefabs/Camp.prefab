@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804228835214920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.82, y: 1, z: -5.82}
+  m_LocalPosition: {x: -8.59, y: 1, z: -7.14}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4997246891524238}
@@ -292,7 +292,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813906105463192}
-  m_Text: 
+  m_Text: 0%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -342,6 +342,7 @@ MonoBehaviour:
   activeTool: {fileID: 0}
   nbrTools: 0
   wood: {fileID: 0}
+  toolCount: {fileID: 0}
 --- !u!114 &114435022792874710
 MonoBehaviour:
   m_ObjectHideFlags: 1
