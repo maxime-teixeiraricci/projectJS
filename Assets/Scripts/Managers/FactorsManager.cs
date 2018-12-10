@@ -9,7 +9,7 @@ public class FactorsManager : MonoBehaviour {
     float res;
 
     float value;
-    public int nbrTrees;
+    int nbrTrees;
 
     public GameObject sliderColor;
 
@@ -19,7 +19,8 @@ public class FactorsManager : MonoBehaviour {
 
     private void Start()
     {
-        maxRessources = nbrTrees * 200;
+        nbrTrees = GameObject.FindGameObjectsWithTag("RessourceTank").Length;
+        maxRessources = nbrTrees * GameObject.FindGameObjectWithTag("RessourceTank").GetComponent<NaturalRessource>().maxRessource;
     }
 
     // Update is called once per frame
