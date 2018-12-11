@@ -29,6 +29,14 @@ public class CarrierActionGoToCampWithRessources : FSMAction
                             return;
                         }
                     }
+                    foreach (Tool t in controler.GetComponent<Citizen>().toolsToTransport.toolInventory)
+                    {
+                        if (building.toolsInventory.nbElementsTotal(t) > 0)
+                        {
+                            controler.target = gO;
+                            return;
+                        }
+                    }
                 }
                 
             }

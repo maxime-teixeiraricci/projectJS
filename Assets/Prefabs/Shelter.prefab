@@ -11,6 +11,23 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1818823018135032}
   m_IsPrefabAsset: 1
+--- !u!1 &1245597976949248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4674574104809276}
+  - component: {fileID: 23904955647303362}
+  - component: {fileID: 102109728516371920}
+  m_Layer: 0
+  m_Name: New Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1589453047157958
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,12 +73,13 @@ GameObject:
   - component: {fileID: 65130639353245388}
   - component: {fileID: 54218593286696496}
   - component: {fileID: 114041807793335754}
-  - component: {fileID: 114184809612184796}
+  - component: {fileID: 114581543458442308}
+  - component: {fileID: 114138077046584218}
   - component: {fileID: 114629482930151118}
   - component: {fileID: 208370385898178866}
   m_Layer: 9
   m_Name: Shelter
-  m_TagString: Shelter
+  m_TagString: Statue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -78,6 +96,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4814096053674934}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4674574104809276
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245597976949248}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.7779999, y: -0.2296, z: -0.884}
+  m_LocalScale: {x: 0.08, y: 0.07999999, z: 0.08}
+  m_Children: []
+  m_Father: {fileID: 4958234566657428}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4814096053674934
 Transform:
@@ -100,10 +131,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1818823018135032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1864133, y: 1, z: -7.2671394}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 6.48, y: 2.69, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4814096053674934}
+  - {fileID: 4674574104809276}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -177,6 +209,41 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23904955647303362
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245597976949248}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 8e4bda75c5fd6e54e8b37d960945061c, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!33 &33150206149807648
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -218,6 +285,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!102 &102109728516371920
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245597976949248}
+  m_Text: 
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 1
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 8e4bda75c5fd6e54e8b37d960945061c, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190080
 --- !u!114 &114041807793335754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,24 +314,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1818823018135032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c25caf18a0cd7e47a9778bee7c81fc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b0984ac98ef0c9418389f72d842a718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 114184809612184796}
+  inventory: {fileID: 114138077046584218}
   needRessource: 0
+  toolsInventory: {fileID: 114581543458442308}
+  needTool: 1
   isConstruct: 0
-  enoughConstructToBuild: 0
-  isPlaced: 0
-  goodPosition: 0
+  enoughToolsToBuild: 0
+  enoughConstructToBuild: 1
+  isPlaced: 1
+  goodPosition: 1
+  mesh: {fileID: 23030446686873432}
+  totalNbr: {fileID: 114629482930151118}
   buildFrequence: 1
-  alphaColor: {r: 0, g: 0.27284098, b: 1, a: 1}
-  timeToBuild: 5
+  alphaColor: {r: 0, g: 0, b: 0, a: 0}
+  timeToBuild: 10
+  passedTimedBuild: 0
   nameCompetence: 
-  nX: 10
-  nY: 10
-  dX: 2
-  dY: 2
---- !u!114 &114184809612184796
+  progressionBuild: {fileID: 102109728516371920}
+--- !u!114 &114138077046584218
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,14 +345,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c22c5cc8645354daa26e135550c1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ressourcesList:
-  - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
-    number: 0
-    numberLimit: 99
-    numberToConstruct: 0
-    numberToTransport: 0
-    neededToTransport: 0
-    neededToConstruct: 1
+  ressourcesList: []
+--- !u!114 &114581543458442308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818823018135032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f094645c789453b48921a02fe33fc58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolInventory:
+  - {fileID: 11400000, guid: d1d7246008bbed742a4e5319c745ffa3, type: 2}
+  activeTool: {fileID: 0}
+  nbrTools: 0
+  wood: {fileID: 0}
+  toolCount: {fileID: 0}
 --- !u!114 &114629482930151118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,6 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e75c10c8ec83648a3f62684ba75fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodText: {fileID: 0}
 --- !u!208 &208370385898178866
 NavMeshObstacle:
   m_ObjectHideFlags: 1

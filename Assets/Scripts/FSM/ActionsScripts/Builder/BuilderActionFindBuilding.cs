@@ -33,9 +33,27 @@ public class BuilderActionFindBuilding : FSMAction
             }
         }
 
-        foreach(Building building in buildings)
+        foreach (Building building in buildings)
+        {
+            if (!building.isConstruct && building.enoughConstructToBuild && building.enoughToolsToBuild && building.isPlaced)
+            {
+                controler.target = building.gameObject;
+                return;
+            }
+        }
+
+        foreach (Building building in buildings)
         {
             if (!building.isConstruct && building.enoughConstructToBuild && building.isPlaced)
+            {
+                controler.target = building.gameObject;
+                return;
+            }
+        }
+
+        foreach (Building building in buildings)
+        {
+            if (!building.isConstruct && building.enoughToolsToBuild && building.isPlaced)
             {
                 controler.target = building.gameObject;
                 return;

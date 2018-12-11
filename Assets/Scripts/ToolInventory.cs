@@ -29,7 +29,10 @@ public class ToolInventory : MonoBehaviour {
                 toolStock.Add(tool, 0);
             }
         }
-        activeTool = toolInventory[0];
+        if (toolInventory.Count > 0)
+        {
+            activeTool = toolInventory[0];
+        }
 	}
 	
 	// Update is called once per frame
@@ -74,5 +77,136 @@ public class ToolInventory : MonoBehaviour {
         }
         
         return false;
+    }
+
+    public static Tool NULL = null;
+
+    public Tool getStruct(Tool tool)
+    {
+        //print(ressourcesList.Count);
+        foreach (Tool t in toolInventory)
+        {
+            //print(ressource.name + " - " + rT.ressource.name);
+            if (t.index == tool.index)
+            {
+                return t;
+            }
+        }
+        return ToolInventory.NULL;
+    }
+
+    public bool contain(Tool tool)
+    {
+        return !getStruct(tool).Equals(ToolInventory.NULL);
+    }
+
+    public int nbElementsTotal(Tool tool)
+    {
+        Tool rT = getStruct(tool);
+        if (!rT.Equals(ToolInventory.NULL))
+        {
+            return rT.number;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public List<Tool> getToolsNeededConstruct()
+    {
+        List<Tool> res = new List<Tool>();
+        if (!toolInventory.Equals(new List<Tool>()))
+        {
+            foreach (Tool t in toolInventory)
+            {
+                if (t.neededToConstruct)
+                {
+                    res.Add(t);
+                }
+            }
+        }
+        return res;
+    }
+
+
+    public List<Tool> getToolsNeededTransport()
+    {
+        List<Tool> res = new List<Tool>();
+        foreach (Tool t in toolInventory)
+        {
+            if (t.neededToTransport)
+            {
+                res.Add(t);
+            }
+        }
+        return res;
+    }
+
+    public void remove(Tool tool)
+    {
+        Tool t = getStruct(tool);
+        //numberRessources = rT.number;
+        if (!t.Equals(ToolInventory.NULL))
+        {
+            if (t.number > 0)
+            {
+                t.number = t.number - 1;
+                //print(nbElementsTotal(ressource));
+
+
+
+
+
+                //numberRessources = numberRessources - 1;
+                //rT.number = numberRessources;
+                //print(rT.number);
+                //return true;
+            }
+        }
+        //return false;
+    }
+
+    public int getLimit(Tool tool)
+    {
+        Tool t = getStruct(tool);
+        if (!t.Equals(ToolInventory.NULL))
+        {
+            return t.numberLimit;
+        }
+        return -1;
+    }
+
+    public void add(Tool tool)
+    {
+        Tool t = getStruct(tool);
+        if (!t.Equals(ToolInventory.NULL))
+        {
+            t.number = t.number + 1;
+            if (tool.nbToConstruct != -1)
+            {
+                t.nbToTransport = tool.nbToConstruct;
+                t.numberLimit = tool.nbToConstruct; // Limite le nombre de ressource à 99 par défaut
+                t.number = 0;
+            }
+        }
+        else
+        {
+            Tool res = new Tool();
+            tool.copy(res);
+            res.neededToTransport = true;
+            res.name = tool.name;
+            res.nbToTransport = 1;
+            res.numberLimit = 10; // Limite le nombre de ressource à 99 par défaut
+            res.number = 1;
+            if (tool.nbToConstruct != -1)
+            {
+                res.nbToTransport = tool.nbToConstruct;
+                res.numberLimit = tool.nbToConstruct; // Limite le nombre de ressource à 99 par défaut
+                res.number = 0;
+            }
+            //Debug.Log(res.name);
+            toolInventory.Add(res);
+        }
     }
 }

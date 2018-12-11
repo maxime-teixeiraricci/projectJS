@@ -20,6 +20,6 @@ public class CarrierDecisionBuildingDontNeedResources : FSMDecision
     private bool BuildingDontNeedResources(FSMControler controler)
     {
         Building building = controler.finalTarget.GetComponent<Building>();
-        return building.needRessource == false;
+        return building.needRessources == false && building.needTools == false;
     }
 }

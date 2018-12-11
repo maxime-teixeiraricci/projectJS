@@ -41,7 +41,8 @@ public class CrafterActionCraftTools : FSMAction
         else
         {
             building.GetComponent<ToolInventory>().addTool();
-            for(int i = 0; i < tool.numberRessourcesNeeded; i++)
+            building.GetComponent<ToolInventory>().add(tool);
+            for (int i = 0; i < tool.numberRessourcesNeeded; i++)
             {
                 building.GetComponent<RessourceInventory>().remove(tool.ressourceNeeded);
             }

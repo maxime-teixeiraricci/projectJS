@@ -7,9 +7,12 @@ public abstract class Building : MonoBehaviour {
 
     //building inventory
     public RessourceInventory inventory;//= new RessourceInventory();
-    public bool needRessource;
+    public bool needRessources;
+    public bool needTools;
+    public ToolInventory toolsInventory;
     //isConstruct
     public bool isConstruct = false;
+    public bool enoughToolsToBuild = false;
     public bool enoughConstructToBuild = false;
     public bool isPlaced = false;
     public bool goodPosition;
@@ -46,6 +49,16 @@ public abstract class Building : MonoBehaviour {
         return res;
     }
 
+    public List<Tool> toolsNeededForConstruct()
+    {
+        List<Tool> res = new List<Tool>();
+        foreach (Tool t in toolsInventory.toolInventory)
+        {
+            if (t.neededToConstruct) res.Add(t);
+        }
+        return res;
+    }
+    /*
     //Called when a citizen need to drop his ressources
     public void addRessource(GameObject ressource, int quantite)
     {
@@ -56,7 +69,7 @@ public abstract class Building : MonoBehaviour {
             totalNbr.Add(r);
         }
     }
-
+    */
     //Fading animation to represent building construction
     public void construct(Citizen citizen)
     {
@@ -84,6 +97,17 @@ public abstract class Building : MonoBehaviour {
                 enoughConstructToBuild = false;
             }
         }
+
+        List<Tool> toolsNeeded = toolsInventory.getToolsNeededConstruct();
+
+        enoughToolsToBuild = true;
+        foreach (Tool t in toolsNeeded)
+        {
+            if (t.number < t.nbToConstruct)
+            {
+                enoughToolsToBuild = false;
+            }
+        }
     }
 
     public void take(Ressource ressource, Citizen citizen)
@@ -98,25 +122,22 @@ public abstract class Building : MonoBehaviour {
 
         if (enoughConstructToBuild)
         {
-            needRessource = false;
+            needRessources = false;
         }
-        if (GetComponent<ToolInventory>())
+    }
+
+    public void takeTool(Tool tool, Citizen citizen)
+    {
+        if (toolsInventory.nbElementsTotal(tool) < toolsInventory.getLimit(tool) && citizen.toolsToTransport.nbElementsTotal(tool) > 0)
         {
-            // L'outil à construire
-            Tool tool = GetComponent<ToolInventory>().activeTool;
-            // La ressource qu'il faut pour le construire
-            Ressource resNeed = tool.ressourceNeeded;
+            citizen.toolsToTransport.remove(tool);
+            toolsInventory.add(tool);
+        }
+        askSupplyToConstruct();
 
-            // Le nombre de cette ressource qu'il faut
-            int nbrRessource = tool.numberRessourcesNeeded;
-
-            // Le nombre de la ressource contenu dans le batiment
-            int stockRessource = GetComponent<RessourceInventory>().nbElementsTotal(ressource);
-
-            if (stockRessource >= nbrRessource)
-            {
-                needRessource = false;
-            }
+        if (enoughToolsToBuild)
+        {
+            needTools = false;
         }
     }
 
@@ -128,6 +149,17 @@ public abstract class Building : MonoBehaviour {
             inventory.remove(ressource);
             //totalNbr.Remove(ressource);
             totalNbr.Remove(ressource);
+        }
+    }
+
+    public void giveTool(Tool tool, Citizen citizen)
+    {
+        if (toolsInventory.nbElementsTotal(tool) > 0)
+        {
+            citizen.toolsToTransport.add(tool);
+            toolsInventory.remove(tool);
+            //totalNbr.Remove(ressource);
+            //totalNbr.Remove(tool);
         }
     }
 
@@ -144,6 +176,24 @@ public abstract class Building : MonoBehaviour {
 
                 int need = r.numberToConstruct - r.number;
                 res.Add(r);
+            }
+        }
+
+        return res;
+    }
+
+    public List<Tool> getToolsNeeded()
+    {
+        List<Tool> toolsNeeded = toolsInventory.getToolsNeededConstruct();
+        List<Tool> res = new List<Tool>();
+
+        foreach (Tool t in toolsNeeded)
+        {
+            if (t.number < t.nbToConstruct)
+            {
+
+                int need = t.nbToConstruct - t.number;
+                res.Add(t);
             }
         }
 

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54942502511138888}
   - component: {fileID: 114652098534679598}
   - component: {fileID: 114103544263297618}
+  - component: {fileID: 114122780954923206}
   - component: {fileID: 208225296494752298}
   - component: {fileID: 114324036291535682}
   m_Layer: 0
@@ -324,6 +325,22 @@ MonoBehaviour:
     numberToTransport: 0
     neededToTransport: 0
     neededToConstruct: 1
+--- !u!114 &114122780954923206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167221350444018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f094645c789453b48921a02fe33fc58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolInventory: []
+  activeTool: {fileID: 0}
+  nbrTools: 0
+  wood: {fileID: 0}
+  toolCount: {fileID: 0}
 --- !u!114 &114324036291535682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -348,8 +365,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 114103544263297618}
-  needRessource: 1
+  needRessources: 0
+  needTools: 0
+  toolsInventory: {fileID: 114122780954923206}
   isConstruct: 0
+  enoughToolsToBuild: 0
   enoughConstructToBuild: 0
   isPlaced: 0
   goodPosition: 1

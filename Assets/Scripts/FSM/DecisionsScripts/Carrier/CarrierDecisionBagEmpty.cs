@@ -7,7 +7,7 @@ public class CarrierDecisionBagEmpty : FSMDecision
 {
     public override bool Decide(FSMControler controler)
     {
-        return bagEmpty(controler);
+        return bagEmpty(controler) && bagToolsEmpty(controler);
     }
 
     public bool bagEmpty(FSMControler controler)
@@ -17,6 +17,26 @@ public class CarrierDecisionBagEmpty : FSMDecision
         foreach (RessourceTank rT in citizen.ressourcesToTransport.ressourcesList)
         {
             nbTotal += rT.number;
+        }
+
+        if (nbTotal == 0)
+        {
+            //controler.target = controler.finalTarget;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool bagToolsEmpty(FSMControler controler)
+    {
+        int nbTotal = 0;
+        Citizen citizen = controler.GetComponent<Citizen>();
+        foreach (Tool t in citizen.toolsToTransport.toolInventory)
+        {
+            nbTotal += t.number;
         }
 
         if (nbTotal == 0)

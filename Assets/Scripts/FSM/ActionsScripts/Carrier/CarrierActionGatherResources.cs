@@ -24,6 +24,16 @@ public class CarrierActionGatherResources : FSMAction
             }
             
         }
+
+        foreach (Tool t in citizen.toolsToTransport.getToolsNeededTransport())
+        {
+
+            if (t.number < t.numberLimit)
+            {
+                target.giveTool(t, citizen);
+            }
+
+        }
     }
 
 }

@@ -320,7 +320,7 @@ MonoBehaviour:
   ressourcesList:
   - ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
     number: 0
-    numberLimit: 99
+    numberLimit: 200
     numberToConstruct: 1
     numberToTransport: 0
     neededToTransport: 0

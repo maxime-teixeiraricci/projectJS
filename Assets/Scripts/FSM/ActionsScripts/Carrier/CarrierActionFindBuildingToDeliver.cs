@@ -23,13 +23,28 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
 
         foreach (Building building in buildings)
         {
-            if (building.needRessource && building.isPlaced)
+            if (building.needRessources && building.isPlaced)
             {
                 controler.finalTarget = building.gameObject;
                 foreach (RessourceTank rt in building.getRessourcesNeeded())
                 {
                     
                     controler.GetComponent<Citizen>().ressourcesToTransport.add(rt);
+                }
+                if (building.needTools) {
+                    foreach (Tool t in building.getToolsNeeded())
+                    {
+
+                        controler.GetComponent<Citizen>().toolsToTransport.add(t);
+                    }
+                    return;
+                }
+            }else if (building.needTools)
+            {
+                foreach (Tool t in building.getToolsNeeded())
+                {
+
+                    controler.GetComponent<Citizen>().toolsToTransport.add(t);
                 }
                 return;
             }

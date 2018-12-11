@@ -18,6 +18,9 @@ MonoBehaviour:
     - {fileID: 11400000, guid: daed43b194d031e4fbab2ec69828b73d, type: 2}
     nextState: {fileID: 11400000, guid: 7f3a81737f437684682347168e7e2e24, type: 2}
   - decisions:
+    - {fileID: 11400000, guid: e0e50745f59787a4a935a30faf69ae02, type: 2}
+    nextState: {fileID: 11400000, guid: 7f3a81737f437684682347168e7e2e24, type: 2}
+  - decisions:
     - {fileID: 11400000, guid: 2adf4ecb216687c4083c58516023c9cb, type: 2}
     nextState: {fileID: 11400000, guid: 78bc85b81c4a6fd41b23740e212d4ef1, type: 2}
   gizmoColor: {r: 0.8405306, g: 0.9056604, b: 0.23495908, a: 1}
