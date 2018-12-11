@@ -49,16 +49,8 @@ public class DispatcherManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-
-        updateWorkLess();
         UpdateCitizen();
         UpdateWorkPlace();
-    }
-
-    void updateWorkLess()
-    {
-
-        
     }
 
     void UpdateWorkPlace()
