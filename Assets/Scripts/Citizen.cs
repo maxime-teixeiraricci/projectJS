@@ -8,7 +8,8 @@ public class Citizen : MonoBehaviour {
     enum Etats { Sain, Malade, Mort };
 
     public RessourceInventory ressourcesToTransport;
-
+    public ToolInventory toolsToTransport;
+    public float coefBuild = 1.0f;
     Dictionary<Ressource, int> capacitesInventaire;
     [HideInInspector] public Dictionary<Ressource, int> inventaire = new Dictionary<Ressource, int>();
 
@@ -34,7 +35,6 @@ public class Citizen : MonoBehaviour {
     [Header("Group")]
     public Group group = Group.None;
     public MeshRenderer citizenShirt;
-
 
     void consommer(Ressource ressource)
     {

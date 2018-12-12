@@ -1,20 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class House : Building {
     bool fait = false;
-    public void start()
+
+    public GameObject citizen;
+
+    public void Start()
     {
         askSupplyToConstruct();
         Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
         alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
         GetComponent<MeshRenderer>().material.color = alphaColor;
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
     }
 	
 	public void Update () {
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
+        //progressionBuild.transform.rotation = Quaternion.LookRotation(progressionBuild.transform.position - Camera.main.transform.position);
+        progressionBuild.transform.rotation = Camera.main.transform.rotation;
+        if (progressionBuild.text == "100%")
+        {
+            progressionBuild.text = "";
+        }
         if (!fait)
         {
+            if (!isConstruct)
+            {
+                needRessources = true;
+                needTools = true;
+            }
             askSupplyToConstruct();
             Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
             alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
@@ -24,52 +41,42 @@ public class House : Building {
         
         if (!isConstruct)
         {
-            if (!enoughConstructToBuild)
+            if (!enoughToolsToBuild)
             {
                 askSupplyToConstruct();
             }
-            else
+            else if(!enoughToolsToBuild)
             {
-                askForConstructer();
-                if (alphaColor.a >= 1.0)
+                askSupplyToConstruct();
+            }else
+            {
+                
+                if (timeToBuild <= passedTimedBuild)
                 {
                     isConstruct = true;
-
+                    createCitizen();
                     foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
                     {
                         for(int i = 0; i < r.numberToConstruct; i++)
                         {
                             inventory.remove(r.ressource);
+                            totalNbr.Remove(r.ressource);
                         }
                         
+                    }
+
+                    foreach (Tool t in toolsInventory.getToolsNeededConstruct())
+                    {
+                        for (int i = 0; i < t.nbToConstruct; i++)
+                        {
+                            toolsInventory.remove(t);
+                            toolText.text = (int.Parse(toolText.text) - 1).ToString();
+                        }
+
                     }
                 }
             }
         }
-    }
-
-    //Called when a citizen need to drop his ressources
-    public override void addRessource(GameObject ressource, int quantite)
-    {
-        for (int i = 0; i < quantite; i++)
-        {
-            Ressource r = ressource.GetComponent<RessourceContainer>().ressource;
-            inventory.add(r);
-        }
-    }
-    
-    //Fading animation to represent building construction
-    public override void construct()
-    {
-        Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
-        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + (1.0f/timeToBuild));
-        GetComponent<MeshRenderer>().material.color = alphaColor;
-    }
-
-    public override void askForConstructer()
-    {
-        //Lors du placement du batiment il demande a être construit jusqu'à ce qu'il le soit
-        //Demande au "camp de constructeurs" ou au dispacher
     }
 
     public void consommer()
@@ -78,111 +85,16 @@ public class House : Building {
         //Si il n'y a plus de nourriture pour tenir le jour suivant, on appel askSupply
     }
 
-    public override void askSupplyToConstruct()
+    public void createCitizen()
     {
-        //Demande au "camp de transporteurs" ou au dispacher des ressources
-        needRessource = true;
-        //S'il y a assez de constructions on le signal
-        enoughConstructToBuild = true;
-        foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
-	    {
-            if (r.number < r.numberToConstruct)
-            {
-                enoughConstructToBuild = false;
-            }
-	    }
-        if (enoughConstructToBuild)
+        for(int i = 0; i < 2; i++)
         {
-            needRessource = false;
+            citizen = Instantiate(citizen, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity) as GameObject;
+            citizen.SetActive(true);
+            DispatcherManager dm = GameObject.Find("Dispatcher").GetComponent<DispatcherManager>();
+            dm.noneCitizens.Add(citizen.GetComponent<Citizen>());
+            dm.updateCitizenList(citizen.GetComponent<Citizen>());
         }
-    }
-
-    public override void take(Ressource ressource, Citizen citizen)
-    {
-        if (inventory.nbElementsTotal(ressource) < inventory.getLimit(ressource) && citizen.ressourcesToTransport.getStruct(ressource).number>0)
-        {
-            citizen.ressourcesToTransport.remove(ressource);
-            inventory.add(ressource);
-        }
-        if (enoughConstructToBuild)
-        {
-            needRessource = false;
-        }
-
-        if (GetComponent<ToolInventory>())
-        {
-            // L'outil à construire
-            Tool tool = GetComponent<ToolInventory>().activeTool;
-            // La ressource qu'il faut pour le construire
-            Ressource resNeed = tool.ressourceNeeded;
-
-            // Le nombre de cette ressource qu'il faut
-            int nbrRessource = tool.numberRessourcesNeeded;
-
-            // Le nombre de la ressource contenu dans le batiment
-            int stockRessource = GetComponent<RessourceInventory>().nbElementsTotal(ressource);
-
-            if (stockRessource >= nbrRessource)
-            {
-                needRessource = false;
-            }
-        }
-    }
-
-    public override void give(Ressource ressource, Citizen citizen)
-    {
-        if (inventory.nbElementsTotal(ressource) > 0)
-        {
-            citizen.ressourcesToTransport.add(ressource);
-            inventory.remove(ressource);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-        // Mauvais collide : On entre en contact avec un item de la map
-        if (!isPlaced)
-        {
-            GetComponent<MeshRenderer>().material.color = new Color(255, 0, 0, 155);
-            goodPosition = false;
-        }
-
-        // Good Collide : le poitneur de la souris entre sur le terrain
-        if (!isPlaced && other == GameObject.Find("Plane").GetComponent<MeshCollider>())
-        {
-            GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
-            goodPosition = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-
-        // Bon exit : On sort de la collision genante
-        if (!isPlaced)
-        {
-            GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
-            goodPosition = true;
-        }
-
-        // Mauvais collide : On sort de la map
-        if (!isPlaced && other == GameObject.Find("Plane").GetComponent<MeshCollider>())
-        {
-            GetComponent<MeshRenderer>().material.color = new Color(255, 0, 0, 155);
-            goodPosition = false;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        // si lorsqu'on quitte un collider, on entre dans un autre collider, notre objet reste alors impossible à placer.
-        // On applique cette vérification uniquement aux batiments qui ne sont pas encore placés.
-        // On vérifie bien de ne pas prendre en compte la collision avec le terrain
-        if (!isPlaced && other != GameObject.Find("Plane").GetComponent<MeshCollider>())
-        {
-            GetComponent<MeshRenderer>().material.color = new Color(255, 0, 0, 155);
-            goodPosition = false;
-        }
+        
     }
 }

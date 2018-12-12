@@ -18,15 +18,15 @@ public class RecolterActionRecoltRessource : FSMAction
         NaturalRessource naturalRessource = controler.target.GetComponent<NaturalRessource>();
         if (!naturalRessource) return;
 
-        // Regarde le niveau de compétence du villageois
+        /*// Regarde le niveau de compétence du villageois
         if (!controler.citizen.competences.ContainsKey(naturalRessource.nameCompetence))
         {
             controler.citizen.competences[naturalRessource.nameCompetence] = 1;
         }
         int level = controler.citizen.competences[naturalRessource.nameCompetence];
         float citizenFrequence = naturalRessource.recoltFrequence * bonusLevel(level);
-        //Debug.Log(1f / citizenFrequence);
-        if (controler.farmTimer > (1f/ citizenFrequence))
+        //Debug.Log(1f / citizenFrequence);*/
+        if (controler.farmTimer > (1f/ naturalRessource.recoltFrequence))
         {
             naturalRessource.Recolt(controler.citizen);
             controler.farmTimer = 0;

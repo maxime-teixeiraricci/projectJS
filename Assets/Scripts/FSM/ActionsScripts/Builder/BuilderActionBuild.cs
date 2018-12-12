@@ -16,26 +16,7 @@ public class BuilderActionBuild : FSMAction
         if (!controler.target) return;
         Building building = controler.target.GetComponent<Building>();
         if (!building) return;
-
-        // Regarde le niveau de compétence du villageois
-        if (!controler.citizen.competences.ContainsKey(building.nameCompetence))
-        {
-            controler.citizen.competences[building.nameCompetence] = 1;
-        }
-        //Niveau du citoyen
-        int level = controler.citizen.competences[building.nameCompetence];
-        //Frequence de construction du citoyen
-        float citizenFrequence = building.buildFrequence * bonusLevel(level);
-        //si le temps passé à construire est 
-        if (controler.buildTimer > (1f / citizenFrequence))
-        {
-            building.construct();
-            controler.buildTimer = 0;
-        }
-        else
-        {
-            controler.buildTimer += Time.deltaTime;
-        }
+        building.construct(controler.citizen);
     }
 
     public float bonusLevel(int level)

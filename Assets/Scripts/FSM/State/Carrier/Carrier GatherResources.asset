@@ -16,11 +16,13 @@ MonoBehaviour:
   transitions:
   - decisions:
     - {fileID: 11400000, guid: c57505faec24a594f84d4c431762dce3, type: 2}
+    - {fileID: 11400000, guid: 6bd6c71972ef21a49b8d3b3c032eae2d, type: 2}
     nextState: {fileID: 11400000, guid: d299ceec083a1234f93d0f6219d2ccf7, type: 2}
   - decisions:
     - {fileID: 11400000, guid: b3cc0270ec4c31544a066e8af0a460f6, type: 2}
     nextState: {fileID: 11400000, guid: d299ceec083a1234f93d0f6219d2ccf7, type: 2}
   - decisions:
     - {fileID: 11400000, guid: 2c6856134bf46e944ba96db58b586a22, type: 2}
+    - {fileID: 11400000, guid: 8a8d395170ffb944f83413657011f9a3, type: 2}
     nextState: {fileID: 11400000, guid: 5320b07082903cc4e906abb04f7047ae, type: 2}
   gizmoColor: {r: 0.85376716, g: 0.023584902, b: 1, a: 1}

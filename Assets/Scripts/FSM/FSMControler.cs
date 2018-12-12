@@ -11,6 +11,7 @@ public class FSMControler : MonoBehaviour
     [HideInInspector] public Citizen citizen;
     public GameObject target;
     public GameObject finalTarget;
+    public GameObject manualTarget;
     public float farmTimer;
     public float buildTimer;
     public float craftTimer;

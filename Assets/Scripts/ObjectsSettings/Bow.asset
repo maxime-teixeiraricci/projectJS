@@ -11,7 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae5a88fd01c6c549a20d5fbcb41bf40, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  nom: 
-  timeToCraft: 15
+  nom: Bow
+  timeToCraft: 35
+  neededToConstruct: 1
+  nbToConstruct: 2
+  neededToTransport: 1
+  nbToTransport: 2
+  number: 0
+  numberLimit: 5
   ressourceNeeded: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
-  numberRessourcesNeeded: 15
+  numberRessourcesNeeded: 10

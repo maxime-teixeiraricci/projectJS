@@ -20,7 +20,7 @@ public class CarrierDecisionResourcesGathered : FSMDecision
             //s'il en reste renvoie true
             if (rT.number < rT.numberToTransport) return false;
         }
-        controler.target = controler.finalTarget;
+        //controler.target = controler.finalTarget;
         return true;
     }
 }

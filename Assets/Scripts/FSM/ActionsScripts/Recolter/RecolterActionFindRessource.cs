@@ -13,15 +13,23 @@ public class RecolterActionFindRessource : FSMAction
     private void FindRessource(FSMControler controler)
     {
         GameObject ressourceTank = GameObject.FindGameObjectWithTag("RessourceTank");
-        if (ressourceTank)
+        if(controler.manualTarget == null)
         {
-            controler.target = ressourceTank;
+            if (ressourceTank)
+            {
+                controler.target = ressourceTank;
+            }
+            else
+            {
+                ressourceTank = GameObject.FindGameObjectWithTag("Camp");
+                controler.target = ressourceTank;
+            }
         }
         else
         {
-            ressourceTank = GameObject.FindGameObjectWithTag("Camp");
-            controler.target = ressourceTank;
+            controler.target = controler.manualTarget;
         }
+        
     }
 
 

@@ -11,17 +11,24 @@ public class HudManager : MonoBehaviour {
     public Image appleImage;
     public Image woodImage;
 
+    public Text nbrCitizens;
+
     // Use this for initialization
     void Start ()
     {
-        appleImage.sprite = appleRessource.image;
+        //appleImage.sprite = appleRessource.image;
         woodImage.sprite = woodRessource.image;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        
+        calculateCitizens();
 	}
 
+    public void calculateCitizens()
+    {
+        Citizen[] citizen = FindObjectsOfType<Citizen>();
+        nbrCitizens.text = citizen.Length.ToString();
+    }
 }

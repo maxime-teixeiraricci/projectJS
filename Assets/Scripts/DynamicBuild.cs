@@ -1,59 +1,35 @@
 ﻿using UnityEngine;
 
 using System.Collections;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class DynamicBuild : MonoBehaviour
 {
-
     Ray ray;
     RaycastHit hit;
-    public GameObject shelter;
+
     public GameObject camp;
     public GameObject house;
 
     GameObject spawnedObj;
-    //bool isPlaced = false;
 
     Color originalColor;
 
-    //string valueTag;
     // Use this for initialization
     void Start()
     {
     }
 
-    // Update is called once per frame
-    /*
-    void Update()
-    {
-
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit))
-        {
-
-            if (Input.GetKey(KeyCode.Mouse0) && built == false)
-            {
-                GameObject obj = Instantiate(prefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity) as GameObject;
-                mixedUp();
-
-            }
-
-        }
-    }
-    */
     void Update()
     {
         if (spawnedObj != null)
         {
-           // if (!spawnedObj.GetComponent<Shelter>().isPlaced)
-           // {
                 updatePos(spawnedObj);
-            //}
         }
 
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && spawnedObj != null)
         {
             
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -64,43 +40,32 @@ public class DynamicBuild : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && spawnedObj != null)
         {
             Destroy(spawnedObj);
         }
     }
-    
-    public void setPrefabShelter()
-    {
-        //valueTag = "Shelter";
-        spawnedObj = Instantiate(shelter, hit.point, Quaternion.identity) as GameObject;
-        originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
-        spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
-        spawnedObj.GetComponent<Building>().goodPosition = true;
-        //spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(255, 0, 0, 155);
-        //isPlaced = false;
-    }
 
     public void setPrefabCamp()
     {
-        //valueTag = "Camp";
-        spawnedObj = Instantiate(camp, hit.point, Quaternion.identity) as GameObject;
-        originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
-        spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
+        spawnedObj = Instantiate(camp, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity) as GameObject;
+        originalColor = spawnedObj.GetComponent<Building>().mesh.material.color;
+        spawnedObj.GetComponent<Building>().mesh.material.color = new Color(0, 255, 0, 155);
         spawnedObj.GetComponent<Building>().goodPosition = true;
-        //spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
-
+        spawnedObj.GetComponent<NavMeshObstacle>().enabled = false;
+        spawnedObj.GetComponent<ResourcesCount>().woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
+        spawnedObj.GetComponent<ToolInventory>().wood = GameObject.Find("WoodTotal").GetComponent<Text>();
+        spawnedObj.GetComponent<ToolInventory>().toolCount = GameObject.Find("ToolTotal").GetComponent<Text>();
     }
 
     public void setPrefabHouse()
     {
-        //valueTag = "House";
-        spawnedObj = Instantiate(house, hit.point, Quaternion.identity) as GameObject;
-        originalColor = spawnedObj.GetComponent<MeshRenderer>().material.color;
-        spawnedObj.GetComponent<MeshRenderer>().material.color = new Color(0, 255, 0, 155);
+        spawnedObj = Instantiate(house, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity) as GameObject;
+        originalColor = spawnedObj.GetComponent<Building>().mesh.material.color;
+        spawnedObj.GetComponent<Building>().mesh.material.color = new Color(0, 255, 0, 155);
         spawnedObj.GetComponent<Building>().goodPosition = true;
-        //spawnedObj.GetComponent<MeshRenderer>().material.color = Color.red;
-        //isPlaced = false;
+        spawnedObj.GetComponent<NavMeshObstacle>().enabled = false;
+        spawnedObj.GetComponent<ResourcesCount>().woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
     }
     
     public void updatePos(GameObject obj)
@@ -113,16 +78,14 @@ public class DynamicBuild : MonoBehaviour
     }
     
     
-    
 
     public void validatePos(RaycastHit hit)
     {
-        //Debug.Log("in it");
-        //Instantiate(obj, hit.point, Quaternion.identity);
         if (spawnedObj.GetComponent<Building>().goodPosition)
         {
-            spawnedObj.GetComponent<MeshRenderer>().material.color = originalColor;
+            spawnedObj.GetComponent<Building>().mesh.material.color = originalColor;
             spawnedObj.GetComponent<Building>().isPlaced = true;
+            spawnedObj.GetComponent<NavMeshObstacle>().enabled = true;
             spawnedObj = null;
         }
         

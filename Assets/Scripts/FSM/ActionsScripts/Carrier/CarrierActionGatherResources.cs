@@ -17,7 +17,22 @@ public class CarrierActionGatherResources : FSMAction
         Citizen citizen = controler.GetComponent<Citizen>();
         foreach(RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
-            target.give(rT.ressource,citizen);
+
+            if (rT.number < rT.numberLimit)
+            {
+                target.give(rT.ressource, citizen);
+            }
+            
+        }
+
+        foreach (Tool t in citizen.toolsToTransport.getToolsNeededTransport())
+        {
+
+            if (t.number < t.numberLimit)
+            {
+                target.giveTool(t, citizen);
+            }
+
         }
     }
 

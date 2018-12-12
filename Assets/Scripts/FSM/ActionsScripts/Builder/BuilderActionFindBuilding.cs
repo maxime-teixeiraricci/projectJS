@@ -14,14 +14,59 @@ public class BuilderActionFindBuilding : FSMAction
     public void FindBuildingNotConstruct(FSMControler controler)
     {
         Building[] buildings = FindObjectsOfType<Building>();
+        Citizen[] citizens = FindObjectsOfType<Citizen>();
 
-        foreach(Building building in buildings)
+
+        if(controler.manualTarget != null)
         {
-            if (!building.isConstruct)
+            controler.target = controler.manualTarget;
+            return;
+        }
+
+        // S'il y a un transporteur avec une cible, prendre sa cible
+        foreach(Citizen cit in citizens)
+        {
+            if(cit.GetComponent<Citizen>().group.ToString() == "Transport" && cit.GetComponent<FSMControler>().finalTarget != null)
             {
-                controler.target = building.gameObject;
+                controler.target = cit.GetComponent<FSMControler>().finalTarget;
+                return;
             }
         }
 
+        foreach (Building building in buildings)
+        {
+            if (!building.isConstruct && building.enoughConstructToBuild && building.enoughToolsToBuild && building.isPlaced)
+            {
+                controler.target = building.gameObject;
+                return;
+            }
+        }
+
+        foreach (Building building in buildings)
+        {
+            if (!building.isConstruct && building.enoughConstructToBuild && building.isPlaced)
+            {
+                controler.target = building.gameObject;
+                return;
+            }
+        }
+
+        foreach (Building building in buildings)
+        {
+            if (!building.isConstruct && building.enoughToolsToBuild && building.isPlaced)
+            {
+                controler.target = building.gameObject;
+                return;
+            }
+        }
+
+        foreach (Building building in buildings)
+        {
+            if (!building.isConstruct && building.isPlaced)
+            {
+                controler.target = building.gameObject;
+                return;
+            }
+        }
     }
 }

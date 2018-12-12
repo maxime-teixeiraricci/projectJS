@@ -13,7 +13,7 @@ public class CarrierDecisionBuildingNeedResources : FSMDecision
 
     private bool BuildingNeedResources(FSMControler controler)
     {
-        Building building = controler.target.GetComponent<Building>();
-        return building.needRessource == true;
+        Building building = controler.finalTarget.GetComponent<Building>();
+        return building.needRessources && building.needTools;
     }
 }

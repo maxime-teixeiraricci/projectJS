@@ -13,11 +13,22 @@ public class CarrierActionGiveRessource : FSMAction
 
     public void give(FSMControler controler)
     {
-        Building target = controler.target.GetComponent<Building>();
+        Building target = controler.finalTarget.GetComponent<Building>();
         Citizen citizen = controler.GetComponent<Citizen>();
         foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
-            target.take(rT.ressource, citizen);
+            if (target.needRessources)
+            {
+                target.take(rT.ressource, citizen);
+            }
+        }
+
+        foreach (Tool t in citizen.toolsToTransport.getToolsNeededTransport())
+        {
+            if (target.needTools)
+            {
+                target.takeTool(t, citizen);
+            }
         }
     }
 }

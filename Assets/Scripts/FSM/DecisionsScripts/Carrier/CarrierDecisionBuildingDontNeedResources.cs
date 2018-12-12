@@ -8,7 +8,7 @@ public class CarrierDecisionBuildingDontNeedResources : FSMDecision
 {
     public override bool Decide(FSMControler controler)
     {
-        bool res = BuildingNeedResources(controler);
+        bool res = BuildingDontNeedResources(controler);
         if (res)
         {
             controler.target = null;
@@ -17,9 +17,9 @@ public class CarrierDecisionBuildingDontNeedResources : FSMDecision
         return res;
     }
 
-    private bool BuildingNeedResources(FSMControler controler)
+    private bool BuildingDontNeedResources(FSMControler controler)
     {
-        Building building = controler.target.GetComponent<Building>();
-        return building.needRessource == false;
+        Building building = controler.finalTarget.GetComponent<Building>();
+        return building.needRessources == false && building.needTools == false;
     }
 }
