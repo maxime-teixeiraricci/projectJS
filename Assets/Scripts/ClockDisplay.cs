@@ -17,7 +17,7 @@ public class ClockDisplay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         hourText.text = timeControler.timeString;
-        dayText.text = "Day   " + timeControler.numberDay.ToString();
+        dayText.text = "Jour  " + timeControler.numberDay.ToString();
 
 	}
 }
