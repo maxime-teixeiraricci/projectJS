@@ -43,12 +43,18 @@ public class CameraManager : MonoBehaviour {
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            GetComponent<Camera>().fieldOfView--;
+            if (GetComponent<Camera>().fieldOfView > 20)
+            {
+                GetComponent<Camera>().fieldOfView--;
+            }
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            GetComponent<Camera>().fieldOfView++;
+            if(GetComponent<Camera>().fieldOfView < 100)
+            {
+                GetComponent<Camera>().fieldOfView++;
+            }
         }
     }
 }
