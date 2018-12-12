@@ -318,13 +318,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 114138077046584218}
-  needRessource: 0
+  needRessources: 0
+  needTools: 0
   toolsInventory: {fileID: 114581543458442308}
-  needTool: 1
   isConstruct: 0
   enoughToolsToBuild: 0
-  enoughConstructToBuild: 1
-  isPlaced: 1
+  enoughConstructToBuild: 0
+  isPlaced: 0
   goodPosition: 1
   mesh: {fileID: 23030446686873432}
   totalNbr: {fileID: 114629482930151118}
@@ -334,6 +334,7 @@ MonoBehaviour:
   passedTimedBuild: 0
   nameCompetence: 
   progressionBuild: {fileID: 102109728516371920}
+  toolText: {fileID: 0}
 --- !u!114 &114138077046584218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,8 +359,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolInventory:
-  - {fileID: 11400000, guid: d1d7246008bbed742a4e5319c745ffa3, type: 2}
-  activeTool: {fileID: 0}
+  - index: 0
+    name: Bow
+    timeToCraft: 0
+    neededToConstruct: 1
+    nbToConstruct: 10
+    neededToTransport: 0
+    nbToTransport: 0
+    number: 0
+    numberLimit: 200
+    ressourceNeeded: {fileID: 0}
+    numberRessourcesNeeded: 0
+  activeTool:
+    index: 0
+    name: 
+    timeToCraft: 0
+    neededToConstruct: 0
+    nbToConstruct: 0
+    neededToTransport: 0
+    nbToTransport: 0
+    number: 0
+    numberLimit: 0
+    ressourceNeeded: {fileID: 0}
+    numberRessourcesNeeded: 0
   nbrTools: 0
   wood: {fileID: 0}
   toolCount: {fileID: 0}

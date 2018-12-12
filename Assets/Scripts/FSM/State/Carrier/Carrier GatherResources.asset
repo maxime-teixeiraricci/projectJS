@@ -25,10 +25,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 2c6856134bf46e944ba96db58b586a22, type: 2}
     - {fileID: 11400000, guid: 8a8d395170ffb944f83413657011f9a3, type: 2}
     nextState: {fileID: 11400000, guid: 5320b07082903cc4e906abb04f7047ae, type: 2}
-  - decisions:
-    - {fileID: 11400000, guid: 2c6856134bf46e944ba96db58b586a22, type: 2}
-    nextState: {fileID: 11400000, guid: 5320b07082903cc4e906abb04f7047ae, type: 2}
-  - decisions:
-    - {fileID: 11400000, guid: 8a8d395170ffb944f83413657011f9a3, type: 2}
-    nextState: {fileID: 11400000, guid: 5320b07082903cc4e906abb04f7047ae, type: 2}
   gizmoColor: {r: 0.85376716, g: 0.023584902, b: 1, a: 1}

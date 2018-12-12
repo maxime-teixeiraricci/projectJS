@@ -33,12 +33,20 @@ public abstract class Building : MonoBehaviour {
     List<Citizen> citizens;
     //Competence builder
     public string nameCompetence;
-    abstract public void askForConstructer();
     //abstract public List<RessourceTank> getRessourcesNeeded();
 
     public TextMesh progressionBuild;
+    public Text toolText;
 
+    private void Start()
+    {
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
+    }
 
+    private void Update()
+    {
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
+    }
     public List<RessourceTank> resosurcesNeededForConstruct()
     {
         List<RessourceTank> res = new List<RessourceTank>();
@@ -92,7 +100,7 @@ public abstract class Building : MonoBehaviour {
         enoughConstructToBuild = true;
         foreach (RessourceTank r in ressourcesNeeded)
         {
-            if (r.number < r.numberToConstruct)
+            if (r.number < r.numberToConstruct && !isConstruct)
             {
                 enoughConstructToBuild = false;
             }
@@ -103,7 +111,7 @@ public abstract class Building : MonoBehaviour {
         enoughToolsToBuild = true;
         foreach (Tool t in toolsNeeded)
         {
-            if (t.number < t.nbToConstruct)
+            if (t.number < t.nbToConstruct && !isConstruct)
             {
                 enoughToolsToBuild = false;
             }
@@ -124,6 +132,10 @@ public abstract class Building : MonoBehaviour {
         {
             needRessources = false;
         }
+        if (enoughToolsToBuild)
+        {
+            needTools = false;
+        }
     }
 
     public void takeTool(Tool tool, Citizen citizen)
@@ -138,6 +150,10 @@ public abstract class Building : MonoBehaviour {
         if (enoughToolsToBuild)
         {
             needTools = false;
+        }
+        if (enoughConstructToBuild)
+        {
+            needRessources = false;
         }
     }
 
@@ -161,6 +177,7 @@ public abstract class Building : MonoBehaviour {
             //totalNbr.Remove(ressource);
             //totalNbr.Remove(tool);
         }
+        else { Debug.Log("Tool not in inventory "+tool.name); }
     }
 
 

@@ -554,6 +554,16 @@ Prefab:
       propertyPath: needRessource
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114652098534679598, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: needRessources
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652098534679598, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: needTools
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170075a68e3327a4cae16129c78a1590, type: 2}
   m_IsPrefabAsset: 0
@@ -6677,7 +6687,7 @@ GameObject:
   - component: {fileID: 2080560699}
   m_Layer: 5
   m_Name: ToolTotal
-  m_TagString: Untagged
+  m_TagString: ToolText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

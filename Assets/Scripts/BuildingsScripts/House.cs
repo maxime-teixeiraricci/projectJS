@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class House : Building {
     bool fait = false;
@@ -13,9 +14,11 @@ public class House : Building {
         Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
         alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
         GetComponent<MeshRenderer>().material.color = alphaColor;
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
     }
 	
 	public void Update () {
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
         //progressionBuild.transform.rotation = Quaternion.LookRotation(progressionBuild.transform.position - Camera.main.transform.position);
         progressionBuild.transform.rotation = Camera.main.transform.rotation;
         if (progressionBuild.text == "100%")
@@ -24,6 +27,11 @@ public class House : Building {
         }
         if (!fait)
         {
+            if (!isConstruct)
+            {
+                needRessources = true;
+                needTools = true;
+            }
             askSupplyToConstruct();
             Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
             alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
@@ -33,13 +41,16 @@ public class House : Building {
         
         if (!isConstruct)
         {
-            if (!enoughConstructToBuild)
+            if (!enoughToolsToBuild)
             {
                 askSupplyToConstruct();
             }
-            else
+            else if(!enoughToolsToBuild)
             {
-                askForConstructer();
+                askSupplyToConstruct();
+            }else
+            {
+                
                 if (timeToBuild <= passedTimedBuild)
                 {
                     isConstruct = true;
@@ -53,15 +64,19 @@ public class House : Building {
                         }
                         
                     }
+
+                    foreach (Tool t in toolsInventory.getToolsNeededConstruct())
+                    {
+                        for (int i = 0; i < t.nbToConstruct; i++)
+                        {
+                            toolsInventory.remove(t);
+                            toolText.text = (int.Parse(toolText.text) - 1).ToString();
+                        }
+
+                    }
                 }
             }
         }
-    }
-
-    public override void askForConstructer()
-    {
-        //Lors du placement du batiment il demande a être construit jusqu'à ce qu'il le soit
-        //Demande au "camp de constructeurs" ou au dispacher
     }
 
     public void consommer()

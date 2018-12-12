@@ -834,7 +834,7 @@ GameObject:
   - component: {fileID: 194657086}
   m_Layer: 5
   m_Name: ToolTotal
-  m_TagString: Untagged
+  m_TagString: ToolText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2702,7 +2702,32 @@ Prefab:
     - target: {fileID: 114122780954923206, guid: 170075a68e3327a4cae16129c78a1590,
         type: 2}
       propertyPath: toolInventory.Array.data[0].neededToConstruct
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114122780954923206, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: toolInventory.Array.data[0].numberLimit
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 114122780954923206, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: toolInventory.Array.data[0].nbToConstruct
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114122780954923206, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: toolInventory.Array.data[0].neededToTransport
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114122780954923206, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: toolInventory.Array.data[0].nbToTransport
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652098534679598, guid: 170075a68e3327a4cae16129c78a1590,
+        type: 2}
+      propertyPath: needTools
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170075a68e3327a4cae16129c78a1590, type: 2}
@@ -4856,11 +4881,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: toolInventory.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4608418081573134, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
       propertyPath: m_LocalPosition.x
       value: -8.08
@@ -4917,93 +4937,6 @@ Prefab:
         type: 2}
       propertyPath: isPlaced
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: needRessource
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 102491919717130168, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: m_Text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435022792874710, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: toolsInventory
-      value: 
-      objectReference: {fileID: 1771603355}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: toolInventory.Array.data[0].name
-      value: Bow
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: toolInventory.Array.data[0].timeToCraft
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: toolInventory.Array.data[0].numberLimit
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: toolInventory.Array.data[0].ressourceNeeded
-      value: 
-      objectReference: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0,
-        type: 2}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: toolInventory.Array.data[0].numberRessourcesNeeded
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: activeTool.name
-      value: Barberie
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: activeTool.ressourceNeeded
-      value: 
-      objectReference: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0,
-        type: 2}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: activeTool.numberRessourcesNeeded
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: activeTool.numberLimit
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: activeTool.timeToCraft
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: toolInventory.Array.data[0].index
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: activeTool.index
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: toolInventory.Array.data[0].nbToConstruct
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-        type: 2}
-      propertyPath: activeTool.nbToConstruct
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
@@ -5833,12 +5766,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 928414d94b29a12469b31565fa214c24, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &1771603355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1423485559}
-  m_Script: {fileID: 11500000, guid: f094645c789453b48921a02fe33fc58a, type: 3}
 --- !u!1 &1802913817
 GameObject:
   m_ObjectHideFlags: 0

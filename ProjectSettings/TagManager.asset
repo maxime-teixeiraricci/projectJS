@@ -15,6 +15,7 @@ TagManager:
   - Soil
   - UI
   - Statue
+  - ToolText
   layers:
   - Default
   - TransparentFX

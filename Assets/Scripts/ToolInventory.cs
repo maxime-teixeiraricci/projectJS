@@ -87,9 +87,14 @@ public class ToolInventory : MonoBehaviour {
         foreach (Tool t in toolInventory)
         {
             //print(ressource.name + " - " + rT.ressource.name);
-            if (t.index == tool.index)
+            if (t.name == tool.name)
             {
+                Debug.Log("Struct found in inventory " + t.name);
                 return t;
+            }
+            else
+            {
+                Debug.Log("Struct not found in inventory " +  tool.name);
             }
         }
         return ToolInventory.NULL;
@@ -102,10 +107,10 @@ public class ToolInventory : MonoBehaviour {
 
     public int nbElementsTotal(Tool tool)
     {
-        Tool rT = getStruct(tool);
-        if (!rT.Equals(ToolInventory.NULL))
+        Tool t = getStruct(tool);
+        if (t != ToolInventory.NULL)
         {
-            return rT.number;
+            return t.number;
         }
         else
         {
@@ -180,12 +185,14 @@ public class ToolInventory : MonoBehaviour {
     public void add(Tool tool)
     {
         Tool t = getStruct(tool);
-        if (!t.Equals(ToolInventory.NULL))
+        if (t != ToolInventory.NULL)
         {
             t.number = t.number + 1;
             if (tool.nbToConstruct != -1)
             {
+                Debug.Log("Number To Construct != -1 : " + tool.nbToConstruct);
                 t.nbToTransport = tool.nbToConstruct;
+                t.nbToConstruct = -1;
                 t.numberLimit = tool.nbToConstruct; // Limite le nombre de ressource à 99 par défaut
                 t.number = 0;
             }
@@ -199,6 +206,7 @@ public class ToolInventory : MonoBehaviour {
             res.nbToTransport = 1;
             res.numberLimit = 10; // Limite le nombre de ressource à 99 par défaut
             res.number = 1;
+            res.nbToConstruct = -1;
             if (tool.nbToConstruct != -1)
             {
                 res.nbToTransport = tool.nbToConstruct;

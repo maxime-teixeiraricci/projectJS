@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Statue : Building
 {
@@ -12,10 +13,12 @@ public class Statue : Building
         Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
         alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
         GetComponent<MeshRenderer>().material.color = alphaColor;
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
     }
 
     public void Update()
     {
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
         //progressionBuild.transform.rotation = Quaternion.LookRotation(progressionBuild.transform.position - Camera.main.transform.position);
         progressionBuild.transform.rotation = Camera.main.transform.rotation;
         if (progressionBuild.text == "100%")
@@ -33,17 +36,20 @@ public class Statue : Building
 
         if (!isConstruct)
         {
-            if (!enoughConstructToBuild || !enoughToolsToBuild)
+            if (!enoughToolsToBuild)
+            {
+                askSupplyToConstruct();
+            }
+            else if (!enoughToolsToBuild)
             {
                 askSupplyToConstruct();
             }
             else
             {
-                askForConstructer();
+
                 if (timeToBuild <= passedTimedBuild)
                 {
                     isConstruct = true;
-                    //createCitizen();
                     foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
                     {
                         for (int i = 0; i < r.numberToConstruct; i++)
@@ -53,12 +59,13 @@ public class Statue : Building
                         }
 
                     }
+
                     foreach (Tool t in toolsInventory.getToolsNeededConstruct())
                     {
                         for (int i = 0; i < t.nbToConstruct; i++)
                         {
                             toolsInventory.remove(t);
-                            //totalNbr.Remove(t);
+                            toolText.text = (int.Parse(toolText.text) - 1).ToString();
                         }
 
                     }
@@ -66,13 +73,7 @@ public class Statue : Building
             }
         }
     }
-
-    public override void askForConstructer()
-    {
-        //Lors du placement du batiment il demande a être construit jusqu'à ce qu'il le soit
-        //Demande au "camp de constructeurs" ou au dispacher
-    }
-
+    
     public void consommer()
     {
         //On consomme une ressource par habitant et par jour (à définir)

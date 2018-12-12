@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProductionBuilding : Building {
     bool fait = false;
@@ -9,10 +10,12 @@ public class ProductionBuilding : Building {
         askSupplyToConstruct();
         alphaColor = gameObject.GetComponent<MeshRenderer>().material.color;
         alphaColor.a = 0;
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
     }
 
     public void Update()
     {
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
         if (!fait)
         {
             askSupplyToConstruct();
@@ -24,26 +27,44 @@ public class ProductionBuilding : Building {
 
         if (!isConstruct)
         {
-            if (!enoughConstructToBuild)
+            if (!enoughToolsToBuild)
+            {
+                askSupplyToConstruct();
+            }
+            else if (!enoughToolsToBuild)
             {
                 askSupplyToConstruct();
             }
             else
             {
-                askForConstructer();
-                if (alphaColor.a >= 1.0)
+
+                if (timeToBuild <= passedTimedBuild)
                 {
                     isConstruct = true;
+                    foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
+                    {
+                        for (int i = 0; i < r.numberToConstruct; i++)
+                        {
+                            inventory.remove(r.ressource);
+                            totalNbr.Remove(r.ressource);
+                        }
+
+                    }
+
+                    foreach (Tool t in toolsInventory.getToolsNeededConstruct())
+                    {
+                        for (int i = 0; i < t.nbToConstruct; i++)
+                        {
+                            toolsInventory.remove(t);
+                            toolText.text = (int.Parse(toolText.text) - 1).ToString();
+                        }
+
+                    }
                 }
             }
         }
     }
-
-    public override void askForConstructer()
-    {
-        //Lors du placement du batiment il demande a être construit jusqu'à ce qu'il le soit
-        //Demande au "camp de constructeurs" ou au dispacher
-    }
+    
 
     public void consommer()
     {

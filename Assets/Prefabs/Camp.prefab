@@ -292,7 +292,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813906105463192}
-  m_Text: 0%
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -337,9 +337,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolInventory:
-  - {fileID: 11400000, guid: d1d7246008bbed742a4e5319c745ffa3, type: 2}
-  - {fileID: 11400000, guid: 69deaa50f8bea904a8f4d82c8ae22f1b, type: 2}
-  activeTool: {fileID: 0}
+  - index: 1
+    name: Bow
+    timeToCraft: 5
+    neededToConstruct: 0
+    nbToConstruct: -1
+    neededToTransport: 0
+    nbToTransport: 0
+    number: 0
+    numberLimit: 150
+    ressourceNeeded: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
+    numberRessourcesNeeded: 10
+  activeTool:
+    index: 1
+    name: Barberie
+    timeToCraft: 5
+    neededToConstruct: 0
+    nbToConstruct: -1
+    neededToTransport: 0
+    nbToTransport: 0
+    number: 0
+    numberLimit: 150
+    ressourceNeeded: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
+    numberRessourcesNeeded: 10
   nbrTools: 0
   wood: {fileID: 0}
   toolCount: {fileID: 0}
@@ -355,8 +375,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 114001324661397374}
-  needRessource: 1
+  needRessources: 0
+  needTools: 0
+  toolsInventory: {fileID: 114060348359974584}
   isConstruct: 0
+  enoughToolsToBuild: 0
   enoughConstructToBuild: 0
   isPlaced: 0
   goodPosition: 1
@@ -368,6 +391,7 @@ MonoBehaviour:
   passedTimedBuild: 0
   nameCompetence: 
   progressionBuild: {fileID: 102491919717130168}
+  toolText: {fileID: 0}
   enoughResourcesToCraft: 0
   numberWorkers: 2
   listWorkers: []

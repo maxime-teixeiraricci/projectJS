@@ -39,7 +39,7 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
                     }
                     return;
                 }
-            }else if (building.needTools)
+            }else if (building.needTools && building.isPlaced)
             {
                 foreach (Tool t in building.getToolsNeeded())
                 {

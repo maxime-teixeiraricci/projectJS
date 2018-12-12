@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Camp : Building
 {
@@ -10,7 +11,6 @@ public class Camp : Building
     [Header("Work")]
     public int numberWorkers;
     public List<Citizen> listWorkers;
-
     
 
     public void Start()
@@ -19,10 +19,12 @@ public class Camp : Building
         Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
         alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
         GetComponent<MeshRenderer>().material.color = alphaColor;
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
     }
 
     public void Update()
     {
+        toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
         //progressionBuild.transform.rotation = Quaternion.LookRotation(progressionBuild.transform.position - Camera.main.transform.position);
         progressionBuild.transform.rotation = Camera.main.transform.rotation;
         if(progressionBuild.text == "100%")
@@ -36,6 +38,11 @@ public class Camp : Building
         }
         if (!done)
         {
+            if (!isConstruct)
+            {
+                needRessources = true;
+                needTools = true;
+            }
             askSupplyToConstruct();
             Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
             alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
@@ -45,22 +52,36 @@ public class Camp : Building
 
         if (!isConstruct)
         {
-            if (!enoughConstructToBuild)
+            if (!enoughToolsToBuild)
+            {
+                askSupplyToConstruct();
+            }
+            else if (!enoughToolsToBuild)
             {
                 askSupplyToConstruct();
             }
             else
             {
-                askForConstructer();
+
                 if (timeToBuild <= passedTimedBuild)
                 {
                     isConstruct = true;
-
                     foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
                     {
                         for (int i = 0; i < r.numberToConstruct; i++)
                         {
                             inventory.remove(r.ressource);
+                            totalNbr.Remove(r.ressource);
+                        }
+
+                    }
+
+                    foreach (Tool t in toolsInventory.getToolsNeededConstruct())
+                    {
+                        for (int i = 0; i < t.nbToConstruct; i++)
+                        {
+                            toolsInventory.remove(t);
+                            toolText.text = (int.Parse(toolText.text) - 1).ToString();
                         }
 
                     }
@@ -68,12 +89,7 @@ public class Camp : Building
             }
         }
     }
-
-    public override void askForConstructer()
-    {
-        //Lors du placement du batiment il demande a être construit jusqu'à ce qu'il le soit
-        //Demande au "camp de constructeurs" ou au dispacher
-    }
+    
 
     public void consommer()
     {
