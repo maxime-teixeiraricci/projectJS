@@ -41,19 +41,21 @@ public class CameraManager : MonoBehaviour {
             //transform.Translate(Vector3.forward * scrollSpeed * Time.deltaTime);
         }
 
+        // Zoom
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            if (GetComponent<Camera>().fieldOfView > 20)
+            if (GetComponent<Camera>().transform.position.y > 6)
             {
-                GetComponent<Camera>().fieldOfView--;
+                GetComponent<Camera>().transform.position = new Vector3(GetComponent<Camera>().transform.position.x, GetComponent<Camera>().transform.position.y - 0.5f, GetComponent<Camera>().transform.position.z);
             }
         }
 
+        // Dezoom
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            if(GetComponent<Camera>().fieldOfView < 100)
+            if(GetComponent<Camera>().transform.position.y < 30)
             {
-                GetComponent<Camera>().fieldOfView++;
+                GetComponent<Camera>().transform.position = new Vector3(GetComponent<Camera>().transform.position.x, GetComponent<Camera>().transform.position.y + 0.5f, GetComponent<Camera>().transform.position.z);
             }
         }
     }
