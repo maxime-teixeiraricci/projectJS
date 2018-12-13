@@ -11,6 +11,7 @@ public class DynamicBuild : MonoBehaviour
 
     public GameObject camp;
     public GameObject house;
+    //public GameObject statue;
 
     GameObject spawnedObj;
 
@@ -67,7 +68,17 @@ public class DynamicBuild : MonoBehaviour
         spawnedObj.GetComponent<NavMeshObstacle>().enabled = false;
         spawnedObj.GetComponent<ResourcesCount>().woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
     }
-    
+
+    public void setPrefabStatue()
+    {
+        spawnedObj = Instantiate(house, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity) as GameObject;
+        originalColor = spawnedObj.GetComponent<Building>().mesh.material.color;
+        spawnedObj.GetComponent<Building>().mesh.material.color = new Color(0, 255, 0, 155);
+        spawnedObj.GetComponent<Building>().goodPosition = true;
+        spawnedObj.GetComponent<NavMeshObstacle>().enabled = false;
+        spawnedObj.GetComponent<ResourcesCount>().woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
+    }
+
     public void updatePos(GameObject obj)
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

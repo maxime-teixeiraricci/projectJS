@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114097836672405736}
   - component: {fileID: 114954946275052540}
   - component: {fileID: 114311206827723912}
+  - component: {fileID: 114062070225500988}
   - component: {fileID: 114900211541854268}
   m_Layer: 10
   m_Name: Citizen
@@ -104,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487986925770250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.77, y: 0.5, z: 0.74}
+  m_LocalPosition: {x: 2.68, y: 0.392, z: -4.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4683617866707768}
@@ -285,6 +286,19 @@ MonoBehaviour:
   farmTimer: 0
   buildTimer: 0
   craftTimer: 0
+--- !u!114 &114062070225500988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487986925770250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb9dbdb509d92542a4295f0e49973fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  fpsActivated: 0
 --- !u!114 &114097836672405736
 MonoBehaviour:
   m_ObjectHideFlags: 1
