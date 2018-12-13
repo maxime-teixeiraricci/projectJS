@@ -81,10 +81,10 @@ public abstract class Building : MonoBehaviour {
     //Fading animation to represent building construction
     public void construct(Citizen citizen)
     {
-        Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+        //Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
         passedTimedBuild += Time.deltaTime;
-        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + Time.deltaTime);
-        GetComponent<MeshRenderer>().material.color = alphaColor;
+        //alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, colorStart.a + Time.deltaTime);
+        //GetComponent<MeshRenderer>().material.color = alphaColor;
         progressionBuild.text = ((int)(passedTimedBuild / timeToBuild * 100)).ToString() + "%";
         //Debug.Log("value % alpha = " + passedTimedBuild / timeToBuild * 100);
     }
@@ -115,6 +115,14 @@ public abstract class Building : MonoBehaviour {
             {
                 enoughToolsToBuild = false;
             }
+        }
+        if (enoughConstructToBuild)
+        {
+            needRessources = false;
+        }
+        if (enoughToolsToBuild)
+        {
+            needTools = false;
         }
     }
 

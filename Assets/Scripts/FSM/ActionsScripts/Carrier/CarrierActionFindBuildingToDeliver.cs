@@ -39,12 +39,23 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
                     }
                     return;
                 }
+                else
+                {
+                    foreach(Tool t in controler.GetComponent<Citizen>().toolsToTransport.toolInventory)
+                    {
+                        t.neededToTransport = false;
+                    }
+                }
             }else if (building.needTools && building.isPlaced)
             {
                 foreach (Tool t in building.getToolsNeeded())
                 {
 
                     controler.GetComponent<Citizen>().toolsToTransport.add(t);
+                }
+                foreach (RessourceTank rT in controler.GetComponent<Citizen>().ressourcesToTransport.ressourcesList)
+                {
+                    rT.neededToTransport = false;
                 }
                 return;
             }

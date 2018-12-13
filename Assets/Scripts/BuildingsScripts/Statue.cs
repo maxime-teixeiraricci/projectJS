@@ -10,9 +10,9 @@ public class Statue : Building
     public void Start()
     {
         askSupplyToConstruct();
-        Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
-        alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
-        GetComponent<MeshRenderer>().material.color = alphaColor;
+        //Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+        //alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
+        //GetComponent<MeshRenderer>().material.color = alphaColor;
         toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
     }
 
@@ -28,9 +28,9 @@ public class Statue : Building
         if (!fait)
         {
             askSupplyToConstruct();
-            Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
-            alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
-            GetComponent<MeshRenderer>().material.color = alphaColor;
+            //Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
+            //alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
+            //GetComponent<MeshRenderer>().material.color = alphaColor;
             fait = true;
         }
 
