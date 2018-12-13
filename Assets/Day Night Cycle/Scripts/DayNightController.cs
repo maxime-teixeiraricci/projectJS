@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+
 [System.Serializable]
+
 public class DayNightController : MonoBehaviour {
 	//Speed of the cycle (if you set this to 1 the one hour in the cycle will pass in 1 real life second)
 	public float daySpeedMultiplier = 0.1f;
@@ -29,13 +32,20 @@ public class DayNightController : MonoBehaviour {
 	private float twinkleCounter = 0.0f;
 	//star's rotation speed
 	public float starRotationSpeed = 0.15f;
-	//camera to follow
-	public Camera cameraToFollow;
+    //camera to follow
 
+    public Camera cameraToFollow;
+    /*
+    private GameObject rain;
+    int weather;
+    bool isRaining = true;
+    */
  	// Use this for initialization
 	void Start () {
 		//set the start time
 		currentTime = startTime;
+
+        //rain = GameObject.Find("RainPrefab");
 	}
 	
 	// Update is called once per frame
@@ -45,6 +55,28 @@ public class DayNightController : MonoBehaviour {
 		//reset time
 		if (currentTime >= 24.0f) {
             numberDay++;
+            //weather = Random.Range(0, 100);
+            /*
+            if(weather > 50 && !isRaining)
+            {
+                Debug.Log("woop woop");
+                while (rain.GetComponent<DigitalRuby.RainMaker.BaseRainScript>().RainIntensity <= 100)
+                {
+                    MakeRain((rain.GetComponent<DigitalRuby.RainMaker.BaseRainScript>().RainIntensity));
+                }
+                StartCoroutine(TakeABreak());
+                while(rain.GetComponent<DigitalRuby.RainMaker.BaseRainScript>().RainIntensity > 0)
+                {
+                    StopRain((rain.GetComponent<DigitalRuby.RainMaker.BaseRainScript>().RainIntensity));
+                }
+            }
+            else
+            {
+                while(rain.GetComponent<DigitalRuby.RainMaker.BaseRainScript>().RainIntensity > 0)
+                {
+                    StopRain((rain.GetComponent<DigitalRuby.RainMaker.BaseRainScript>().RainIntensity));
+                }
+            }*/
 			currentTime %= 24.0f;
 		}
 		//Check for sunlight
@@ -64,8 +96,26 @@ public class DayNightController : MonoBehaviour {
 		//Gets The timeString;
 		CalculateTime ();
 	}
+    /*
+    public void MakeRain(float intensity)
+    {
+        isRaining = true;
+        intensity += Time.deltaTime;
+    }
 
-	void ControlLight() {
+    public void StopRain(float intensity)
+    {
+        intensity -= Time.deltaTime;
+        isRaining = false;
+    }
+
+    IEnumerator TakeABreak()
+    {
+        yield return new WaitForSeconds(10f);
+    }
+    */
+
+    void ControlLight() {
 		//Rotate light
 		xValueOfSun = -(90.0f+currentTime*15.0f);
 		sunLight.transform.eulerAngles = sunLight.transform.right*xValueOfSun;
@@ -148,3 +198,4 @@ public class DayNightController : MonoBehaviour {
 	}
 
 }
+
