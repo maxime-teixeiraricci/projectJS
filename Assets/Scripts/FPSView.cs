@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FPSView : MonoBehaviour {
 
     public Camera camera;
     public bool fpsActivated = false;
+    public GameObject fpsFeedBack;
     Vector3 defaultCamPos;
     Quaternion defaultCamRot;
 
@@ -18,6 +20,7 @@ public class FPSView : MonoBehaviour {
     // Use this for initialization
     void Start () {
         camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        fpsFeedBack = GameObject.Find("FeedbackFPS");
         defaultCamPos = camera.transform.position;
         defaultCamRot = camera.transform.rotation;
         
@@ -44,6 +47,8 @@ public class FPSView : MonoBehaviour {
         camera.GetComponent<CameraManager>().enabled = false;
         updateCamera();
         fpsActivated = true;
+        fpsFeedBack.GetComponent<Image>().enabled = true;
+        fpsFeedBack.GetComponentInChildren<Text>().enabled = true;
     }
 
     public void updateCamera()
@@ -64,6 +69,8 @@ public class FPSView : MonoBehaviour {
         if(Input.GetKey(KeyCode.Escape) && fpsActivated)
         {
             fpsActivated = false;
+            fpsFeedBack.GetComponent<Image>().enabled = false;
+            fpsFeedBack.GetComponentInChildren<Text>().enabled = false;
             camera.GetComponent<CameraManager>().enabled = true;
             camera.transform.position = defaultCamPos;
             camera.transform.rotation = defaultCamRot;

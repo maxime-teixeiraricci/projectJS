@@ -299,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   fpsActivated: 0
+  fpsFeedBack: {fileID: 0}
 --- !u!114 &114097836672405736
 MonoBehaviour:
   m_ObjectHideFlags: 1
