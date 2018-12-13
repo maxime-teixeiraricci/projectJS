@@ -58,7 +58,7 @@ public class CameraManager : MonoBehaviour {
                 GetComponent<Camera>().transform.position = new Vector3(GetComponent<Camera>().transform.position.x, GetComponent<Camera>().transform.position.y + 0.5f, GetComponent<Camera>().transform.position.z);
             }
         }
-
+        /*
         if (Input.GetMouseButton(0))
         {
             // Souris va à gauche
@@ -82,10 +82,10 @@ public class CameraManager : MonoBehaviour {
             {
                 GetComponent<Camera>().transform.position = new Vector3(GetComponent<Camera>().transform.position.x, GetComponent<Camera>().transform.position.y, GetComponent<Camera>().transform.position.z + 0.2f);
             }
+            
 
 
-
-        }
+        }*/
 
     }
 }
