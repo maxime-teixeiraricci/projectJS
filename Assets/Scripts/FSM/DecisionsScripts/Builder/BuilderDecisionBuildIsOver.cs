@@ -17,6 +17,11 @@ public class BuilderDecisionBuildIsOver : FSMDecision
         Building building =  controler.target.GetComponent<Building>();
         if (!building) return false;
         if (building.isConstruct) controler.target = null;
+        if (building.isConstruct)
+        {
+            controler.target = null;
+            controler.manualTarget = null;
+        }
         return building.isConstruct;
     }
 }

@@ -37,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4372026661849112}
   - component: {fileID: 65037410046320848}
-  - component: {fileID: 54359112717953028}
   m_Layer: 0
   m_Name: StatueModel
   m_TagString: Untagged
@@ -143,6 +142,9 @@ GameObject:
   - component: {fileID: 114865304731406742}
   - component: {fileID: 114246582257287158}
   - component: {fileID: 208672412662480096}
+  - component: {fileID: 65685554456228788}
+  - component: {fileID: 114463605606912918}
+  - component: {fileID: 54993238933623394}
   m_Layer: 0
   m_Name: Statue
   m_TagString: Statue
@@ -871,12 +873,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1530016514319398}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54359112717953028
+--- !u!54 &54993238933623394
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1076495285983146}
+  m_GameObject: {fileID: 1539027798304268}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -894,10 +896,22 @@ BoxCollider:
   m_GameObject: {fileID: 1076495285983146}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.5764165, y: 6.604452, z: 5.4533362}
   m_Center: {x: 1.0345016, y: -0.5221605, z: 2.2918181}
+--- !u!65 &65685554456228788
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539027798304268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4904251, y: 3.1106708, z: 1.3829515}
+  m_Center: {x: -0.027882218, y: 1.555139, z: -0.00019493699}
 --- !u!102 &102283955819951462
 TextMesh:
   serializedVersion: 3
@@ -949,7 +963,7 @@ MonoBehaviour:
   isConstruct: 0
   enoughToolsToBuild: 0
   enoughConstructToBuild: 0
-  isPlaced: 1
+  isPlaced: 0
   goodPosition: 1
   mesh: {fileID: 23453017775782516}
   totalNbr: {fileID: 114246582257287158}
@@ -979,13 +993,26 @@ MonoBehaviour:
     numberToTransport: 0
     neededToTransport: 0
     neededToConstruct: 1
---- !u!114 &114865304731406742
+--- !u!114 &114463605606912918
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1539027798304268}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1d1df21fc53714c8ab41b4070eb51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 23453017775782516}
+  originalColor: {fileID: 2100000, guid: 8e3808d6ab2c6c5488656f92501aa4fc, type: 2}
+--- !u!114 &114865304731406742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539027798304268}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f094645c789453b48921a02fe33fc58a, type: 3}
   m_Name: 

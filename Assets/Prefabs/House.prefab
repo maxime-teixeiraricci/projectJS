@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114122780954923206}
   - component: {fileID: 208225296494752298}
   - component: {fileID: 114324036291535682}
+  - component: {fileID: 114284252478068110}
   m_Layer: 0
   m_Name: House
   m_TagString: House
@@ -91,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1167221350444018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.47, y: 1, z: 6.97}
+  m_LocalPosition: {x: -8.211, y: 0.79, z: 7.51}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4594280150552682}
@@ -337,10 +338,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolInventory: []
-  activeTool: {fileID: 0}
+  activeTool:
+    index: 0
+    name: 
+    timeToCraft: 0
+    neededToConstruct: 0
+    nbToConstruct: 0
+    neededToTransport: 0
+    nbToTransport: 0
+    number: 0
+    numberLimit: 0
+    ressourceNeeded: {fileID: 0}
+    numberRessourcesNeeded: 0
   nbrTools: 0
   wood: {fileID: 0}
   toolCount: {fileID: 0}
+--- !u!114 &114284252478068110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167221350444018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1d1df21fc53714c8ab41b4070eb51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 23497484724911888}
+  originalColor: {fileID: 2100000, guid: 16791de083d6b6f4dbdab088c5d01b74, type: 2}
 --- !u!114 &114324036291535682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -365,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 114103544263297618}
-  needRessources: 0
+  needRessources: 1
   needTools: 0
   toolsInventory: {fileID: 114122780954923206}
   isConstruct: 0
@@ -381,6 +406,7 @@ MonoBehaviour:
   passedTimedBuild: 0
   nameCompetence: builder
   progressionBuild: {fileID: 102311477020065816}
+  toolText: {fileID: 0}
   citizen: {fileID: 1487986925770250, guid: a3c1477e08642fa419c5bf2ed5b36c58, type: 2}
 --- !u!208 &208225296494752298
 NavMeshObstacle:

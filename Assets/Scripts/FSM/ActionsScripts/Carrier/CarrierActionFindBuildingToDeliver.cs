@@ -17,7 +17,7 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
 
         if (controler.manualTarget != null)
         {
-            controler.target = controler.manualTarget;
+            controler.finalTarget = controler.manualTarget;
             return;
         }
 

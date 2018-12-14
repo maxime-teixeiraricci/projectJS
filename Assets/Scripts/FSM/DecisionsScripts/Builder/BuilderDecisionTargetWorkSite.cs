@@ -14,6 +14,16 @@ public class BuilderDecisionTargetWorkSite : FSMDecision
     public bool HaveTarget(FSMControler controler)
     {
         if (!controler.target) return false;
-        return controler.target.gameObject.GetComponent<Building>();
+
+        // On retounre en priorité la manualTarget si elle existe
+        if(controler.manualTarget != null)
+        {
+            return controler.manualTarget.gameObject.GetComponent<Building>();
+        }
+
+        else
+        {
+            return controler.target.gameObject.GetComponent<Building>();
+        } 
     }
 }

@@ -16,7 +16,11 @@ public class BuilderActionBuild : FSMAction
         if (!controler.target) return;
         Building building = controler.target.GetComponent<Building>();
         if (!building) return;
-        building.construct(controler.citizen);
+        if(building.enoughConstructToBuild && building.enoughToolsToBuild && !building.isConstruct)
+        {
+            building.construct(controler.citizen);
+        }
+        
     }
 
     public float bonusLevel(int level)
