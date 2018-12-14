@@ -17,7 +17,7 @@ public class DayNightController : MonoBehaviour {
 	float currentTime = 0.0f;
     public int numberDay = 0;
 
-	public string timeString = "00:00 AM";
+	public string timeString = "00:00";
 	//x rotation value of the light
 	private float xValueOfSun = 90.0f;
 	//Clouds
@@ -193,7 +193,7 @@ public class DayNightController : MonoBehaviour {
 			AMPM = "PM";
 		}
 		//Make the final string
-		timeString = Mathf.Floor(currentTime).ToString() + " : " + minutes.ToString("F0") + " "+AMPM ;
+		timeString = Mathf.Floor(currentTime).ToString() + " : " + minutes.ToString("F0");
 
 	}
 
