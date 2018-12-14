@@ -7,9 +7,12 @@ public class Statue : Building
 {
     bool fait = false;
 
+    public Text objStatue;
+
     public void Start()
     {
         askSupplyToConstruct();
+        objStatue = GameObject.Find("CurrentObjectif").GetComponent<Text>();
         //Color colorStart = gameObject.GetComponent<MeshRenderer>().material.color;
         //alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
         //GetComponent<MeshRenderer>().material.color = alphaColor;
@@ -50,6 +53,7 @@ public class Statue : Building
                 if (timeToBuild <= passedTimedBuild)
                 {
                     isConstruct = true;
+                    objStatue.text = (int.Parse(objStatue.text) + 1).ToString();
                     foreach (RessourceTank r in inventory.getRessourcesNeededConstruct())
                     {
                         for (int i = 0; i < r.numberToConstruct; i++)

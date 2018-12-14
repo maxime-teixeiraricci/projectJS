@@ -1102,6 +1102,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 114327612568471074, guid: cb96f22632d487243890cd2468d2aa6f,
+        type: 2}
+      propertyPath: objStatue
+      value: 
+      objectReference: {fileID: 2051757371}
     - target: {fileID: 1539027798304268, guid: cb96f22632d487243890cd2468d2aa6f, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -2717,8 +2722,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.87362087, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.1200027, y: 0.5000062}
-  m_SizeDelta: {x: 5.419998, y: 11.599998}
+  m_AnchoredPosition: {x: 3, y: -0.43}
+  m_SizeDelta: {x: 5.19, y: 13.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707586244
 MonoBehaviour:
@@ -6532,6 +6537,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: toolInventory.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4608418081573134, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.88
@@ -6598,6 +6608,42 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: toolInventory.Array.data[1].index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: toolInventory.Array.data[1].name
+      value: Bow
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: toolInventory.Array.data[1].timeToCraft
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: toolInventory.Array.data[1].nbToConstruct
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: toolInventory.Array.data[1].numberLimit
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: toolInventory.Array.data[1].ressourceNeeded
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0,
+        type: 2}
+    - target: {fileID: 114060348359974584, guid: 0ecf43e5e466a8c41bb755743b29b0cc,
+        type: 2}
+      propertyPath: toolInventory.Array.data[1].numberRessourcesNeeded
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ecf43e5e466a8c41bb755743b29b0cc, type: 2}
@@ -7993,10 +8039,10 @@ RectTransform:
   m_Father: {fileID: 428836800}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.78368604}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.3500061, y: -46}
-  m_SizeDelta: {x: 2.7000122, y: 2.3499985}
+  m_AnchorMin: {x: 0, y: 0.6893946}
+  m_AnchorMax: {x: 1, y: 0.91}
+  m_AnchoredPosition: {x: -1.35, y: 0.5}
+  m_SizeDelta: {x: 2.7000122, y: 1.3499985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1600958108
 MonoBehaviour:
@@ -8036,8 +8082,8 @@ MonoBehaviour:
     m_FontSize: 52
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 52
+    m_MinSize: 5
+    m_MaxSize: 56
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -9904,8 +9950,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7821896, y: 0}
   m_AnchorMax: {x: 0.87362087, y: 1}
-  m_AnchoredPosition: {x: 0.6910019, y: 0.5000758}
-  m_SizeDelta: {x: -0.66000366, y: 11.599998}
+  m_AnchoredPosition: {x: 0.7155075, y: 0.27000046}
+  m_SizeDelta: {x: -0.611, y: 14.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2051757371
 MonoBehaviour:

@@ -974,6 +974,7 @@ MonoBehaviour:
   nameCompetence: builder
   progressionBuild: {fileID: 102283955819951462}
   toolText: {fileID: 0}
+  objStatue: {fileID: 0}
 --- !u!114 &114436608290204650
 MonoBehaviour:
   m_ObjectHideFlags: 1
