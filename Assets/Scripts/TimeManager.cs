@@ -16,6 +16,6 @@ public class TimeManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Time.timeScale = time.value;
-        timeValue.text = time.value.ToString();
+        timeValue.text = time.value.ToString("0.0");
     }
 }
