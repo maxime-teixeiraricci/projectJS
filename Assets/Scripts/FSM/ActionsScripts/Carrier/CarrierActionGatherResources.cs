@@ -15,6 +15,7 @@ public class CarrierActionGatherResources : FSMAction
     {
         Building target = controler.target.GetComponent<Building>();
         Citizen citizen = controler.GetComponent<Citizen>();
+        
         foreach(RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
 
