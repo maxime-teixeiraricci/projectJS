@@ -16,6 +16,22 @@ public class CrafterActionFindTarget : FSMAction
         Building[] buildings = FindObjectsOfType<Building>();
         Citizen[] citizens = FindObjectsOfType<Citizen>();
 
+        foreach (Building building in buildings)
+            
+        {
+            if (building.tag == "Camp" && building.isPlaced && building.isConstruct)
+            {
+                foreach (RessourceTank rt in building.GetComponent<RessourceInventory>().ressourcesList)
+                {
+                    if (rt.number >= 10)
+                    {
+                        controler.target = building.gameObject;
+                        return;
+                    }
+                }               
+            }
+        }
+
 
         foreach (Building building in buildings)
         {
