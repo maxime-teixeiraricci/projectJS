@@ -37,15 +37,24 @@ public abstract class Building : MonoBehaviour {
 
     public TextMesh progressionBuild;
     public Text toolText;
-
-    private void Start()
+    public TextMesh nbWoodText;
+    public TextMesh nbToolText;
+    public void Start()
     {
         toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
     }
 
-    private void Update()
+    public void Update()
     {
         toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
+        if (inventory.ressourcesList.Count != 0)
+        {
+            nbWoodText.text = inventory.ressourcesList[0].number.ToString();
+        }
+        if (toolsInventory.toolInventory.Count != 0)
+        {
+            nbToolText.text = toolsInventory.toolInventory[0].number.ToString();
+        }
     }
     public List<RessourceTank> resosurcesNeededForConstruct()
     {
@@ -132,7 +141,10 @@ public abstract class Building : MonoBehaviour {
         {
             citizen.ressourcesToTransport.remove(ressource);
             inventory.add(ressource);
-            totalNbr.Add(ressource);
+            if (GetComponent<Camp>())
+            {
+                totalNbr.Add(ressource);
+            }
         }
         askSupplyToConstruct();
 
@@ -172,7 +184,7 @@ public abstract class Building : MonoBehaviour {
             citizen.ressourcesToTransport.add(ressource);
             inventory.remove(ressource);
             //totalNbr.Remove(ressource);
-            totalNbr.Remove(ressource);
+            //totalNbr.Remove(ressource);
         }
     }
 

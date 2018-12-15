@@ -24,6 +24,7 @@ public class Camp : Building
 
     public void Update()
     {
+        base.Update();
         toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
         //progressionBuild.transform.rotation = Quaternion.LookRotation(progressionBuild.transform.position - Camera.main.transform.position);
         progressionBuild.transform.rotation = Camera.main.transform.rotation;

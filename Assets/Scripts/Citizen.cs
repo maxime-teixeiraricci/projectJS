@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Citizen : MonoBehaviour {
 
@@ -35,6 +36,9 @@ public class Citizen : MonoBehaviour {
     [Header("Group")]
     public Group group = Group.None;
     public MeshRenderer citizenShirt;
+
+    public TextMesh nbWoodText;
+    public TextMesh nbToolText;
 
     void consommer(Ressource ressource)
     {
@@ -130,6 +134,15 @@ public class Citizen : MonoBehaviour {
             case Group.Construct:
                 citizenShirt.material.color = Color.yellow;
                 break;
+        }
+
+        if (ressourcesToTransport.ressourcesList.Count != 0)
+        {
+            nbWoodText.text = ressourcesToTransport.ressourcesList[0].number.ToString();
+        }
+        if (toolsToTransport.toolInventory.Count != 0)
+        {
+            nbToolText.text = toolsToTransport.toolInventory[0].number.ToString();
         }
     }
 }
