@@ -15,6 +15,7 @@ public class ProductionBuilding : Building {
 
     public void Update()
     {
+        base.Update();
         toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
         if (!fait)
         {
