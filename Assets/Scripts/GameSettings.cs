@@ -14,6 +14,8 @@ public class GameSettings : MonoBehaviour {
 
     public Slider slideTrees;
 
+    public GameObject evenementManager;
+
     public Text days;
 
     int maxDays = 45;
@@ -33,6 +35,10 @@ public class GameSettings : MonoBehaviour {
         if(slideTrees.value == 0 ||int.Parse(days.text) >= maxDays)
         {
             endScreenLose.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            evenementManager.SetActive(true);
         }
 	}
 

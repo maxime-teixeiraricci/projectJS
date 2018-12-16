@@ -14,6 +14,7 @@ public class FactorsManager : MonoBehaviour {
     public GameObject sliderColor;
 
     float maxRessources;
+    public static float malus;
     Color color;
 
 
@@ -27,7 +28,7 @@ public class FactorsManager : MonoBehaviour {
     void Update ()
     {
         res = environmentShape();
-        slider.value = res / maxRessources * 100;
+        slider.value = Mathf.Min(1f,res / maxRessources ) * 100 - malus;
         updateColor();  
 	}
 
@@ -60,5 +61,10 @@ public class FactorsManager : MonoBehaviour {
         {
             sliderColor.GetComponent<Image>().color = Color.green;
         }
+    }
+
+    public void AddMalus(float value)
+    {
+        malus += value;
     }
 }
