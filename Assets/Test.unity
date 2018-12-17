@@ -1377,6 +1377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woodText: {fileID: 292561179}
+  wood: 0
 --- !u!4 &373719661
 Transform:
   m_ObjectHideFlags: 0
@@ -5362,7 +5363,7 @@ GameObject:
   - component: {fileID: 1032368646}
   - component: {fileID: 1032368648}
   m_Layer: 5
-  m_Name: EndGameDefeat (1)
+  m_Name: Help
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6973,7 +6974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1267509562
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10884,6 +10885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woodText: {fileID: 292561179}
+  wood: 0
 --- !u!114 &1884144838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10913,6 +10915,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1194354748}
   sliderColor: {fileID: 794039534}
+  wood:
+    ressource: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
+    number: 1
+    numberLimit: 99
+    numberToConstruct: 0
+    numberToTransport: 0
+    neededToTransport: 0
+    neededToConstruct: 0
 --- !u!1001 &1900362023
 Prefab:
   m_ObjectHideFlags: 0
@@ -11936,6 +11946,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 154246, guid: b98ee8ecf2d58a14f88439c2dd46ca21, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114434789790137614, guid: b98ee8ecf2d58a14f88439c2dd46ca21,
+        type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

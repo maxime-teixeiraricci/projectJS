@@ -25,6 +25,10 @@ public class NaturalRessource : MonoBehaviour
         {
             health.text = "";
         }
+        if (numberRessource <= 0)
+        {
+            Destroy(gameObject);
+        }
         Growth();
         updateText();
         //Debug.Log("Nb ressources = " + 1.0f / timetoGrow);

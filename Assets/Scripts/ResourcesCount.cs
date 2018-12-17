@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class ResourcesCount : MonoBehaviour {
 
+    public static ResourcesCount singleton;
+
     Text appleText;
     public Text woodText;
     int apple;
-    int wood = 0;
+    public int wood = 0;
 
 	// Use this for initialization
 	void Start () {
-        
+        if (!singleton) singleton = this;
+
         if(woodText.text != null)
         {
             wood = int.Parse(woodText.text);
@@ -24,6 +27,7 @@ public class ResourcesCount : MonoBehaviour {
         if(woodText.text != null)
         {
             wood = int.Parse(woodText.text);
+
         }
         
     }

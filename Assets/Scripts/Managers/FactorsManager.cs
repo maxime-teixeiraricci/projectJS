@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class FactorsManager : MonoBehaviour {
 
+    public static FactorsManager singleton;
+
     public Slider slider;
     float res;
 
@@ -12,14 +14,15 @@ public class FactorsManager : MonoBehaviour {
     int nbrTrees;
 
     public GameObject sliderColor;
+    public RessourceTank wood;
 
     float maxRessources;
-    public static float malus;
     Color color;
 
 
     private void Start()
     {
+        if (!singleton) singleton = this;
         nbrTrees = GameObject.FindGameObjectsWithTag("RessourceTank").Length;
         maxRessources = nbrTrees * GameObject.FindGameObjectWithTag("RessourceTank").GetComponent<NaturalRessource>().maxRessource;
     }
@@ -28,7 +31,7 @@ public class FactorsManager : MonoBehaviour {
     void Update ()
     {
         res = environmentShape();
-        slider.value = Mathf.Min(1f,res / maxRessources ) * 100 - malus;
+        slider.value = Mathf.Min(1f,res / maxRessources ) * 100;
         updateColor();  
 	}
 
@@ -62,9 +65,25 @@ public class FactorsManager : MonoBehaviour {
             sliderColor.GetComponent<Image>().color = Color.green;
         }
     }
+    
 
-    public void AddMalus(float value)
+    public void AddRessource(float value)
     {
-        malus += value;
+        GameObject[] trees = GameObject.FindGameObjectsWithTag("RessourceTank");
+        foreach (GameObject tree in trees)
+        {
+            tree.GetComponent<NaturalRessource>().numberRessource += value ;
+
+        }
+        if (value < 0)
+        {
+            value = -value;
+            for (int i = 0; i < value * trees.Length; i++)
+            {
+                FindObjectOfType<Camp>().inventory.ressourcesList[0].number++;
+                ResourcesCount.singleton.Add(FindObjectOfType<Camp>().inventory.ressourcesList[0].ressource);
+            }
+        }
+        
     }
 }

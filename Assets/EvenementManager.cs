@@ -32,7 +32,7 @@ public class EvenementManager : MonoBehaviour
 
     public void ActivateResponse(int i)
     {
-        FactorsManager.malus -= evenement.reponses[i].changeGauge[0].value;
+        FactorsManager.singleton.AddRessource(evenement.reponses[i].changeGauge[0].value);
         gameObject.SetActive(false);
     }
     
