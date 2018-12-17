@@ -14,7 +14,7 @@ public class CarrierDecisionIsTargetConstruct : FSMDecision
     private bool IsTargetConstruct(FSMControler controler)
     {
         if (!controler.finalTarget) return false;
-        if (controler.finalTarget.GetComponent<Building>().isConstruct)
+        if (controler.finalTarget.GetComponent<Building>().isConstruct || (controler.finalTarget.GetComponent<Building>().enoughConstructToBuild && controler.finalTarget.GetComponent<Building>().enoughToolsToBuild))
         {
             controler.finalTarget = null;
             controler.manualTarget = null;

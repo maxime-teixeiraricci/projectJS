@@ -18,11 +18,13 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
         if (controler.manualTarget != null)
         {
             controler.finalTarget = controler.manualTarget;
+
             return;
         }
 
         foreach (Building building in buildings)
         {
+          
             if (building.needRessources && building.isPlaced)
             {
                 controler.finalTarget = building.gameObject;
@@ -48,6 +50,7 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
                 }
             }else if (building.needTools && building.isPlaced)
             {
+                controler.finalTarget = building.gameObject;
                 foreach (Tool t in building.getToolsNeeded())
                 {
 

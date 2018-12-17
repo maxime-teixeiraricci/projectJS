@@ -53,6 +53,7 @@ public class RessourceInventory : MonoBehaviour
             {
                 rT.numberToTransport = ressourceTank.numberToConstruct;
                 rT.numberLimit = ressourceTank.numberToConstruct; // Limite le nombre de ressource à 99 par défaut
+                rT.neededToTransport = true;
                 //rT.number = 0;
             }
             else
@@ -67,7 +68,7 @@ public class RessourceInventory : MonoBehaviour
             res.neededToTransport = true;
             res.ressource = ressourceTank.ressource;
             res.numberToTransport = 1;
-            res.numberLimit = 100; // Limite le nombre de ressource à 99 par défaut
+            res.numberLimit = 5; // Limite le nombre de ressource à 99 par défaut
             res.number = 1;
             if (ressourceTank.numberToConstruct != -1)
             {
@@ -121,23 +122,13 @@ public class RessourceInventory : MonoBehaviour
     public void remove(Ressource ressource)
     {
         RessourceTank rT = getStruct(ressource);
-        //numberRessources = rT.number;
         if (!rT.Equals(RessourceInventory.NULL))
         {
             if (rT.number > 0)
             {
                 rT.number = rT.number - 1;
-                //print(nbElementsTotal(ressource));
-
-
-
-             
-
-                //numberRessources = numberRessources - 1;
-                //rT.number = numberRessources;
-                //print(rT.number);
-                //return true;
             }
+            rT.numberToTransport = rT.numberToTransport - 1;
         }
         //return false;
     }

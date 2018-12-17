@@ -157,16 +157,10 @@ public class ToolInventory : MonoBehaviour {
             if (t.number > 0)
             {
                 t.number = t.number - 1;
-                //print(nbElementsTotal(ressource));
-
-
-
-
-
-                //numberRessources = numberRessources - 1;
-                //rT.number = numberRessources;
-                //print(rT.number);
-                //return true;
+            }
+            if (t.nbToConstruct == -1)
+            {
+                t.nbToTransport = t.nbToTransport - 1;
             }
         }
         //return false;
@@ -182,19 +176,25 @@ public class ToolInventory : MonoBehaviour {
         return -1;
     }
 
+
     public void add(Tool tool)
     {
         Tool t = getStruct(tool);
         if (t != ToolInventory.NULL)
         {
-            t.number = t.number + 1;
+            
             if (tool.nbToConstruct != -1)
             {
                 Debug.Log("Number To Construct != -1 : " + tool.nbToConstruct);
                 t.nbToTransport = tool.nbToConstruct;
                 t.nbToConstruct = -1;
                 t.numberLimit = tool.nbToConstruct; // Limite le nombre de ressource à 99 par défaut
-                t.number = 0;
+                t.neededToTransport = true;
+                //t.number = 0;
+            }
+            else
+            {
+                t.number = t.number + 1;
             }
         }
         else
