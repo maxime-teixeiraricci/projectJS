@@ -506,7 +506,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813906105463192}
-  m_Text: 
+  m_Text: 0%
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -610,11 +610,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 114001324661397374}
-  needRessources: 0
+  needRessources: 1
   needTools: 0
   toolsInventory: {fileID: 114060348359974584}
   isConstruct: 0
-  enoughToolsToBuild: 0
+  enoughToolsToBuild: 1
   enoughConstructToBuild: 0
   isPlaced: 0
   goodPosition: 1
@@ -657,6 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woodText: {fileID: 0}
+  wood: 0
 --- !u!208 &208541965895005988
 NavMeshObstacle:
   m_ObjectHideFlags: 1
