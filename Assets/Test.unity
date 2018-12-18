@@ -681,8 +681,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 177114084}
   m_CullTransparentMesh: 0
-<<<<<<< .merge_file_a31516
-=======
 --- !u!1 &182954444
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,7 +785,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> .merge_file_a31456
 --- !u!1001 &203193527
 Prefab:
   m_ObjectHideFlags: 0
