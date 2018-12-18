@@ -10,7 +10,7 @@ public class FactorsManager : MonoBehaviour {
     public Slider slider;
     float res;
 
-    float value;
+    public float value;
     int nbrTrees;
 
     public GameObject sliderColor;
@@ -23,6 +23,7 @@ public class FactorsManager : MonoBehaviour {
     private void Start()
     {
         if (!singleton) singleton = this;
+        else Destroy(this);
         nbrTrees = GameObject.FindGameObjectsWithTag("RessourceTank").Length;
         maxRessources = nbrTrees * GameObject.FindGameObjectWithTag("RessourceTank").GetComponent<NaturalRessource>().maxRessource;
     }

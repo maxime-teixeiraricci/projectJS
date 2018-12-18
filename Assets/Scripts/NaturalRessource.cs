@@ -14,7 +14,7 @@ public class NaturalRessource : MonoBehaviour
 
     public TextMesh health;
 
-    float timetoGrow = 2.0f;
+    public float timetoGrow = 2.0f;
 
     float timePassed;
 

@@ -314,6 +314,7 @@ MonoBehaviour:
     neededToConstruct: 0
   ressou: {fileID: 11400000, guid: 9c4c39d2a5abdf349929b9fbda82e5f0, type: 2}
   health: {fileID: 102044801045433268}
+  timetoGrow: 5
 --- !u!114 &114570309786011706
 MonoBehaviour:
   m_ObjectHideFlags: 1
