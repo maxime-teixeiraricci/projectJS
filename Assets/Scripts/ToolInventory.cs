@@ -63,7 +63,7 @@ public class ToolInventory : MonoBehaviour {
 
     public void isGettingCrafted()
     {
-        timeCrafted += 1.0f / activeTool.timeToCraft;
+        timeCrafted += 1.0f / Time.deltaTime;
     }
 
     public bool isCrafted()

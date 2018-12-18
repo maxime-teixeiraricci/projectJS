@@ -30,11 +30,13 @@ public class GameSettings : MonoBehaviour {
 		if(int.Parse(currentObjectif.text) == int.Parse(finalObjectif.text))
         {
             endScreenWin.SetActive(true);
+            Time.timeScale = 0;
         }
 
         if(slideTrees.value == 0 ||int.Parse(days.text) >= maxDays)
         {
             endScreenLose.SetActive(true);
+            Time.timeScale = 0;
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
