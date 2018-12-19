@@ -15,29 +15,29 @@ public class CameraManager : MonoBehaviour {
         float mousePosX = Input.mousePosition.x;
         float mousePosY = Input.mousePosition.y;
         int scrollDistance = 5;
-        float scrollSpeed = 15;
+        float scrollSpeed = 0.2f;
         //Debug.Log("mouse = " + mousePosX);
         if (mousePosX < scrollDistance && transform.position.x > -25)
         {
             //transform.Translate(Vector3.right * -scrollSpeed * Time.deltaTime);
-            transform.position += Vector3.right * -scrollSpeed * Time.deltaTime;
+            transform.position += Vector3.right * -scrollSpeed;
         }
 
         if (mousePosX >= Screen.width - scrollDistance && transform.position.x < 25)
         {
-            transform.position += Vector3.right * scrollSpeed * Time.deltaTime;
+            transform.position += Vector3.right * scrollSpeed;
             //transform.Translate(Vector3.right * scrollSpeed * Time.deltaTime);
         }
 
         if (mousePosY < scrollDistance && transform.position.z > -25)
         {
-            transform.position += Vector3.forward * -scrollSpeed * Time.deltaTime;
+            transform.position += Vector3.forward * -scrollSpeed;
             //transform.Translate(Vector3.forward * -scrollSpeed * Time.deltaTime);
         }
 
         if (mousePosY >= Screen.height - scrollDistance && transform.position.z < 25)
         {
-            transform.position += Vector3.forward * scrollSpeed * Time.deltaTime;
+            transform.position += Vector3.forward * scrollSpeed;
             //transform.Translate(Vector3.forward * scrollSpeed * Time.deltaTime);
         }
 

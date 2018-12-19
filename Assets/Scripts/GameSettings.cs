@@ -29,14 +29,14 @@ public class GameSettings : MonoBehaviour {
 	void Update () {
 		if(int.Parse(currentObjectif.text) == int.Parse(finalObjectif.text))
         {
-            endScreenWin.SetActive(true);
             Time.timeScale = 0;
+            endScreenWin.SetActive(true);
         }
 
         if(slideTrees.value == 0 ||int.Parse(days.text) >= maxDays)
         {
-            endScreenLose.SetActive(true);
             Time.timeScale = 0;
+            endScreenLose.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
