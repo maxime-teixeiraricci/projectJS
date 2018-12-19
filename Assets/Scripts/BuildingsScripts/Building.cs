@@ -55,6 +55,14 @@ public abstract class Building : MonoBehaviour {
         {
             nbToolText.text = toolsInventory.toolInventory[0].number.ToString();
         }
+        if (!isConstruct)
+        {
+            mesh.material.color = new Color(mesh.material.color.r, mesh.material.color.g, mesh.material.color.b, 0.2f);
+        }
+        else
+        {
+            mesh.material.color = new Color(mesh.material.color.r, mesh.material.color.g, mesh.material.color.b, 1f);
+        }
     }
     public List<RessourceTank> resosurcesNeededForConstruct()
     {
