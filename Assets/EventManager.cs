@@ -18,7 +18,7 @@ public class EventManager : MonoBehaviour
     {
         t -= Time.deltaTime;
         t = Mathf.Max(0, t);
-        print("Factor : " + FactorsManager.singleton.slider.value); 
+        //print("Factor : " + FactorsManager.singleton.slider.value); 
 
         if (t <= 0 && FactorsManager.singleton.slider.value <= 40.0f)
         {
