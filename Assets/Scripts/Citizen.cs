@@ -22,6 +22,9 @@ public class Citizen : MonoBehaviour {
 
     public bool isFull;
     public bool canWork;
+    public bool isWalking;
+
+    public AudioSource walk;
 
     public int soifMax;
     public int faimMax;
@@ -70,6 +73,18 @@ public class Citizen : MonoBehaviour {
 
     }
 
+    public void setWalkingSound()
+    {
+        if (isWalking)
+        {
+            walk.enabled = true;
+        }
+        else
+        {
+            walk.enabled = false;
+        }
+    }
+
     public void ChangeGroup(Group newGroup)
     {
         if (newGroup != group)
@@ -105,6 +120,7 @@ public class Citizen : MonoBehaviour {
     private void Update()
     {
         SeekForJob();
+        setWalkingSound();
         for (int i=0; i < ressources.Count; i ++)
         {
             if (i == 0)

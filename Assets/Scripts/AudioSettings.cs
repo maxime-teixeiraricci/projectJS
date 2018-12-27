@@ -20,7 +20,7 @@ public class AudioSettings : MonoBehaviour {
 
     void windStrength()
     {
-        windSound.volume = camera.transform.position.y * 2f / 100;
+        windSound.volume = camera.transform.position.y * 1f / 100;
         Debug.Log("volume = " + windSound.volume);
     }
 }

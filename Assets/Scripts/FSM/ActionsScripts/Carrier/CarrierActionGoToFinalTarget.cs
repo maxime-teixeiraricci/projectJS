@@ -15,6 +15,8 @@ public class CarrierActionGoToFinalTarget : FSMAction
     {
         if (controler.finalTarget)
         {
+            Citizen citizen = controler.GetComponent<Citizen>();
+            citizen.isWalking = true;
             controler.agent.SetDestination(controler.finalTarget.transform.position);
         }
     }

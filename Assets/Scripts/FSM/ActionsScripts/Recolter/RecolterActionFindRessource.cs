@@ -12,6 +12,8 @@ public class RecolterActionFindRessource : FSMAction
 
     private void FindRessource(FSMControler controler)
     {
+        Citizen citizen = controler.GetComponent<Citizen>();
+        citizen.isWalking = false;
         GameObject ressourceTank = GameObject.FindGameObjectWithTag("RessourceTank");
         if(controler.manualTarget == null)
         {

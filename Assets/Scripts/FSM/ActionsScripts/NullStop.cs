@@ -12,6 +12,8 @@ public class NullStop : FSMAction
 
     private void Stop(FSMControler controler)
     {
+        Citizen citizen = controler.GetComponent<Citizen>();
+        citizen.isWalking = false;
         controler.agent.isStopped = true;
     }
 

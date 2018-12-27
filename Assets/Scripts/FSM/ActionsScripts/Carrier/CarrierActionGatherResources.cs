@@ -13,10 +13,13 @@ public class CarrierActionGatherResources : FSMAction
 
     private void GatherResources(FSMControler controler)
     {
+
+
         Building target = controler.target.GetComponent<Building>();
         Citizen citizen = controler.GetComponent<Citizen>();
-        
-        foreach(RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
+        citizen.isWalking = false;
+
+        foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
 
             if (rT.number < rT.numberLimit)

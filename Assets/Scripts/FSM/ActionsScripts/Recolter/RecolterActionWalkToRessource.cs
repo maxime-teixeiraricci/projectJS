@@ -21,6 +21,8 @@ public class RecolterActionWalkToRessource : FSMAction
     {
         if (controler.target)
         {
+            Citizen citizen = controler.GetComponent<Citizen>();
+            citizen.isWalking = true;
             controler.agent.SetDestination(controler.target.transform.position);
         }
     }

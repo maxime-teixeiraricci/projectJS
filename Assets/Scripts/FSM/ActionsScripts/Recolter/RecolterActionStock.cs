@@ -24,13 +24,10 @@ public class RecolterActionStock : FSMAction
     {
         Building target = controler.citizen.workPlace.GetComponent<Building>();
         Citizen citizen = controler.GetComponent<Citizen>();
+        citizen.isWalking = false;
         foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
-
-            
-                target.take(rT.ressource, citizen);
-            
-
+            target.take(rT.ressource, citizen);
         }
     }
 }

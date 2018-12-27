@@ -26,7 +26,8 @@ public class FSMControler : MonoBehaviour
 	void Update ()
     {
         currentState.UpdateState(this); // On passe en argument le controler pour avoir une main sur l'entité qui subit la FSM
-	}
+        
+    }
 
     private void OnDrawGizmos()
     {

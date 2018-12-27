@@ -17,5 +17,16 @@ public class TimeManager : MonoBehaviour {
 	void Update () {
         Time.timeScale = time.value;
         timeValue.text = time.value.ToString("0.0");
+
+        Citizen[] listCitizen = GameObject.FindObjectsOfType<Citizen>();
+
+        foreach(Citizen cit in listCitizen)
+        {
+            cit.GetComponent<AudioSource>().pitch = time.value;
+        }
+
+        GameObject camera = GameObject.Find("Main Camera");
+
+        //camera.GetComponent<AudioSource>().pitch = time.value;
     }
 }
