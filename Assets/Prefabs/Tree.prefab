@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114477099589626934}
   - component: {fileID: 65844974007573530}
   - component: {fileID: 114570309786011706}
+  - component: {fileID: 114863250720289490}
   m_Layer: 0
   m_Name: Tree
   m_TagString: RessourceTank
@@ -128,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1569947679646468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.1, y: 2.04, z: -11.51}
+  m_LocalPosition: {x: -8.1, y: 2.04, z: -9.99}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4232964345737970}
@@ -327,6 +328,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 23204510264928556}
+--- !u!114 &114863250720289490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1569947679646468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/TreeEvents
+  PlayEvent: 2
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!208 &208840460096738026
 NavMeshObstacle:
   m_ObjectHideFlags: 1

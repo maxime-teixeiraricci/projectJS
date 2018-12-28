@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 114062070225500988}
   - component: {fileID: 114900211541854268}
   - component: {fileID: 82848265540502218}
+  - component: {fileID: 114349488347164084}
   m_Layer: 10
   m_Name: Citizen
   m_TagString: Untagged
@@ -198,7 +199,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487986925770250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.68, y: 0.392, z: -4.58}
+  m_LocalPosition: {x: -2.39, y: 0.392, z: -4.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4683617866707768}
@@ -465,7 +466,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487986925770250}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a315a23146e28114d919581cd3d719ed, type: 3}
@@ -689,6 +690,38 @@ MonoBehaviour:
   nbrTools: 0
   wood: {fileID: 0}
   toolCount: {fileID: 0}
+--- !u!114 &114349488347164084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487986925770250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/CitizenEvents
+  PlayEvent: 11
+  StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: 
+    Value: 0
+  - Name: 
+    Value: 0
+  - Name: 
+    Value: 0
+  - Name: Recolt
+    Value: 0
+  - Name: Walk
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &114900211541854268
 MonoBehaviour:
   m_ObjectHideFlags: 1

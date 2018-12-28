@@ -77,11 +77,30 @@ public class Citizen : MonoBehaviour {
     {
         if (isWalking)
         {
-            walk.enabled = true;
+            //walk.enabled = true;
+            FMODUnity.StudioEventEmitter emitter = GetComponent<FMODUnity.StudioEventEmitter>();
+            //emitter.Play();
+            emitter.enabled = true;
+            FMOD.Studio.ParameterInstance parameter;
+            emitter.EventInstance.getParameter("Walk", out parameter);
+            if (!parameter.Equals(null))
+            {
+                parameter.setValue(1.0f);
+            }
+            //emitter.EventInstance.start();     
         }
         else
         {
             walk.enabled = false;
+            FMODUnity.StudioEventEmitter emitter = GetComponent<FMODUnity.StudioEventEmitter>();
+            FMOD.Studio.ParameterInstance parameter;
+            emitter.EventInstance.getParameter("Walk", out parameter);
+            if (!parameter.Equals(null))
+            {
+                parameter.setValue(0.0f);
+            }
+            //emitter.Stop();
+            emitter.enabled = false;
         }
     }
 
