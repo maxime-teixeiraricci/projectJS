@@ -14,7 +14,8 @@ public class CrafterActionCraftTools : FSMAction
     private void Craft(FSMControler controler)
     {
         Citizen citizen = controler.GetComponent<Citizen>();
-        citizen.isWalking = false;
+        citizen.refreshSoundBools();
+        citizen.isProductTool = true;
 
         if (!controler.target) return;
         Building building = controler.target.GetComponent<Building>();

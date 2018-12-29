@@ -23,6 +23,9 @@ public class Citizen : MonoBehaviour {
     public bool isFull;
     public bool canWork;
     public bool isWalking;
+    public bool isProductTool;
+    public bool isRecoltWood;
+    public bool isBuilding;
 
     public AudioSource walk;
 
@@ -42,6 +45,14 @@ public class Citizen : MonoBehaviour {
 
     public TextMesh nbWoodText;
     public TextMesh nbToolText;
+
+    public void refreshSoundBools()
+    {
+            isWalking = false;
+            isProductTool = false;
+            isRecoltWood = false;
+            isBuilding = false;
+    }
 
     void consommer(Ressource ressource)
     {
@@ -73,35 +84,62 @@ public class Citizen : MonoBehaviour {
 
     }
 
-    public void setWalkingSound()
+    public void setFSMSounds()
     {
-        if (isWalking)
+        List<string> soundParameters = new List<string>();
+        soundParameters.Add("Walk");
+        soundParameters.Add("Recolt");
+        soundParameters.Add("ToolProduction");
+        soundParameters.Add("Construct");
+        bool isSoundNeeded;
+        foreach (string param in soundParameters)
         {
-            //walk.enabled = true;
-            FMODUnity.StudioEventEmitter emitter = GetComponent<FMODUnity.StudioEventEmitter>();
-            //emitter.Play();
-            emitter.enabled = true;
-            FMOD.Studio.ParameterInstance parameter;
-            emitter.EventInstance.getParameter("Walk", out parameter);
-            if (!parameter.Equals(null))
+            isSoundNeeded = false;
+            switch (param)
             {
-                parameter.setValue(1.0f);
+                case "Walk":
+                    isSoundNeeded = isWalking;
+                    break;
+                case "Recolt":
+                    isSoundNeeded = isRecoltWood;
+                    break;
+                case "ToolProduction":
+                    isSoundNeeded = isProductTool;
+                    break;
+                case "Construct":
+                    isSoundNeeded = isBuilding;
+                    break;
+                default:
+                    break;
             }
-            //emitter.EventInstance.start();     
-        }
-        else
-        {
-            walk.enabled = false;
-            FMODUnity.StudioEventEmitter emitter = GetComponent<FMODUnity.StudioEventEmitter>();
-            FMOD.Studio.ParameterInstance parameter;
-            emitter.EventInstance.getParameter("Walk", out parameter);
-            if (!parameter.Equals(null))
+            if (isSoundNeeded)
             {
-                parameter.setValue(0.0f);
+                FMODUnity.StudioEventEmitter emitter = GetComponent<FMODUnity.StudioEventEmitter>();
+                emitter.enabled = true;
+                FMOD.Studio.ParameterInstance parameter;
+                emitter.EventInstance.getParameter(param, out parameter);
+                if (!parameter.Equals(null))
+                {
+                    parameter.setValue(1.0f);
+                }
+                Debug.Log("Found IT 1" + param);
             }
-            //emitter.Stop();
-            emitter.enabled = false;
+            else
+            {
+                FMODUnity.StudioEventEmitter emitter = GetComponent<FMODUnity.StudioEventEmitter>();
+                FMOD.Studio.ParameterInstance parameter;
+                emitter.EventInstance.getParameter(param, out parameter);
+                if (!parameter.Equals(null))
+                {
+                    parameter.setValue(0.0f);
+                }
+                if (!isWalking && !isBuilding && !isProductTool && !isRecoltWood) {
+                    emitter.enabled = false;
+                }
+                Debug.Log("Found IT 0" + param);
+            }
         }
+        
     }
 
     public void ChangeGroup(Group newGroup)
@@ -139,7 +177,7 @@ public class Citizen : MonoBehaviour {
     private void Update()
     {
         SeekForJob();
-        setWalkingSound();
+        setFSMSounds();
         for (int i=0; i < ressources.Count; i ++)
         {
             if (i == 0)

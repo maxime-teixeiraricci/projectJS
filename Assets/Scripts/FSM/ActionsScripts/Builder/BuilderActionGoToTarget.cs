@@ -16,6 +16,7 @@ public class BuilderActionGoToTarget : FSMAction
         if (controler.target)
         {
             Citizen citizen = controler.GetComponent<Citizen>();
+            citizen.refreshSoundBools();
             citizen.isWalking = true;
             controler.agent.SetDestination(controler.target.transform.position);
         }

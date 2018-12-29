@@ -14,7 +14,7 @@ public class CrafterActionFindTarget : FSMAction
     public void FindBuilding(FSMControler controler)
     {
         Citizen citizen = controler.GetComponent<Citizen>();
-        citizen.isWalking = false;
+        citizen.refreshSoundBools();
         Building[] buildings = FindObjectsOfType<Building>();
         Citizen[] citizens = FindObjectsOfType<Citizen>();
 

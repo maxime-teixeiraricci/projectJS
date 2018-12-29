@@ -13,7 +13,7 @@ public class CarrierActionGoToCampWithRessources : FSMAction
     private void FindRessource(FSMControler controler)
     {
         Citizen citizen = controler.GetComponent<Citizen>();
-        citizen.isWalking = false;
+        citizen.refreshSoundBools();
 
         GameObject[] shelterList = GameObject.FindGameObjectsWithTag("Camp");
         controler.target = null;

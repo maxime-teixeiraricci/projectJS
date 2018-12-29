@@ -17,7 +17,7 @@ public class CarrierActionGatherResources : FSMAction
 
         Building target = controler.target.GetComponent<Building>();
         Citizen citizen = controler.GetComponent<Citizen>();
-        citizen.isWalking = false;
+        citizen.refreshSoundBools();
 
         foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {

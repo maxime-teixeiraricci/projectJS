@@ -14,7 +14,7 @@ public class BuilderActionFindBuilding : FSMAction
     public void FindBuildingNotConstruct(FSMControler controler)
     {
         Citizen citizen = controler.GetComponent<Citizen>();
-        citizen.isWalking = false;
+        citizen.refreshSoundBools();
 
         Building[] buildings = FindObjectsOfType<Building>();
         Citizen[] citizens = FindObjectsOfType<Citizen>();

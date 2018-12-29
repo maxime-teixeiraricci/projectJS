@@ -16,7 +16,7 @@ public class CarrierActionFindBuildingToDeliver : FSMAction
         Building[] buildings = FindObjectsOfType<Building>();
 
         Citizen citizen = controler.GetComponent<Citizen>();
-        citizen.isWalking = false;
+        citizen.refreshSoundBools();
 
         if (controler.manualTarget != null)
         {

@@ -13,6 +13,8 @@ public class BuilderDecisionEnoughResources : FSMDecision
 
     public bool HaveEnoughResources(FSMControler controler)
     {
+        Citizen citizen = controler.GetComponent<Citizen>();
+        citizen.refreshSoundBools();
         if (!controler.target) return false;
         Building building = controler.target.gameObject.GetComponent<Building>();
         if (!building) return false;

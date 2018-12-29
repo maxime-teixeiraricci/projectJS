@@ -14,7 +14,7 @@ public class CarrierActionGiveRessource : FSMAction
     public void give(FSMControler controler)
     {
         Citizen citizen = controler.GetComponent<Citizen>();
-        citizen.isWalking = false;
+        citizen.refreshSoundBools();
         Building target = controler.finalTarget.GetComponent<Building>();
         foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {

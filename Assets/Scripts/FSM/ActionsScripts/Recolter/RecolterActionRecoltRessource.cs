@@ -15,7 +15,8 @@ public class RecolterActionRecoltRessource : FSMAction
     private void Recolt(FSMControler controler)
     {
         Citizen citizen = controler.GetComponent<Citizen>();
-        citizen.isWalking = false;
+        citizen.refreshSoundBools();
+        citizen.isRecoltWood = true;
         if (!controler.target) return;
         NaturalRessource naturalRessource = controler.target.GetComponent<NaturalRessource>();
         if (!naturalRessource) return;

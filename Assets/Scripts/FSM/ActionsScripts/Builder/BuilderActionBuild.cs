@@ -14,7 +14,8 @@ public class BuilderActionBuild : FSMAction
     private void Build(FSMControler controler)
     {
         Citizen citizen = controler.GetComponent<Citizen>();
-        citizen.isWalking = false;
+        citizen.refreshSoundBools();
+        citizen.isBuilding = true;
 
         if (!controler.target) return;
         Building building = controler.target.GetComponent<Building>();
