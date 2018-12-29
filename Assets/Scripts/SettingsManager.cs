@@ -67,7 +67,7 @@ public class SettingsManager : MonoBehaviour {
         foreach (NaturalRessource tree in trees)
         {
             FMODUnity.StudioEventEmitter emitter = tree.GetComponent<FMODUnity.StudioEventEmitter>();
-            emitter.EventInstance.setVolume(volume);
+            emitter.EventInstance.setVolume(0.0f);
             AudioSource source = tree.GetComponent<AudioSource>();
             source.volume = volume;
         }

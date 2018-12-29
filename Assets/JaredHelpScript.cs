@@ -21,13 +21,13 @@ public class JaredHelpScript : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         GetComponent<MeshRenderer>().material.color = normal;
-        text.SetActive(false);
+        //text.SetActive(false);
         if (Physics.Raycast(ray, out hit))
         {
             if (hit.transform.gameObject == gameObject )
             {
                 GetComponent<MeshRenderer>().material.color = over;
-                text.SetActive(true);
+                //text.SetActive(true);
             }
         }
     }
