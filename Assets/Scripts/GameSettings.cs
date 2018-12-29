@@ -31,12 +31,16 @@ public class GameSettings : MonoBehaviour {
         {
             Time.timeScale = 0;
             endScreenWin.SetActive(true);
+            GetComponent<AudioSource>().enabled = false;
+            GameObject.Find("Main Camera").GetComponent<AudioSource>().enabled = false;
         }
 
         if(slideTrees.value == 0 ||int.Parse(days.text) >= maxDays)
         {
             Time.timeScale = 0;
             endScreenLose.SetActive(true);
+            GetComponent<AudioSource>().enabled = false;
+            GameObject.Find("Main Camera").GetComponent<AudioSource>().enabled = false;
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
