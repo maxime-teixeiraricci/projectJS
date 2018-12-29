@@ -12,12 +12,20 @@ public class JaredBubblePopManager : MonoBehaviour {
 
     Building[] buildingToBuild;
 
-    int oldNbrBld;
+    int oldNbrBld = 0;
     int numberBld = 0;
 
     void Start () {
         isActif = false;
-	}
+        buildingToBuild = FindObjectsOfType<Building>();
+        foreach (Building building in buildingToBuild)
+        {
+            if (building.isConstruct)
+            {
+                numberBld++;
+            }
+        }
+    }
 	
 	
 	void Update () {
@@ -27,23 +35,25 @@ public class JaredBubblePopManager : MonoBehaviour {
         }
 	}
 
-    // *************************************  WARNING   *************************************
-
-    // J'essaie de comparer la liste des buildings à construire du tick précédent à celle du tick courant, et je comapre leur taille, voir si un batiment a été craft entre deux ticks
-    // J'vois pas comment faire sinon c'est la grosse merde, si jamais t'as une idée x)
     public bool buildingBuilt()
     {
         oldNbrBld = numberBld;
+        numberBld = 0;
         buildingToBuild = FindObjectsOfType<Building>();
-        numberBld = buildingToBuild.Length;
+        foreach(Building building in buildingToBuild)
+        {
+            if (building.isConstruct)
+            {
+                numberBld++;
+            }
+        }
         if(oldNbrBld < numberBld)
         {
             return true;
         }
         return false;
     }
-
-    // *************************************  END WARNING   *************************************
+    
 
     public void setMessage()
     {
@@ -82,19 +92,19 @@ public class JaredBubblePopManager : MonoBehaviour {
         {
             messages.Add("Notre stock d’outils déborde ! Peut-être devrions-nous suspendre la production ?");
         }
-
-        // *************************************  WARNING   *************************************
-        // Experimental de ouf du coup !
-        if (buildingBuilt())
+        
+        bool newBat = buildingBuilt();
+        if (newBat)
         {
-            messages.Add("Un bâtiment vient d'être construit !");
+            //messages.Add("Un bâtiment vient d'être construit !");
+            popMessage("Un bâtiment vient d'être construit !");
         }
-        // ************************************* END WARNING   *************************************
-
-        System.Random rand = new System.Random();
-        int index = rand.Next(0, messages.Count);
-        popMessage(messages[index]);
-        Debug.Log(index);
+        if (!newBat)
+        {
+            if (messages.Count <= 0) return;
+            int index = Random.Range(0, Mathf.Max(0, messages.Count));
+            popMessage(messages[index]);
+        }
 
     }
 

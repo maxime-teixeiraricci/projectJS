@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114666747396138184}
-  - {fileID: 114077351949354772}
+  - {fileID: 114797486628557716}
   EditorEvents:
   - {fileID: 114931646665736112}
   - {fileID: 114907965598905436}
@@ -23,7 +23,7 @@ MonoBehaviour:
   - {fileID: 114188253470822250}
   StringsBanks:
   - {fileID: 114666747396138184}
-  stringsBankWriteTime: 636816971649093732
+  stringsBankWriteTime: 636816962167990870
   cacheVersion: 3
 --- !u!114 &114011928745391068
 MonoBehaviour:
@@ -607,6 +607,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114286131990963832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Construct
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114314382171661288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,12 +651,12 @@ MonoBehaviour:
   Path: event:/MainThemeEvent
   guid: 161fd5217ad3544c86d24e6deb23269c
   Banks:
-  - {fileID: 114077351949354772}
+  - {fileID: 114797486628557716}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114084072339477854}
+  - {fileID: 114376159302241656}
   MinDistance: 1
   MaxDistance: 20
   Length: 58287
@@ -672,6 +687,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: ToolProduction
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114376159302241656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Etat
   Min: 0
   Max: 1
   Default: 0
@@ -930,6 +960,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 12474
   Exists: 1
+--- !u!114 &114500957923636452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: ToolProduction
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114513829648924888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,7 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Sound\FMODProject\SoundsEvents\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636816971649093732
+  lastModified: 636816962167990870
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1222,6 +1267,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 466464
   Exists: 0
+--- !u!114 &114725227835479120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Walk
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114760152346146574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,6 +1357,25 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114797486628557716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "C:\\Users\\Mehdi\\Desktop\\Master2\\Soci\xE9t\xE9s virtuelles\\ProjetJaredGit\\Assets\\Sound\\FMODProject\\SoundsEvents\\Build\\Desktop\\Master
+    Bank.bank"
+  lastModified: 636816962167676382
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1124320
+  Exists: 1
 --- !u!114 &114817147926944140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1411,15 +1490,15 @@ MonoBehaviour:
   Path: event:/CitizenEvents
   guid: 0bee10568b089243af7fa6c74acded3c
   Banks:
-  - {fileID: 114077351949354772}
+  - {fileID: 114797486628557716}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114359057433622808}
-  - {fileID: 114601707310190746}
-  - {fileID: 114840637729990956}
-  - {fileID: 114113160971770352}
+  - {fileID: 114500957923636452}
+  - {fileID: 114286131990963832}
+  - {fileID: 114993922746228974}
+  - {fileID: 114725227835479120}
   MinDistance: 1
   MaxDistance: 20
   Length: 9384
@@ -1437,7 +1516,7 @@ MonoBehaviour:
   Path: event:/TreeEvents
   guid: 986dfb529fd8e64594a7731c24f73676
   Banks:
-  - {fileID: 114077351949354772}
+  - {fileID: 114797486628557716}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1517,6 +1596,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Construct
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114993922746228974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Recolt
   Min: 0
   Max: 1
   Default: 0

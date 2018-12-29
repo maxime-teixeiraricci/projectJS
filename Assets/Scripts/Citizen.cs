@@ -122,7 +122,6 @@ public class Citizen : MonoBehaviour {
                 {
                     parameter.setValue(1.0f);
                 }
-                Debug.Log("Found IT 1" + param);
             }
             else
             {
@@ -136,7 +135,6 @@ public class Citizen : MonoBehaviour {
                 if (!isWalking && !isBuilding && !isProductTool && !isRecoltWood) {
                     emitter.enabled = false;
                 }
-                Debug.Log("Found IT 0" + param);
             }
         }
         
