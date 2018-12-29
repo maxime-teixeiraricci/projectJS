@@ -19,6 +19,7 @@ public class FactorsManager : MonoBehaviour {
     float maxRessources;
     Color color;
 
+    public FMODUnity.StudioEventEmitter mainTheme;
 
     private void Start()
     {
@@ -54,16 +55,34 @@ public class FactorsManager : MonoBehaviour {
         if (slider.value < 60 && slider.value > 30)
         {
             sliderColor.GetComponent<Image>().color = Color.yellow;
+            FMOD.Studio.ParameterInstance parameter;
+            mainTheme.EventInstance.getParameter("Etat", out parameter);
+            if (!parameter.Equals(null))
+            {
+                parameter.setValue(0.6f);
+            }
         }
 
         else if (slider.value < 30)
         {
             sliderColor.GetComponent<Image>().color = Color.red;
+            FMOD.Studio.ParameterInstance parameter;
+            mainTheme.EventInstance.getParameter("Etat", out parameter);
+            if (!parameter.Equals(null))
+            {
+                parameter.setValue(0.3f);
+            }
         }
 
         else
         {
             sliderColor.GetComponent<Image>().color = Color.green;
+            FMOD.Studio.ParameterInstance parameter;
+            mainTheme.EventInstance.getParameter("Etat", out parameter);
+            if (!parameter.Equals(null))
+            {
+                parameter.setValue(1.6f);
+            }
         }
     }
     

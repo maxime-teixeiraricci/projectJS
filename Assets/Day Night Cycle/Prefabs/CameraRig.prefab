@@ -32,6 +32,8 @@ GameObject:
   - component: {fileID: 82617896998827866}
   - component: {fileID: 114434789790137614}
   - component: {fileID: 114857811576508268}
+  - component: {fileID: 114523054783928260}
+  - component: {fileID: 114247684840558670}
   m_Layer: 0
   m_Name: CameraRig
   m_TagString: MainCamera
@@ -191,7 +193,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154246}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1942747254d502e41b7e2bf6aeb1862a, type: 3}
@@ -280,6 +282,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114247684840558670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/MainThemeEvent
+  PlayEvent: 1
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Etat
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &114434789790137614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,6 +317,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d4315b722e1e842b49ec0de2e81ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114523054783928260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!114 &114857811576508268
 MonoBehaviour:
   m_ObjectHideFlags: 1

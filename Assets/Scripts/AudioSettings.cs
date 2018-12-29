@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioSettings : MonoBehaviour {
-
+    public Slider volume;
     public Camera camera;
     public AudioSource windSound;
 
@@ -20,7 +21,7 @@ public class AudioSettings : MonoBehaviour {
 
     void windStrength()
     {
-        windSound.volume = camera.transform.position.y * 0.6f / 100;
+        windSound.volume = camera.transform.position.y * (volume.value / 100) * 0.6f / 100;
         //Debug.Log("volume = " + windSound.volume);
     }
 }

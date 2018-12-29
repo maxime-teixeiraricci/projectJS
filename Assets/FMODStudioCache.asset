@@ -13,16 +13,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114666747396138184}
-  - {fileID: 114713222499400772}
+  - {fileID: 114188253470822250}
   EditorEvents:
   - {fileID: 114931646665736112}
   - {fileID: 114907965598905436}
+  - {fileID: 114331648778846268}
   MasterBanks:
   - {fileID: 114713222499400772}
+  - {fileID: 114188253470822250}
   StringsBanks:
   - {fileID: 114666747396138184}
-  stringsBankWriteTime: 636816892600017432
+  stringsBankWriteTime: 636816962167990870
   cacheVersion: 3
+--- !u!114 &114011928745391068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: ToolProduction
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114019551707504212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,6 +70,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114035085340134878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Construct
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114059576738871030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +97,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Construct
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114069277979129600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Walk
   Min: 0
   Max: 1
   Default: 0
@@ -143,6 +190,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114110326233089280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Construct
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114110564434365146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +232,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Recolt
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114144277925976528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Construct
   Min: 0
   Max: 1
   Default: 0
@@ -237,6 +314,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 672
   Exists: 1
+--- !u!114 &114173747482538820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Etat
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114177600727997818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +344,40 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114181089390203132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Walk
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114188253470822250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "C:\\Users\\Mehdi\\Desktop\\Master2\\Soci\xE9t\xE9s virtuelles\\ProjetJaredGit\\Assets\\Sound\\FMODProject\\SoundsEvents\\Build\\Desktop\\Master
+    Bank.bank"
+  lastModified: 636816962167676382
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1124320
+  Exists: 1
 --- !u!114 &114194205729445134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +409,36 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114222271493189616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Recolt
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114225650684524440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Construct
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114238542703586638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -357,7 +513,37 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114267899953195222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Walk
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114281060579719456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Walk
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114284453445820594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -387,6 +573,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114331648778846268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MainThemeEvent
+  guid: 161fd5217ad3544c86d24e6deb23269c
+  Banks:
+  - {fileID: 114188253470822250}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114173747482538820}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 58287
 --- !u!114 &114349353679322888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +712,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114421935293297436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Etat
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114426345139750262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,6 +817,36 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114474711775032222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Recolt
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114482722572326788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Recolt
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114500649066164884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,6 +926,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114554219633064146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: ToolProduction
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114583271394726194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,6 +1005,25 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114649189288693312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "C:\\Users\\Mehdi\\Desktop\\Master2\\Soci\xE9t\xE9s virtuelles\\ProjetJaredGit\\Assets\\Sound\\FMODProject\\SoundsEvents\\Build\\Desktop\\Master
+    Bank.bank"
+  lastModified: 636816909580133257
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 466464
+  Exists: 1
 --- !u!114 &114651877905006388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,11 +1073,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Sound\FMODProject\SoundsEvents\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636816892600017432
+  lastModified: 636816962167990870
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 776
+    Value: 822
   Exists: 1
 --- !u!114 &114671396602335616
 MonoBehaviour:
@@ -821,6 +1109,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114696559924559686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Recolt
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114713222499400772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,7 +1142,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 466464
-  Exists: 1
+  Exists: 0
 --- !u!114 &114760152346146574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,6 +1203,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114793443233316952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: ToolProduction
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114817147926944140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,6 +1240,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10000
+--- !u!114 &114825140562559522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Walk
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114895579566085234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +1273,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 776
   Exists: 1
+--- !u!114 &114897997242042592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: ToolProduction
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114902276906495308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,15 +1317,15 @@ MonoBehaviour:
   Path: event:/CitizenEvents
   guid: 0bee10568b089243af7fa6c74acded3c
   Banks:
-  - {fileID: 114713222499400772}
+  - {fileID: 114188253470822250}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114792489425373628}
-  - {fileID: 114671396602335616}
-  - {fileID: 114075029495041126}
-  - {fileID: 114378020473615094}
+  - {fileID: 114897997242042592}
+  - {fileID: 114035085340134878}
+  - {fileID: 114482722572326788}
+  - {fileID: 114284453445820594}
   MinDistance: 1
   MaxDistance: 20
   Length: 9384
@@ -995,7 +1343,7 @@ MonoBehaviour:
   Path: event:/TreeEvents
   guid: 986dfb529fd8e64594a7731c24f73676
   Banks:
-  - {fileID: 114713222499400772}
+  - {fileID: 114188253470822250}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1003,7 +1351,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3796
+--- !u!114 &114945396360865162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Construct
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114946907152344700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: ToolProduction
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114947252183575320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Recolt
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114965150690712266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
