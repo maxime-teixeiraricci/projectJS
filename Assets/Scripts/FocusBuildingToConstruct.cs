@@ -155,7 +155,7 @@ public class FocusBuildingToConstruct : MonoBehaviour
 
     IEnumerator colorChange()
     {
-        Debug.Log("change color");
+        //Debug.Log("change color");
         mesh.material.color = Color.red;
         yield return new WaitForSeconds(0.5f);
         mesh.material = originalColor;
