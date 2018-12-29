@@ -7,6 +7,8 @@ public class FocusTrees : MonoBehaviour {
     List<Citizen> citizen;
     public MeshRenderer mesh;
 
+    public AudioSource sound;
+
     Color originalColor;
 
 
@@ -31,6 +33,7 @@ public class FocusTrees : MonoBehaviour {
             cit.GetComponent<FSMControler>().manualTarget = gameObject;
         }
         StartCoroutine(colorChange());
+        musicFeedBack();
 
     }
 
@@ -39,5 +42,10 @@ public class FocusTrees : MonoBehaviour {
         mesh.material.color = Color.red;
         yield return new WaitForSeconds(0.5f);
         mesh.material.color = originalColor;
+    }
+
+    public void musicFeedBack()
+    {
+        sound.Play();
     }
 }

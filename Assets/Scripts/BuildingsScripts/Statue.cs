@@ -28,6 +28,13 @@ public class Statue : Building
         if (progressionBuild.text == "100%")
         {
             progressionBuild.text = "";
+            foreach(AudioSource audio in GetComponents<AudioSource>())
+            {
+                if(audio.clip.name == "waou")
+                {
+                    audio.Play();
+                }
+            }
         }
         if (!fait)
         {
