@@ -9,6 +9,8 @@ public class FocusBuildingToConstruct : MonoBehaviour
     List<Citizen> carrierCitizen;
     public MeshRenderer mesh;
 
+    public AudioSource sound;
+
     public Material originalColor;
     //Color originalColor;
 
@@ -46,6 +48,7 @@ public class FocusBuildingToConstruct : MonoBehaviour
                     cit.GetComponent<FSMControler>().manualTarget = gameObject;
                 }
                 StartCoroutine(colorChange());
+                musicFeedBack();
             }
         }
         else if(gameObject.tag == "Camp")
@@ -65,6 +68,7 @@ public class FocusBuildingToConstruct : MonoBehaviour
                     cit.GetComponent<FSMControler>().manualTarget = gameObject;
                 }
                 StartCoroutine(colorChange());
+                musicFeedBack();
             }
         }
 
@@ -87,6 +91,7 @@ public class FocusBuildingToConstruct : MonoBehaviour
                     cit.GetComponent<FSMControler>().manualTarget = gameObject;
                 }
                 StartCoroutine(colorChange());
+                musicFeedBack();
             }
         }
 
@@ -154,5 +159,10 @@ public class FocusBuildingToConstruct : MonoBehaviour
         mesh.material.color = Color.red;
         yield return new WaitForSeconds(0.5f);
         mesh.material = originalColor;
+    }
+
+    public void musicFeedBack()
+    {
+        sound.Play();
     }
 }

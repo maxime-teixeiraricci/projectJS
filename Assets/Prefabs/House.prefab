@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 208225296494752298}
   - component: {fileID: 114324036291535682}
   - component: {fileID: 114284252478068110}
+  - component: {fileID: 82116524997119262}
   m_Layer: 0
   m_Name: House
   m_TagString: House
@@ -478,6 +479,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6975374, y: 1.0498986, z: 1.6436894}
   m_Center: {x: -0.011066914, y: 0.024949312, z: -0.04131162}
+--- !u!82 &82116524997119262
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167221350444018}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8101a9b02457c5644b937786469f1625, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!102 &102311477020065816
 TextMesh:
   serializedVersion: 3
@@ -599,6 +695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 23497484724911888}
+  sound: {fileID: 82116524997119262}
   originalColor: {fileID: 2100000, guid: 16791de083d6b6f4dbdab088c5d01b74, type: 2}
 --- !u!114 &114324036291535682
 MonoBehaviour:
@@ -626,7 +723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 114103544263297618}
   needRessources: 1
-  needTools: 1
+  needTools: 0
   toolsInventory: {fileID: 114122780954923206}
   isConstruct: 0
   enoughToolsToBuild: 0
