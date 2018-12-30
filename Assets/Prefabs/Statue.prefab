@@ -1393,6 +1393,7 @@ MonoBehaviour:
   isPlaced: 0
   goodPosition: 1
   mesh: {fileID: 23453017775782516}
+  mesh2: {fileID: 23458520981005120}
   totalNbr: {fileID: 114246582257287158}
   buildFrequence: 1
   alphaColor: {r: 0, g: 0, b: 0, a: 0}

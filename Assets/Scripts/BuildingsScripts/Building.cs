@@ -18,6 +18,7 @@ public abstract class Building : MonoBehaviour {
     public bool goodPosition;
 
     public MeshRenderer mesh;
+    //public MeshRenderer mesh2;
 
     public ResourcesCount totalNbr;
     
@@ -57,11 +58,28 @@ public abstract class Building : MonoBehaviour {
         }
         if (!isConstruct)
         {
-            mesh.material.color = new Color(mesh.material.color.r, mesh.material.color.g, mesh.material.color.b, 0.2f);
+            if(tag == "Statue")
+            {
+                mesh.material.color = new Color(mesh.material.color.r, mesh.material.color.g, mesh.material.color.b, 0.45f);
+                //mesh2.material.color = new Color(mesh2.material.color.r, mesh2.material.color.g, mesh2.material.color.b, 0.45f);
+            }
+            else
+            {
+                mesh.material.color = new Color(mesh.material.color.r, mesh.material.color.g, mesh.material.color.b, 0.2f);
+            }
+            
         }
         else
         {
-            mesh.material.color = new Color(mesh.material.color.r, mesh.material.color.g, mesh.material.color.b, 1f);
+            if (tag == "Statue")
+            {
+                mesh.material.color = new Color(mesh.material.color.r, mesh.material.color.g, mesh.material.color.b, 1f);
+                //mesh2.material.color = new Color(mesh2.material.color.r, mesh2.material.color.g, mesh2.material.color.b, 1f);
+            }
+            else
+            {
+                mesh.material.color = new Color(mesh.material.color.r, mesh.material.color.g, mesh.material.color.b, 1f);
+            }
         }
     }
     public List<RessourceTank> resosurcesNeededForConstruct()

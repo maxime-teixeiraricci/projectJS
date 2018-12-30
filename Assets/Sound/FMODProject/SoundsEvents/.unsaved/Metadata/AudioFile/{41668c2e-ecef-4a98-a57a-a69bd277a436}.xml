@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{41668c2e-ecef-4a98-a57a-a69bd277a436}">
+        <property name="assetPath">
+            <value>WavesChill.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>76.224000000000004</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{05c0415c-caca-48d5-af16-b3a4f439cd0f}</destination>
+        </relationship>
+    </object>
+</objects>
