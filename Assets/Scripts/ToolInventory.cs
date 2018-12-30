@@ -68,15 +68,15 @@ public class ToolInventory : MonoBehaviour {
 
     public bool isCrafted()
     {
-        if(timeCrafted >= activeTool.timeToCraft)
-        {
+        //if(timeCrafted >= activeTool.timeToCraft)
+        //{
             timeCrafted = 0;
             wood.text = (int.Parse(wood.text) - activeTool.numberRessourcesNeeded).ToString();
             toolCount.text = (int.Parse(toolCount.text) + 1).ToString();
             return true;
-        }
+        //}
         
-        return false;
+        //return false;
     }
 
     public static Tool NULL = null;

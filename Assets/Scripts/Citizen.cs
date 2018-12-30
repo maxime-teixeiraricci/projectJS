@@ -26,6 +26,7 @@ public class Citizen : MonoBehaviour {
     public bool isProductTool;
     public bool isRecoltWood;
     public bool isBuilding;
+    public bool isCraftingTool;
 
     public AudioSource walk;
 
@@ -215,5 +216,30 @@ public class Citizen : MonoBehaviour {
         {
             nbToolText.text = toolsToTransport.toolInventory[0].number.ToString();
         }
+    }
+    
+            
+    public void product(Tool tool,Building building)
+    {
+        StartCoroutine(create(tool, building));
+    }
+
+
+    IEnumerator create(Tool tool, Building building)
+    {
+        isCraftingTool = true;
+        for (int i = 0; i < tool.numberRessourcesNeeded; i++)
+        {
+            building.GetComponent<RessourceInventory>().remove(tool.ressourceNeeded);
+        }
+        ToolInventory toolInventoryBuilding = building.GetComponent<ToolInventory>();
+        toolInventoryBuilding.wood.text = (int.Parse(toolInventoryBuilding.wood.text) - toolInventoryBuilding.activeTool.numberRessourcesNeeded).ToString();
+        yield return new WaitForSeconds(5.0f);
+        toolInventoryBuilding.addTool();
+        toolInventoryBuilding.add(tool);
+        toolInventoryBuilding.toolCount.text = (int.Parse(toolInventoryBuilding.toolCount.text) + 1).ToString();
+        //toolInventoryBuilding.isCrafted();
+        //yield return new WaitForSeconds(1.0f);
+        isCraftingTool = false;
     }
 }

@@ -37,7 +37,7 @@ public class CrafterActionCraftTools : FSMAction
         float citizenFrequence = building.timeToBuild * bonusLevel(level);
         //si le temps passé à construire est 
         */
-        if (!building.GetComponent<ToolInventory>().isCrafted())
+        /*if (!building.GetComponent<ToolInventory>().isCrafted())
         {
             building.GetComponent<ToolInventory>().isGettingCrafted();
         }
@@ -51,7 +51,13 @@ public class CrafterActionCraftTools : FSMAction
                 building.GetComponent<RessourceInventory>().remove(tool.ressourceNeeded);
             }
             
+        }*/
+
+        if (!controler.citizen.isCraftingTool && building.inventory.nbElementsTotal(tool.ressourceNeeded)>=tool.numberRessourcesNeeded)
+        {
+            controler.citizen.product(tool, building);
         }
+
     }
 
     public float bonusLevel(int level)
