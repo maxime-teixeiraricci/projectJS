@@ -7,19 +7,65 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000000E4DAC2E8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000000005EA852C8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] SoundI::release                          : BenlamineMehdiSonVillage (000000005455C098)
+[LOG] SoundI::release                          :     BenlamineMehdiSonVillage (000000005119A6B8)
+[LOG] SoundI::release                          :     BenlamineMehdiSonVillage (000000005455B678)
+[LOG] SoundI::release                          : WavesCalm (000000005455C758)
+[LOG] SoundI::release                          :     WavesCalm (000000005F93D8C8)
+[LOG] SoundI::release                          :     WavesCalm (000000005455BEE8)
+[LOG] SoundI::release                          : WavesCalm (000000005455BB88)
+[LOG] SoundI::release                          :     WavesCalm (000000005F93D588)
+[LOG] SoundI::release                          :     WavesCalm (000000005455B168)
+[LOG] SoundI::release                          : WavesCalm (000000005455C908)
+[LOG] SoundI::release                          :     WavesCalm (000000005F93CD68)
+[LOG] SoundI::release                          :     WavesCalm (000000005455B9D8)
+[LOG] SoundI::release                          : WavesCalm (000000005455AC58)
+[LOG] SoundI::release                          :     WavesCalm (000000005F93D0A8)
+[LOG] SoundI::release                          :     WavesCalm (000000005455C3F8)
+[LOG] SoundI::release                          : WavesCalm (000000005455C5A8)
+[LOG] SoundI::release                          :     WavesCalm (000000005F93CF08)
+[LOG] SoundI::release                          :     WavesCalm (000000005455B828)
+[LOG] SoundI::release                          : WavesCalm (000000001B4E6A68)
+[LOG] SoundI::release                          :     WavesCalm (000000005184F8C8)
+[LOG] SoundI::release                          :     WavesCalm (000000005455AE08)
+[LOG] SoundI::release                          : WavesCalm (000000005455BD38)
+[LOG] SoundI::release                          :     WavesCalm (000000005F93CBC8)
+[LOG] SoundI::release                          :     WavesCalm (000000005455C248)
+[LOG] SoundI::release                          : WavesCalm (000000005455B4C8)
+[LOG] SoundI::release                          :     WavesCalm (000000005F93D728)
+[LOG] SoundI::release                          :     WavesCalm (000000005455B318)
+[LOG] SoundI::release                          :  (0000000053EF66D8)
+[LOG] SoundI::release                          :     HammerInNails (0000000051198E98)
+[LOG] SoundI::release                          :  (0000000053EF4E68)
+[LOG] SoundI::release                          :     WalkOnLeaves (0000000051198B58)
+[LOG] SoundI::release                          :  (0000000053EF5598)
+[LOG] SoundI::release                          :     woodCutter (0000000051198CF8)
+[LOG] SoundI::release                          :  (0000000053EF7AF8)
+[LOG] SoundI::release                          :     fallingTrees (0000000051199378)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
@@ -27,4 +73,6 @@
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

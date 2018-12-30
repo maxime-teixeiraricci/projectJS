@@ -12,17 +12,26 @@ public class JaredBubblePopManager : MonoBehaviour {
 
     Building[] buildingToBuild;
 
-    int oldNbrBld = 0;
-    int numberBld = 0;
+    int oldNbrHouse = 0;
+    int oldNbrCamp = 0;
+    int oldNbrStatue = 0;
 
     void Start () {
         isActif = false;
         buildingToBuild = FindObjectsOfType<Building>();
         foreach (Building building in buildingToBuild)
         {
-            if (building.isConstruct)
+            if (building.isConstruct && building.tag == "House")
             {
-                numberBld++;
+                oldNbrHouse++;
+            }
+            if (building.isConstruct && building.tag == "Camp")
+            {
+                oldNbrCamp++;
+            }
+            if (building.isConstruct && building.tag == "Statue")
+            {
+                oldNbrStatue++;
             }
         }
     }
@@ -35,23 +44,40 @@ public class JaredBubblePopManager : MonoBehaviour {
         }
 	}
 
-    public bool buildingBuilt()
+    public int buildingBuilt()
     {
-        oldNbrBld = numberBld;
-        numberBld = 0;
+        int numberHouse = 0;
+        int numberCamp = 0;
+        int numberStatue = 0;
         buildingToBuild = FindObjectsOfType<Building>();
         foreach(Building building in buildingToBuild)
         {
-            if (building.isConstruct)
+            if (building.isConstruct && building.tag == "House")
             {
-                numberBld++;
+                numberHouse++;
+            }
+            if (building.isConstruct && building.tag == "Camp")
+            {
+                numberCamp++;
+            }
+            if (building.isConstruct && building.tag == "Statue")
+            {
+                numberStatue++;
             }
         }
-        if(oldNbrBld < numberBld)
+        if(oldNbrStatue < numberStatue)
         {
-            return true;
+            return 1;
         }
-        return false;
+        if (oldNbrCamp < numberCamp)
+        {
+            return 2;
+        }
+        if (oldNbrHouse < numberHouse)
+        {
+            return 3;
+        }
+        return -1;
     }
     
 
@@ -93,13 +119,32 @@ public class JaredBubblePopManager : MonoBehaviour {
             messages.Add("Notre stock d’outils déborde ! Peut-être devrions-nous suspendre la production ?");
         }
         
-        bool newBat = buildingBuilt();
-        if (newBat)
+        int newBat = buildingBuilt();
+        if (newBat != -1)
         {
-            //messages.Add("Un bâtiment vient d'être construit !");
-            popMessage("Un bâtiment vient d'être construit !");
+            if (newBat == 1)
+            {
+                oldNbrStatue++;
+                //messages.Add("Un bâtiment vient d'être construit !");
+                popMessage("Une merveille vient d'être construite. Félicitation! Vous vous rapprochez de l'objectif!");
+                return;
+            }
+            if (newBat == 2)
+            {
+                oldNbrCamp++;
+                //messages.Add("Un bâtiment vient d'être construit !");
+                popMessage("Un camp vient d'être construit. Vous pouvez y assigner deux récolteurs supplémentaires!");
+                return;
+            }
+            if (newBat == 3)
+            {
+                oldNbrHouse++;
+                //messages.Add("Un bâtiment vient d'être construit !");
+                popMessage("Une maison vient d'être construite. Deux nouveaux habitants ont rejoint votre société bravo!");
+                return;
+            }
         }
-        if (!newBat)
+        if (newBat == -1)
         {
             if (messages.Count <= 0) return;
             int index = Random.Range(0, Mathf.Max(0, messages.Count));
@@ -118,9 +163,9 @@ public class JaredBubblePopManager : MonoBehaviour {
         text.text = message;
         bubbleText.SetActive(true);
         isActif = true;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(5.0f);
         bubbleText.SetActive(false);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(3.0f);
         isActif = false;
     }
 }
