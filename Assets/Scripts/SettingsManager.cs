@@ -67,7 +67,7 @@ public class SettingsManager : MonoBehaviour {
         foreach (NaturalRessource tree in trees)
         {
             FMODUnity.StudioEventEmitter emitter = tree.GetComponent<FMODUnity.StudioEventEmitter>();
-            emitter.EventInstance.setVolume(0.0f);
+            emitter.EventInstance.setVolume(volume);
             AudioSource source = tree.GetComponent<AudioSource>();
             source.volume = volume;
         }
@@ -82,6 +82,14 @@ public class SettingsManager : MonoBehaviour {
         GameObject.Find("ButtonCamp").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonHouse").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonStatue").GetComponent<AudioSource>().volume = volume;
+
+        foreach(Transform child in GameObject.Find("WaveSound").transform)
+        {
+            FMODUnity.StudioEventEmitter emitter = child.GetComponent<FMODUnity.StudioEventEmitter>();
+            emitter.EventInstance.setVolume(volume);
+        }
+
+        //GameObject.Find("WaveN").GetComponent<FMODUnity.StudioEventEmitter>();
 
     }
 

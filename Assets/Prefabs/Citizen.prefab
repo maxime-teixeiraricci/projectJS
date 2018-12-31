@@ -199,7 +199,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487986925770250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.39, y: 0.392, z: -4.58}
+  m_LocalPosition: {x: 2.68, y: 0.392, z: -4.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4683617866707768}
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487986925770250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdb9dbdb509d92542a4295f0e49973fb, type: 3}
   m_Name: 
@@ -650,6 +650,10 @@ MonoBehaviour:
   isFull: 0
   canWork: 1
   isWalking: 0
+  isProductTool: 0
+  isRecoltWood: 0
+  isBuilding: 0
+  isCraftingTool: 0
   walk: {fileID: 82848265540502218}
   soifMax: 0
   faimMax: 0
@@ -713,15 +717,9 @@ MonoBehaviour:
     Value: 0
   - Name: 
     Value: 0
-  - Name: 
-    Value: 0
-  - Name: Recolt
-    Value: 0
   - Name: Walk
     Value: 0
-  - Name: ToolProduction
-    Value: 0
-  - Name: Construct
+  - Name: Walk
     Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
