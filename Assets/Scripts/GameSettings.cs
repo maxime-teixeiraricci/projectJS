@@ -45,12 +45,18 @@ public class GameSettings : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.B))
         {
             evenementManager.SetActive(true);
+            evenementManager.GetComponent<AudioSource>().Play();
         }
 	}
 
     public void goToMainScreen()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void replayGame()
+    {
+        SceneManager.LoadScene("Test");
     }
 
 }
