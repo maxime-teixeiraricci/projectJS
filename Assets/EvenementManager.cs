@@ -32,7 +32,14 @@ public class EvenementManager : MonoBehaviour
 
     public void ActivateResponse(int i)
     {
+        if(ResourcesCount.singleton.wood < 10 && evenement.reponses[i].value == -10)
+        {
+            gameObject.SetActive(false);
+            GameObject.Find("ErrorMessage").SetActive(true);
+            return;
+        }
         FactorsManager.singleton.AddRessource(evenement.reponses[i].changeGauge[0].value);
+        ResourcesCount.singleton.boostTrees(evenement.reponses[i].value);
         gameObject.SetActive(false);
     }
     

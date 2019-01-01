@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e97639f9e4f646458ac843c01c4b8ff, type: 3}
   m_Name: R2
   m_EditorClassIdentifier: 
-  text: Planter
+  text: "Am\xE9liorer la pousse des arbres (-10 bois)"
+  value: -10
   changeGauge:
   - name: Environnement
     value: 10

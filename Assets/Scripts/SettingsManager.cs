@@ -14,6 +14,7 @@ public class SettingsManager : MonoBehaviour {
     //AudioSource music;
 
     public FMODUnity.StudioEventEmitter mainTheme;
+    public GameObject eventSound;
 
     float oldValue;
 
@@ -82,8 +83,10 @@ public class SettingsManager : MonoBehaviour {
         GameObject.Find("ButtonCamp").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonHouse").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonStatue").GetComponent<AudioSource>().volume = volume;
+        eventSound.GetComponent<AudioSource>().volume = volume;
 
-        foreach(Transform child in GameObject.Find("WaveSound").transform)
+
+        foreach (Transform child in GameObject.Find("WaveSound").transform)
         {
             FMODUnity.StudioEventEmitter emitter = child.GetComponent<FMODUnity.StudioEventEmitter>();
             emitter.EventInstance.setVolume(volume);

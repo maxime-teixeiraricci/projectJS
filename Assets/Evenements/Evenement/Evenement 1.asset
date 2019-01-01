@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Evenement 1
   m_EditorClassIdentifier: 
   titre: Gestion des arbres
-  description: Couper des arbres ou en planter ?
+  description: "Notre v\xE9g\xE9tation commence \xE0 d\xE9croitre. Voulez-vous am\xE9liorer
+    leur pousse ?"
   reponses:
   - {fileID: 11400000, guid: a34751f20c1673d44861a00a4d2d496c, type: 2}
   - {fileID: 11400000, guid: 39e4f344829e8624fba5004628ae0492, type: 2}

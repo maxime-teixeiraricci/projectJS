@@ -59,4 +59,9 @@ public class GameSettings : MonoBehaviour {
         SceneManager.LoadScene("Test");
     }
 
+    public void hideWindow()
+    {
+        gameObject.SetActive(false);
+    }
+
 }

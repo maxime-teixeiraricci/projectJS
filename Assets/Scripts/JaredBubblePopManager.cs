@@ -126,7 +126,7 @@ public class JaredBubblePopManager : MonoBehaviour {
             {
                 oldNbrStatue++;
                 //messages.Add("Un bâtiment vient d'être construit !");
-                popMessage("Une merveille vient d'être construite. Félicitation! Vous vous rapprochez de l'objectif!");
+                popMessage("Une statue vient d'être construite. Félicitations! Vous vous rapprochez de l'objectif!");
                 return;
             }
             if (newBat == 2)
@@ -140,7 +140,7 @@ public class JaredBubblePopManager : MonoBehaviour {
             {
                 oldNbrHouse++;
                 //messages.Add("Un bâtiment vient d'être construit !");
-                popMessage("Une maison vient d'être construite. Deux nouveaux habitants ont rejoint votre société bravo!");
+                popMessage("Une maison vient d'être construite. Deux nouveaux habitants ont rejoint votre société, bravo!");
                 return;
             }
         }

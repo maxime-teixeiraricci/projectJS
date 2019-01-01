@@ -50,6 +50,12 @@ public class ResourcesCount : MonoBehaviour {
         }
     }
 
+    public void boostTrees(int value)
+    {
+        wood -= 10;
+        woodText.text = (int.Parse(woodText.text) + value).ToString();
+    }
+
 
 }
 

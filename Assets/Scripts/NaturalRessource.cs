@@ -14,7 +14,7 @@ public class NaturalRessource : MonoBehaviour
 
     public TextMesh health;
 
-    public float timetoGrow = 2.0f;
+    public float timetoGrow = 50.0f;
 
     float timePassed;
 
@@ -69,6 +69,7 @@ public class NaturalRessource : MonoBehaviour
         if(numberRessource < maxRessource)
         {
             numberRessource += Time.deltaTime / timetoGrow;
+            Debug.Log("Time to grow  = " + Time.deltaTime / timetoGrow);
         }
     }
 

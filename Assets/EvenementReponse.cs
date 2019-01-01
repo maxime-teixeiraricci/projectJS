@@ -6,5 +6,6 @@ using UnityEngine;
 public class EvenementReponse : ScriptableObject
 {
     public string text;
+    public int value;
     public Gauge[] changeGauge;
 }
