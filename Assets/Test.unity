@@ -364,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScreenWin: {fileID: 1939163866}
   endScreenLose: {fileID: 1228350744}
+  errorScreen: {fileID: 1129392141}
   currentObjectif: {fileID: 2051757371}
   finalObjectif: {fileID: 707586244}
   slideTrees: {fileID: 1194354748}
@@ -6098,7 +6099,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 121092097}
-        m_MethodName: replayGame
+        m_MethodName: hideWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9177,6 +9178,7 @@ MonoBehaviour:
   textResponses:
   - {fileID: 144749205}
   - {fileID: 684514682}
+  errorMessage: {fileID: 1129392141}
 --- !u!114 &1267509564
 MonoBehaviour:
   m_ObjectHideFlags: 0

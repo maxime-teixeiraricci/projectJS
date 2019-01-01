@@ -13,6 +13,8 @@ public class EvenementManager : MonoBehaviour
     public Text textDescription;
     public Text[] textResponses;
 
+    public GameObject errorMessage;
+
 
     public void Update()
     {
@@ -35,7 +37,7 @@ public class EvenementManager : MonoBehaviour
         if(ResourcesCount.singleton.wood < 10 && evenement.reponses[i].value == -10)
         {
             gameObject.SetActive(false);
-            GameObject.Find("ErrorMessage").SetActive(true);
+            errorMessage.SetActive(true);
             return;
         }
         FactorsManager.singleton.AddRessource(evenement.reponses[i].changeGauge[0].value);

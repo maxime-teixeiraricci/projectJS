@@ -9,6 +9,8 @@ public class GameSettings : MonoBehaviour {
     public GameObject endScreenWin;
     public GameObject endScreenLose;
 
+    public GameObject errorScreen;
+
     public Text currentObjectif;
     public Text finalObjectif;
 
@@ -61,7 +63,7 @@ public class GameSettings : MonoBehaviour {
 
     public void hideWindow()
     {
-        gameObject.SetActive(false);
+        errorScreen.SetActive(false);
     }
 
 }
