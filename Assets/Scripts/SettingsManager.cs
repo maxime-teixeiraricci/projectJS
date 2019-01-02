@@ -85,6 +85,10 @@ public class SettingsManager : MonoBehaviour {
         GameObject.Find("ButtonStatue").GetComponent<AudioSource>().volume = volume;
         eventSound.GetComponent<AudioSource>().volume = volume;
 
+        GameObject birds = GameObject.Find("BirdsSound");
+        FMODUnity.StudioEventEmitter emitBirds = birds.GetComponent<FMODUnity.StudioEventEmitter>();
+        emitBirds.EventInstance.setVolume(volume);
+
 
         foreach (Transform child in GameObject.Find("WaveSound").transform)
         {
