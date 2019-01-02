@@ -5,6 +5,9 @@ using System.Collections;
 [System.Serializable]
 
 public class DayNightController : MonoBehaviour {
+
+    public bool day;
+
 	//Speed of the cycle (if you set this to 1 the one hour in the cycle will pass in 1 real life second)
 	public float daySpeedMultiplier = 0.1f;
 	//main directional light
@@ -126,9 +129,11 @@ public class DayNightController : MonoBehaviour {
 		//This basically turn on and off the sun light based on day / night
 		if (controlIntensity && sunLight && (currentTime >= 18.0f || currentTime <= 5.5f)) {
 			sunLight.intensity = Mathf.MoveTowards(sunLight.intensity,0.0f,Time.deltaTime*daySpeedMultiplier*10.0f);
-		} else if (controlIntensity && sunLight) {
+            day = false;
+        } else if (controlIntensity && sunLight) {
 			sunLight.intensity = Mathf.MoveTowards(sunLight.intensity,1.0f,Time.deltaTime*daySpeedMultiplier*10.0f);
-		}
+            day = true;
+        }
 
 	}
 
@@ -188,10 +193,9 @@ public class DayNightController : MonoBehaviour {
 		float minutes = ((currentTime) - (Mathf.Floor(currentTime)))*60.0f;
 		if (currentTime <= 12.0f) {
 			AMPM = "AM";
-
-		} else {
+        } else {
 			AMPM = "PM";
-		}
+        }
 		//Make the final string
 		timeString = Mathf.Floor(currentTime).ToString() + " : " + minutes.ToString("F0");
 

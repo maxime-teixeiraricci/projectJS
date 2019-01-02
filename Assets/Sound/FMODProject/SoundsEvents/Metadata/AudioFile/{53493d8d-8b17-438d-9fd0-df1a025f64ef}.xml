@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{53493d8d-8b17-438d-9fd0-df1a025f64ef}">
+        <property name="assetPath">
+            <value>SF-huard-1.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>7.9151020408163264</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{05c0415c-caca-48d5-af16-b3a4f439cd0f}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{f489c94b-96c6-410f-b572-c97ee50e33a3}">
+        <property name="assetPath">
+            <value>birds1.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>123.93600000000001</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{05c0415c-caca-48d5-af16-b3a4f439cd0f}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ClockDisplay : MonoBehaviour {
-
+    
     public DayNightController timeControler;
     public Text hourText;
     public Text dayText;
