@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaf1b73342d99243bd530ff4f247cbf, type: 3}
+  m_Name: Evenement Tools
+  m_EditorClassIdentifier: 
+  titre: Stock d'outils
+  description: "Votre stock d'outils est cons\xE9quent. Voulez-vous en recycler quelques
+    uns pour r\xE9cup\xE9rer du bois ?"
+  reponses:
+  - {fileID: 11400000, guid: 24772d4c2a27f73428a95dc957bd636a, type: 2}
+  - {fileID: 11400000, guid: 2222adc10d69a4a428e70eb41a17354c, type: 2}

@@ -44,5 +44,22 @@ public class EvenementManager : MonoBehaviour
         ResourcesCount.singleton.boostTrees(evenement.reponses[i].value);
         gameObject.SetActive(false);
     }
+
+    public void recycleTools()
+    {
+        GameObject toolsCount = GameObject.Find("ToolTotal");
+        GameObject woodCount = GameObject.Find("WoodTotal");
+
+        FactorsManager.singleton.AddRessource(25);
+
+        toolsCount.GetComponent<Text>().text = (int.Parse(toolsCount.GetComponent<Text>().text) - 5).ToString();
+        woodCount.GetComponent<Text>().text = (int.Parse(woodCount.GetComponent<Text>().text) + 25).ToString();
+
+        gameObject.SetActive(false);
+    }
     
+    public void hideWindow()
+    {
+        gameObject.SetActive(false);
+    }
 }

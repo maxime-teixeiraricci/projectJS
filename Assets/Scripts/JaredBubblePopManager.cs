@@ -119,6 +119,11 @@ public class JaredBubblePopManager : MonoBehaviour {
             messages.Add("Notre stock d’outils déborde ! Peut-être devrions-nous suspendre la production ?");
         }
         
+        if(nbrTools == 5)
+        {
+            messages.Add("Nous avons assez d'outils pour construire une statue ! Nous devrions le faire immédiatement !");
+        }
+
         int newBat = buildingBuilt();
         if (newBat != -1)
         {

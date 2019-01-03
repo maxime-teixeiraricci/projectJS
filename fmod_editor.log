@@ -7,19 +7,77 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000000471CCC48 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000000101946C8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004D32FBE8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004D32FBE8
+[LOG] SoundI::release                          : BenlamineMehdiSonVillage (000000004D32FD98)
+[LOG] SoundI::release                          :     BenlamineMehdiSonVillage (000000004CBC4CD8)
+[LOG] SoundI::release                          :     BenlamineMehdiSonVillage (000000004CBB9C08)
+[LOG] SoundI::release                          : WavesCalm (000000004D32FA38)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBC54F8)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBB9A58)
+[LOG] SoundI::release                          : WavesCalm (000000004D330608)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBC5018)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBB91E8)
+[LOG] SoundI::release                          : WavesCalm (000000004CBB9038)
+[LOG] SoundI::release                          :     WavesCalm (000000004C72A7B8)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBB9F68)
+[LOG] SoundI::release                          : WavesCalm (000000004D331538)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBC5358)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBB9DB8)
+[LOG] SoundI::release                          : WavesCalm (000000004CBB98A8)
+[LOG] SoundI::release                          :     WavesCalm (000000004C72A958)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBB9548)
+[LOG] SoundI::release                          : WavesCalm (000000004D3307B8)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBC51B8)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBB96F8)
+[LOG] SoundI::release                          : WavesCalm (000000004D331388)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBC4E78)
+[LOG] SoundI::release                          :     WavesCalm (000000004D32FBE8)
+[LOG] SoundI::release                          : WavesCalm (000000004CBB87C8)
+[LOG] SoundI::release                          :     WavesCalm (000000004C729C58)
+[LOG] SoundI::release                          :     WavesCalm (000000004CBB9398)
+[LOG] SoundI::release                          :  (000000004C4883B8)
+[LOG] SoundI::release                          :     HammerInNails (000000004D3AE678)
+[LOG] SoundI::release                          :  (000000004C486138)
+[LOG] SoundI::release                          :     wood4 (000000004D3AE198)
+[LOG] SoundI::release                          :  (000000004C488808)
+[LOG] SoundI::release                          :     WalkOnLeaves (00000000198AC198)
+[LOG] SoundI::release                          :  (000000004C487C88)
+[LOG] SoundI::release                          :     woodCutter (000000004D3AE9B8)
+[LOG] SoundI::release                          :  (000000004C484E88)
+[LOG] SoundI::release                          :     SF-huard-1 (000000004D3ADFF8)
+[LOG] SoundI::release                          :  (000000004C488528)
+[LOG] SoundI::release                          :     SF-huard-2 (000000004D3AE338)
+[LOG] SoundI::release                          :  (000000004C484FF8)
+[LOG] SoundI::release                          :     aigle (000000004D3AE4D8)
+[LOG] SoundI::release                          :  (000000004C486588)
+[LOG] SoundI::release                          :     sf_goelands_bruns_01 (000000004D3AE818)
+[LOG] SoundI::release                          :  (000000004C485448)
+[LOG] SoundI::release                          :     fallingTrees (00000000198ABB18)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
@@ -27,4 +85,6 @@
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.
