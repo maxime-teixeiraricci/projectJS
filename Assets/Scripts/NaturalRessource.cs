@@ -27,6 +27,7 @@ public class NaturalRessource : MonoBehaviour
         }
         if (numberRessource <= 0)
         {
+            GetComponent<FMODUnity.StudioEventEmitter>().enabled = true;
             Destroy(gameObject);
         }
         Growth();
@@ -48,6 +49,7 @@ public class NaturalRessource : MonoBehaviour
                 numberRessource--;
                 if (numberRessource <= 0)
                 {
+                    GetComponent<FMODUnity.StudioEventEmitter>().enabled = true;
                     Destroy(gameObject);
                 }
 
@@ -58,6 +60,7 @@ public class NaturalRessource : MonoBehaviour
             numberRessource--;
             if (numberRessource <= 0)
             {
+                GetComponent<FMODUnity.StudioEventEmitter>().enabled = true;
                 Destroy(gameObject);
             }
         }
