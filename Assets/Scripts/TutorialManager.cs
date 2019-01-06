@@ -36,6 +36,7 @@ public class TutorialManager : MonoBehaviour {
 
     public void skipTuto()
     {
+        activatingInteractables();
         gameObject.SetActive(false);
     }
 
@@ -48,6 +49,12 @@ public class TutorialManager : MonoBehaviour {
 
     public void playGame()
     {
+        activatingInteractables();
+        gameObject.SetActive(false);
+    }
+
+    public void activatingInteractables()
+    {
         gatherers.interactable = true;
         crafters.interactable = true;
         carriers.interactable = true;
@@ -55,6 +62,5 @@ public class TutorialManager : MonoBehaviour {
         camp.interactable = true;
         house.interactable = true;
         statue.interactable = true;
-        gameObject.SetActive(false);
     }
 }
