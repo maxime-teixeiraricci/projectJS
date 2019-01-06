@@ -11,6 +11,8 @@ public class Camp : Building
     [Header("Work")]
     public int numberWorkers;
     public List<Citizen> listWorkers;
+
+    public TextMesh citizenNumber;
     
 
     public void Start()
@@ -20,6 +22,7 @@ public class Camp : Building
         alphaColor = new Color(colorStart.r, colorStart.g, colorStart.b, 0);
         GetComponent<MeshRenderer>().material.color = alphaColor;
         toolText = GameObject.FindGameObjectWithTag("ToolText").GetComponent<Text>();
+        //citizenNumber = GameObject.Find("citizenNumber").GetComponent<TextMesh>();
     }
 
     public void Update()
@@ -89,6 +92,8 @@ public class Camp : Building
                 }
             }
         }
+
+        citizenNumber.text = listWorkers.Count.ToString();
     }
     
 
