@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 114097836672405736}
   - component: {fileID: 114954946275052540}
   - component: {fileID: 114311206827723912}
-  - component: {fileID: 114062070225500988}
   - component: {fileID: 114900211541854268}
   - component: {fileID: 82848265540502218}
   - component: {fileID: 114349488347164084}
@@ -617,20 +616,6 @@ MonoBehaviour:
   farmTimer: 0
   buildTimer: 0
   craftTimer: 0
---- !u!114 &114062070225500988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1487986925770250}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb9dbdb509d92542a4295f0e49973fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 0}
-  fpsActivated: 0
-  fpsFeedBack: {fileID: 0}
 --- !u!114 &114097836672405736
 MonoBehaviour:
   m_ObjectHideFlags: 1

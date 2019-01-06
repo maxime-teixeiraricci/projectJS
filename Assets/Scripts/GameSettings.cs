@@ -22,6 +22,9 @@ public class GameSettings : MonoBehaviour {
 
     int maxDays = 45;
 
+    public GameObject nextTuto;
+
+
     // Use this for initialization
     void Start () {
 		
@@ -64,6 +67,17 @@ public class GameSettings : MonoBehaviour {
     public void hideWindow()
     {
         errorScreen.SetActive(false);
+    }
+
+    public void skipTuto()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void showNextTuto()
+    {
+        nextTuto.SetActive(true);
+        gameObject.SetActive(false);
     }
 
 }
