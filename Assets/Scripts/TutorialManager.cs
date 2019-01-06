@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TutorialManager : MonoBehaviour {
 
     public GameObject nextTuto;
+    public GameObject previousTuto;
     public Slider gatherers;
     public Slider crafters;
     public Slider carriers;
@@ -44,6 +45,12 @@ public class TutorialManager : MonoBehaviour {
     {
         nextTuto.SetActive(true);
 
+        gameObject.SetActive(false);
+    }
+
+    public void showPreviousTuto()
+    {
+        previousTuto.SetActive(true);
         gameObject.SetActive(false);
     }
 
