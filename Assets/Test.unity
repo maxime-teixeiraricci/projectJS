@@ -4950,6 +4950,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTuto: {fileID: 846670308}
+  gatherers: {fileID: 1368300020}
+  crafters: {fileID: 1403801102}
+  carriers: {fileID: 1600746356}
+  builders: {fileID: 1142640527}
+  camp: {fileID: 1093941173}
+  house: {fileID: 860158569}
+  statue: {fileID: 422790965}
 --- !u!114 &530989224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8567,6 +8574,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTuto: {fileID: 0}
+  gatherers: {fileID: 1368300020}
+  crafters: {fileID: 1403801102}
+  carriers: {fileID: 1600746356}
+  builders: {fileID: 1142640527}
+  camp: {fileID: 1093941173}
+  house: {fileID: 860158569}
+  statue: {fileID: 422790965}
 --- !u!114 &846670311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12490,6 +12504,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTuto: {fileID: 1211544144}
+  gatherers: {fileID: 1368300020}
+  crafters: {fileID: 1403801102}
+  carriers: {fileID: 1600746356}
+  builders: {fileID: 1142640527}
+  camp: {fileID: 1093941173}
+  house: {fileID: 860158569}
+  statue: {fileID: 422790965}
 --- !u!114 &1176465016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12952,6 +12973,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTuto: {fileID: 530989221}
+  gatherers: {fileID: 1368300020}
+  crafters: {fileID: 1403801102}
+  carriers: {fileID: 1600746356}
+  builders: {fileID: 1142640527}
+  camp: {fileID: 1093941173}
+  house: {fileID: 860158569}
+  statue: {fileID: 422790965}
 --- !u!114 &1211544147
 MonoBehaviour:
   m_ObjectHideFlags: 0
