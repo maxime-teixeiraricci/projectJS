@@ -5154,6 +5154,7 @@ MonoBehaviour:
   crafters: {fileID: 1403801102}
   carriers: {fileID: 1600746356}
   builders: {fileID: 1142640527}
+  speedTime: {fileID: 1581560798}
   camp: {fileID: 1093941173}
   house: {fileID: 860158569}
   statue: {fileID: 422790965}
@@ -8779,6 +8780,7 @@ MonoBehaviour:
   crafters: {fileID: 1403801102}
   carriers: {fileID: 1600746356}
   builders: {fileID: 1142640527}
+  speedTime: {fileID: 1581560798}
   camp: {fileID: 1093941173}
   house: {fileID: 860158569}
   statue: {fileID: 422790965}
@@ -12908,6 +12910,7 @@ MonoBehaviour:
   crafters: {fileID: 1403801102}
   carriers: {fileID: 1600746356}
   builders: {fileID: 1142640527}
+  speedTime: {fileID: 1581560798}
   camp: {fileID: 1093941173}
   house: {fileID: 860158569}
   statue: {fileID: 422790965}
@@ -13378,6 +13381,7 @@ MonoBehaviour:
   crafters: {fileID: 1403801102}
   carriers: {fileID: 1600746356}
   builders: {fileID: 1142640527}
+  speedTime: {fileID: 1581560798}
   camp: {fileID: 1093941173}
   house: {fileID: 860158569}
   statue: {fileID: 422790965}

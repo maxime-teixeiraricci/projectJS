@@ -12,17 +12,22 @@ public class TutorialManager : MonoBehaviour {
     public Slider carriers;
     public Slider builders;
 
+    public Slider speedTime;
+
     public Button camp;
     public Button house;
     public Button statue;
 
     // Use this for initialization
     void Start () {
-		
-	}
+        Time.timeScale = 0;
+        speedTime.value = 0;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        Time.timeScale = 0;
+        speedTime.value = 0;
         if (gameObject.activeSelf)
         {
             gatherers.interactable = false;
@@ -32,6 +37,7 @@ public class TutorialManager : MonoBehaviour {
             camp.interactable = false;
             house.interactable = false;
             statue.interactable = false;
+            speedTime.interactable = false;
         }
 	}
 
@@ -39,6 +45,7 @@ public class TutorialManager : MonoBehaviour {
     {
         activatingInteractables();
         gameObject.SetActive(false);
+        
     }
 
     public void showNextTuto()
@@ -69,5 +76,8 @@ public class TutorialManager : MonoBehaviour {
         camp.interactable = true;
         house.interactable = true;
         statue.interactable = true;
+        speedTime.interactable = true;
+        Time.timeScale = 1;
+        speedTime.value = 1;
     }
 }
