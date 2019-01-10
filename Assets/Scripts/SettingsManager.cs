@@ -12,6 +12,7 @@ public class SettingsManager : MonoBehaviour {
     public Sprite sound;
     public Sprite muteSound;
     //AudioSource music;
+    public GameObject errorSound;
 
     public FMODUnity.StudioEventEmitter mainTheme;
     public GameObject eventSound;
@@ -105,6 +106,8 @@ public class SettingsManager : MonoBehaviour {
             }
             
         }
+
+        errorSound.GetComponent<AudioSource>().volume = volume;
 
         GameObject.Find("ButtonCamp").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonHouse").GetComponent<AudioSource>().volume = volume;

@@ -817,7 +817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScreenWin: {fileID: 1939163866}
   endScreenLose: {fileID: 1228350744}
-  errorScreen: {fileID: 0}
+  errorScreen: {fileID: 1129392141}
   currentObjectif: {fileID: 2051757371}
   finalObjectif: {fileID: 707586244}
   slideTrees: {fileID: 1194354748}
@@ -1054,6 +1054,7 @@ MonoBehaviour:
   mute: {fileID: 1570668752}
   sound: {fileID: 21300000, guid: 537538c0e982be94aa167326b9464a71, type: 3}
   muteSound: {fileID: 21300000, guid: 5bbcdc1871856214582619a7ec7155ca, type: 3}
+  errorSound: {fileID: 1129392141}
   mainTheme: {fileID: 526196923}
   eventSound: {fileID: 1267509561}
 --- !u!114 &133240375
@@ -12226,7 +12227,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f85785f3cb175ef4cb4bb0073dcfc78c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5739a5f6f8e075f41be4f7c0d8cae135, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -13971,6 +13972,7 @@ GameObject:
   - component: {fileID: 1267509564}
   - component: {fileID: 1267509563}
   - component: {fileID: 1267509566}
+  - component: {fileID: 1267509567}
   m_Layer: 5
   m_Name: Evenement
   m_TagString: Untagged
@@ -14016,7 +14018,7 @@ MonoBehaviour:
   textResponses:
   - {fileID: 144749205}
   - {fileID: 684514682}
-  errorMessage: {fileID: 0}
+  errorMessage: {fileID: 1129392141}
 --- !u!114 &1267509564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14062,6 +14064,101 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6e04bd4ee4ee191458157634fdc7ab60, type: 3}
   m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1267509567
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267509561}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 804b2eb0dde3b0c4da75253ec9b5805d, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -17435,6 +17532,7 @@ MonoBehaviour:
   mute: {fileID: 1548240319}
   sound: {fileID: 21300000, guid: 537538c0e982be94aa167326b9464a71, type: 3}
   muteSound: {fileID: 21300000, guid: 5bbcdc1871856214582619a7ec7155ca, type: 3}
+  errorSound: {fileID: 0}
   mainTheme: {fileID: 526196923}
   eventSound: {fileID: 1267509561}
 --- !u!114 &1566346424

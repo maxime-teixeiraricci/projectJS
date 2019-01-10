@@ -42,6 +42,7 @@ public class EvenementManager : MonoBehaviour
         }
         FactorsManager.singleton.AddRessource(evenement.reponses[i].changeGauge[0].value);
         ResourcesCount.singleton.boostTrees(evenement.reponses[i].value);
+        
         gameObject.SetActive(false);
     }
 
