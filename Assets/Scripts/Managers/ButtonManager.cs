@@ -10,6 +10,8 @@ public class ButtonManager : MonoBehaviour
     public Button currentButton;
     public GameObject arrow;
 
+    public AudioSource sound;
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,7 @@ public class ButtonManager : MonoBehaviour
     public void mouseOnButton()
     {
         arrow.SetActive(true);
+        sound.Play();
         //Debug.Log("Im on it");
     }
 

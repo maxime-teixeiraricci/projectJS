@@ -34,6 +34,8 @@ public class SettingsManager : MonoBehaviour {
         {
             changeSoundsVolumes(volume.value / 100);
         }
+
+        musicMuted();
         //mainTheme.EventInstance.setVolume(volume.value / 100);
 
 	}
@@ -52,7 +54,19 @@ public class SettingsManager : MonoBehaviour {
             volume.value = oldValue;
             mute.GetComponent<Image>().sprite = sound;
         }
-        
+    }
+
+    public void musicMuted()
+    {
+        if(volume.value == 0)
+        {
+            mute.GetComponent<Image>().sprite = muteSound;
+        }
+
+        else
+        {
+            mute.GetComponent<Image>().sprite = sound;
+        }
     }
 
     public void changeSoundsVolumes(float volume)
@@ -76,8 +90,20 @@ public class SettingsManager : MonoBehaviour {
         Building[] buildings = GameObject.FindObjectsOfType<Building>();
         foreach (Building building in buildings)
         {
-            AudioSource source = building.GetComponent<AudioSource>();
-            source.volume = volume;
+            if(building.tag == "Statue")
+            {
+                foreach (AudioSource clip in building.GetComponents<AudioSource>())
+                {
+                    clip.volume = volume;
+                }
+            }
+
+            else
+            {
+                AudioSource source = building.GetComponent<AudioSource>();
+                source.volume = volume;
+            }
+            
         }
 
         GameObject.Find("ButtonCamp").GetComponent<AudioSource>().volume = volume;
