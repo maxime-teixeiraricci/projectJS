@@ -77,17 +77,15 @@ public class SettingsManager : MonoBehaviour {
     public void changeSoundsVolumes(float volume)
     {
         Citizen[] citizens = GameObject.FindObjectsOfType<Citizen>();
-        NaturalRessource[] trees = GameObject.FindObjectsOfType<NaturalRessource>();
+        GameObject[] trees = GameObject.FindGameObjectsWithTag("RessourceTank");
 
-        foreach(Citizen cit in citizens)
+        foreach (Citizen cit in citizens)
         {
             FMODUnity.StudioEventEmitter emitter = cit.GetComponent<FMODUnity.StudioEventEmitter>();
             emitter.EventInstance.setVolume(volume);
         }
-        foreach (NaturalRessource tree in trees)
+        foreach (GameObject tree in trees)
         {
-            FMODUnity.StudioEventEmitter emitter = tree.GetComponent<FMODUnity.StudioEventEmitter>();
-            emitter.EventInstance.setVolume(volume);
             AudioSource source = tree.GetComponent<AudioSource>();
             source.volume = volume;
         }
@@ -112,7 +110,7 @@ public class SettingsManager : MonoBehaviour {
         }
 
         errorSound.GetComponent<AudioSource>().volume = volume;
-
+        GameObject.Find("SoundTree").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonCamp").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonHouse").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonStatue").GetComponent<AudioSource>().volume = volume;

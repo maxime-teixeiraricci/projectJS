@@ -34,6 +34,7 @@ public class GameSettings : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         FMODUnity.StudioEventEmitter emitter = mainTheme.GetComponent<FMODUnity.StudioEventEmitter>();
         if (int.Parse(currentObjectif.text) == int.Parse(finalObjectif.text))
         {
@@ -103,5 +104,7 @@ public class GameSettings : MonoBehaviour {
         nextTuto.SetActive(true);
         gameObject.SetActive(false);
     }
+
+    
 
 }

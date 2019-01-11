@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 114477099589626934}
   - component: {fileID: 65844974007573530}
   - component: {fileID: 114570309786011706}
-  - component: {fileID: 114863250720289490}
   - component: {fileID: 82624205841289546}
   m_Layer: 0
   m_Name: Tree
@@ -371,7 +370,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280661925933622}
-  m_Text: 0
+  m_Text: 100
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -425,28 +424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 23204510264928556}
   sound: {fileID: 82624205841289546}
---- !u!114 &114863250720289490
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1569947679646468}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/TreeEvents
-  PlayEvent: 11
-  StopEvent: 0
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!208 &208840460096738026
 NavMeshObstacle:
   m_ObjectHideFlags: 1

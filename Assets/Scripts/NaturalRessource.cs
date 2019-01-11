@@ -25,11 +25,11 @@ public class NaturalRessource : MonoBehaviour
         {
             health.text = "";
         }
+        /*
         if (numberRessource <= 0)
         {
-            GetComponent<FMODUnity.StudioEventEmitter>().enabled = true;
             Destroy(gameObject);
-        }
+        }*/
         Growth();
         updateText();
         //Debug.Log("Nb ressources = " + 1.0f / timetoGrow);
@@ -47,22 +47,22 @@ public class NaturalRessource : MonoBehaviour
             {
                 citizen.ressourcesToTransport.add(structRessource);
                 numberRessource--;
+                /*
                 if (numberRessource <= 0)
                 {
-                    GetComponent<FMODUnity.StudioEventEmitter>().enabled = true;
                     Destroy(gameObject);
-                }
+                }*/
 
             }
         }
         else{
             citizen.ressourcesToTransport.add(structRessource);
             numberRessource--;
+            /*
             if (numberRessource <= 0)
             {
-                GetComponent<FMODUnity.StudioEventEmitter>().enabled = true;
                 Destroy(gameObject);
-            }
+            }*/
         }
         //numberRessource--;
     }
