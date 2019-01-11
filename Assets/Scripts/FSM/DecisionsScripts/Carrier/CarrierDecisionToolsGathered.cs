@@ -17,7 +17,7 @@ public class CarrierDecisionToolsGathered : FSMDecision
         foreach (Tool t in citizen.toolsToTransport.getToolsNeededTransport())
         {
             //s'il en reste renvoie true
-            if (t.number < t.nbToTransport) return false;
+            if (t.number < 1) return false;
         }
         //controler.target = controler.finalTarget;
         return true;

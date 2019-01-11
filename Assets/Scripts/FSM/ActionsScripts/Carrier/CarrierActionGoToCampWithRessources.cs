@@ -24,6 +24,33 @@ public class CarrierActionGoToCampWithRessources : FSMAction
                 if (gO.GetComponent<Building>().isConstruct)
                 {
                     Building building = gO.GetComponent<Building>();
+
+                    foreach (RessourceTank rT in controler.GetComponent<Citizen>().ressourcesToTransport.ressourcesList)
+                    {
+                        if (building.inventory.nbElementsTotal(rT.ressource) > 0)
+                        {
+                            controler.target = gO;
+                            foreach (Tool t in controler.GetComponent<Citizen>().toolsToTransport.toolInventory)
+                            {
+                                if (building.toolsInventory.nbElementsTotal(t) > 0)
+                                {
+                                    controler.target = gO;
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                
+            }
+
+            foreach (GameObject gO in shelterList)
+            {
+                if (gO.GetComponent<Building>().isConstruct)
+                {
+                    Building building = gO.GetComponent<Building>();
+
                     foreach (RessourceTank rT in controler.GetComponent<Citizen>().ressourcesToTransport.ressourcesList)
                     {
                         if (building.inventory.nbElementsTotal(rT.ressource) > 0)
@@ -32,16 +59,9 @@ public class CarrierActionGoToCampWithRessources : FSMAction
                             return;
                         }
                     }
-                    foreach (Tool t in controler.GetComponent<Citizen>().toolsToTransport.toolInventory)
-                    {
-                        if (building.toolsInventory.nbElementsTotal(t) > 0)
-                        {
-                            controler.target = gO;
-                            return;
-                        }
-                    }
+
                 }
-                
+
             }
         }
 
