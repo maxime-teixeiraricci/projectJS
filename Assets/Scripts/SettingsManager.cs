@@ -13,6 +13,8 @@ public class SettingsManager : MonoBehaviour {
     public Sprite muteSound;
     //AudioSource music;
     public GameObject errorSound;
+    public GameObject winScreen;
+    public GameObject loseScreen;
 
     public FMODUnity.StudioEventEmitter mainTheme;
     public GameObject eventSound;
@@ -30,6 +32,8 @@ public class SettingsManager : MonoBehaviour {
         if(index == 1)
         {
             mainTheme.EventInstance.setVolume(volume.value / 100);
+            winScreen.GetComponent<AudioSource>().volume = volume.value / 100;
+            loseScreen.GetComponent<AudioSource>().volume = volume.value / 100;
         }
         else
         {
@@ -112,6 +116,7 @@ public class SettingsManager : MonoBehaviour {
         GameObject.Find("ButtonCamp").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonHouse").GetComponent<AudioSource>().volume = volume;
         GameObject.Find("ButtonStatue").GetComponent<AudioSource>().volume = volume;
+
         eventSound.GetComponent<AudioSource>().volume = volume;
 
         GameObject birds = GameObject.Find("BirdsSound");

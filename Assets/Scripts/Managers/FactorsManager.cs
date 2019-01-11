@@ -63,7 +63,7 @@ public class FactorsManager : MonoBehaviour {
             }
         }
 
-        else if (slider.value < 30)
+        else if (slider.value <= 30)
         {
             sliderColor.GetComponent<Image>().color = Color.red;
             FMOD.Studio.ParameterInstance parameter;

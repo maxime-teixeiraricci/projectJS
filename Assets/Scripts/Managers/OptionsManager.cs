@@ -28,6 +28,7 @@ public class OptionsManager : MonoBehaviour {
 	void Update () {
         GetComponent<AudioSource>().volume = volumeSlider.value / 100;
         GameObject.Find("Button").GetComponent<AudioSource>().volume = volumeSlider.value / 100;
+
         if (volumeValue != null)
         {
             volumeValue.text = "" + volumeSlider.value;
