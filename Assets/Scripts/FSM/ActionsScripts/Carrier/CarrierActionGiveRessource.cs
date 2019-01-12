@@ -22,6 +22,10 @@ public class CarrierActionGiveRessource : FSMAction
             {
                 target.take(rT.ressource, citizen);
             }
+            else
+            {
+                break;
+            }
         }
 
         foreach (Tool t in citizen.toolsToTransport.getToolsNeededTransport())
@@ -29,6 +33,10 @@ public class CarrierActionGiveRessource : FSMAction
             if (target.needTools)
             {
                 target.takeTool(t, citizen);
+            }
+            else
+            {
+                break;
             }
         }
     }

@@ -14,6 +14,8 @@ public class NullStop : FSMAction
     {
         Citizen citizen = controler.GetComponent<Citizen>();
         citizen.isWalking = false;
+        citizen.GetComponent<FSMControler>().manualTarget = null;
+        citizen.GetComponent<FSMControler>().finalTarget = null;
         controler.agent.isStopped = true;
     }
 

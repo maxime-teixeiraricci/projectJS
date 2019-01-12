@@ -46,6 +46,10 @@ public class NaturalRessource : MonoBehaviour
             if (rt.number < rt.numberLimit)
             {
                 citizen.ressourcesToTransport.add(structRessource);
+                if (citizen.ressourcesToTransport.ressourcesList.Count != 0)
+                {
+                    citizen.ressourcesToTransport.ressourcesList[0].neededToTransport = true;
+                }
                 numberRessource--;
                 /*
                 if (numberRessource <= 0)

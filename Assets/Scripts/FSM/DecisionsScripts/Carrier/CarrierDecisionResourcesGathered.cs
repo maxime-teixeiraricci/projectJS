@@ -13,8 +13,9 @@ public class CarrierDecisionResourcesGathered : FSMDecision
 
     private bool ResourcesGathered(FSMControler controler)
     {
-        Building target = controler.target.GetComponent<Building>();
+        //Building target = controler.target.GetComponent<Building>();
         Citizen citizen = controler.GetComponent<Citizen>();
+
         foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
             //s'il en reste renvoie true

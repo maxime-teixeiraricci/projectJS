@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "PluggableAI/Actions/Recolter/Stock")]
 public class RecolterActionStock : FSMAction
@@ -27,6 +28,8 @@ public class RecolterActionStock : FSMAction
         citizen.refreshSoundBools();
         foreach (RessourceTank rT in citizen.ressourcesToTransport.getRessourcesNeededTransport())
         {
+            Text woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
+            woodText.text = (int.Parse(woodText.text) - 1).ToString();
             target.take(rT.ressource, citizen);
         }
     }

@@ -20,6 +20,13 @@ public class CarrierDecisionResourcesNotGathered : FSMDecision
             //s'il en reste renvoie true
             if (rT.number<rT.numberToTransport && target.needRessources) return true;
         }
+
+        foreach (Tool tool in citizen.toolsToTransport.getToolsNeededTransport())
+        {
+            //s'il en reste renvoie true
+            if (tool.number < 1 && target.needTools) return true;
+        }
+
         return false;
     }
 }

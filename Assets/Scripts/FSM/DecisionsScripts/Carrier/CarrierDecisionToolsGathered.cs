@@ -12,7 +12,7 @@ public class CarrierDecisionToolsGathered : FSMDecision
 
     private bool ToolsGathered(FSMControler controler)
     {
-        Building target = controler.target.GetComponent<Building>();
+        //Building target = controler.target.GetComponent<Building>();
         Citizen citizen = controler.GetComponent<Citizen>();
         foreach (Tool t in citizen.toolsToTransport.getToolsNeededTransport())
         {

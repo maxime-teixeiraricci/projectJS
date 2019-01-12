@@ -13,6 +13,11 @@ public class RecolterActionFindRessource : FSMAction
     private void FindRessource(FSMControler controler)
     {
         Citizen citizen = controler.GetComponent<Citizen>();
+        if (citizen.ressourcesToTransport.ressourcesList.Count != 0)
+        {
+            citizen.ressourcesToTransport.ressourcesList[0].neededToTransport = true;
+            citizen.ressourcesToTransport.ressourcesList[0].numberLimit = 5;
+        }
         citizen.refreshSoundBools();
         GameObject ressourceTank = GameObject.FindGameObjectWithTag("RessourceTank");
         if(controler.manualTarget == null)

@@ -18,6 +18,11 @@ public class CrafterActionFindTarget : FSMAction
         Building[] buildings = FindObjectsOfType<Building>();
         Citizen[] citizens = FindObjectsOfType<Citizen>();
 
+        if(citizen.workPlace != null)
+        {
+            citizen.workPlace = null;
+        }
+
         foreach (Building building in buildings)
             
         {

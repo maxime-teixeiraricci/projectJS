@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "PluggableAI/Actions/Recolter/Recolt")]
 public class RecolterActionRecoltRessource : FSMAction
@@ -32,6 +33,8 @@ public class RecolterActionRecoltRessource : FSMAction
         if (controler.farmTimer > (1f/ naturalRessource.recoltFrequence))
         {
             naturalRessource.Recolt(controler.citizen);
+            Text woodText = GameObject.Find("WoodTotal").GetComponent<Text>();
+            woodText.text = (int.Parse(woodText.text) + 1).ToString();
             controler.farmTimer = 0;
         }
         else
