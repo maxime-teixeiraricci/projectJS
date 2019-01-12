@@ -30,7 +30,7 @@ public class EventManager : MonoBehaviour
             t = time;
         }
 
-        if(t <= 0 && int.Parse(toolNbr.GetComponent<Text>().text) >= 35)
+        if(t <= 0 && int.Parse(toolNbr.GetComponent<Text>().text) > 10)
         {
             eventTools.SetActive(true);
             t = time;
