@@ -8,7 +8,7 @@ public class GameSettings : MonoBehaviour {
 
     public GameObject endScreenWin;
     public GameObject endScreenLose;
-
+    public GameObject optionsScreen;
     public GameObject errorScreen;
 
     public Text currentObjectif;
@@ -74,8 +74,13 @@ public class GameSettings : MonoBehaviour {
             GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
             mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().enabled = false;
             GameObject.Find("Sounds").GetComponentInChildren<Slider>().value = 0;
-            endScreenLose.SetActive(true);
-            
+            endScreenLose.SetActive(true);   
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            optionsScreen.SetActive(true);
         }
     }
 
