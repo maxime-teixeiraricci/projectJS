@@ -168,10 +168,14 @@ public abstract class Building : MonoBehaviour {
         {
             citizen.ressourcesToTransport.remove(ressource);
             inventory.add(ressource);
-            if (GetComponent<Camp>())
+            if (!DispatcherManager.instance.transportCitizens.Contains(citizen))
             {
-                totalNbr.Add(ressource);
+                if (GetComponent<Camp>())
+                {
+                    totalNbr.Add(ressource);
+                }
             }
+            
         }
         askSupplyToConstruct();
 
