@@ -64,7 +64,7 @@ public class GameSettings : MonoBehaviour {
         {
             Time.timeScale = 0;
             GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
-            mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().enabled = false;
+            mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().Stop();
             GameObject.Find("Sounds").GetComponentInChildren<Slider>().value = 0;
             endScreenWin.SetActive(true);
         }
@@ -73,7 +73,7 @@ public class GameSettings : MonoBehaviour {
         {
             Time.timeScale = 0;
             GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
-            mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().enabled = false;
+            mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().Stop();
             GameObject.Find("Sounds").GetComponentInChildren<Slider>().value = 0;
             endScreenLose.SetActive(true);   
         }
