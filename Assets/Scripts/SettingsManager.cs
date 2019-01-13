@@ -76,6 +76,8 @@ public class SettingsManager : MonoBehaviour {
 
     public void changeSoundsVolumes(float volume)
     {
+        FMODUnity.StudioEventEmitter[] emitters = GameObject.FindObjectsOfType<FMODUnity.StudioEventEmitter>();
+
         Citizen[] citizens = GameObject.FindObjectsOfType<Citizen>();
         GameObject[] trees = GameObject.FindGameObjectsWithTag("RessourceTank");
 
@@ -129,6 +131,24 @@ public class SettingsManager : MonoBehaviour {
         }
 
         //GameObject.Find("WaveN").GetComponent<FMODUnity.StudioEventEmitter>();
+
+        foreach (FMODUnity.StudioEventEmitter emitter in emitters)
+        {
+            FMOD.Studio.PLAYBACK_STATE state;
+            emitter.EventInstance.getPlaybackState(out state);
+            float vol;
+            float finalvol;
+            emitter.EventInstance.getVolume(out vol, out finalvol);
+            if (vol <= 0)
+            {
+                //emitter.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                emitter.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+            else if(!(state.Equals(FMOD.Studio.PLAYBACK_STATE.PLAYING)))
+            {
+                emitter.Play();
+            }
+        }
 
     }
 
