@@ -22,6 +22,8 @@ public class EscSettings : MonoBehaviour {
 
     public void continueGame()
     {
+        Time.timeScale = 1;
+        GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 1;
         gameObject.SetActive(false);
     }
 

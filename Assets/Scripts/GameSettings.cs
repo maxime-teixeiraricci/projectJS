@@ -39,6 +39,7 @@ public class GameSettings : MonoBehaviour {
         if (int.Parse(currentObjectif.text) == int.Parse(finalObjectif.text))
         {
             Time.timeScale = 0;
+            GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
             endScreenWin.SetActive(true);
             GetComponent<AudioSource>().enabled = false;
             mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().enabled = false;
@@ -80,6 +81,7 @@ public class GameSettings : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0;
+            GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
             optionsScreen.SetActive(true);
         }
     }
