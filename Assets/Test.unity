@@ -1054,6 +1054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   volume: {fileID: 220234106}
+  volumeTheme: {fileID: 913609921}
   mute: {fileID: 1570668752}
   sound: {fileID: 21300000, guid: 537538c0e982be94aa167326b9464a71, type: 3}
   muteSound: {fileID: 21300000, guid: 5bbcdc1871856214582619a7ec7155ca, type: 3}
@@ -18316,6 +18317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   volume: {fileID: 913609921}
+  volumeTheme: {fileID: 913609921}
   mute: {fileID: 1548240319}
   sound: {fileID: 21300000, guid: 537538c0e982be94aa167326b9464a71, type: 3}
   muteSound: {fileID: 21300000, guid: 5bbcdc1871856214582619a7ec7155ca, type: 3}
@@ -22835,16 +22837,6 @@ Prefab:
     - target: {fileID: 154246, guid: b98ee8ecf2d58a14f88439c2dd46ca21, type: 2}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 114247684840558670, guid: b98ee8ecf2d58a14f88439c2dd46ca21,
-        type: 2}
-      propertyPath: StopEvent
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114247684840558670, guid: b98ee8ecf2d58a14f88439c2dd46ca21,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b98ee8ecf2d58a14f88439c2dd46ca21, type: 2}

@@ -7,6 +7,7 @@ public class SettingsManager : MonoBehaviour {
 
     public int index;
     public Slider volume;
+    public Slider volumeTheme;
     public Button mute;
 
     public Sprite sound;
@@ -134,18 +135,23 @@ public class SettingsManager : MonoBehaviour {
 
         foreach (FMODUnity.StudioEventEmitter emitter in emitters)
         {
-            FMOD.Studio.PLAYBACK_STATE state;
-            emitter.EventInstance.getPlaybackState(out state);
-            float vol;
-            float finalvol;
-            emitter.EventInstance.getVolume(out vol, out finalvol);
-            if (vol <= 0)
+            //FMOD.Studio.PLAYBACK_STATE state;
+            //emitter.EventInstance.getPlaybackState(out state);
+            //float vol;
+            //float finalvol;
+            //emitter.EventInstance.getVolume(out vol, out finalvol);
+            if(emitter.tag.Equals("MainCamera") && volumeTheme.value <= 0){
+                emitter.Stop();
+            }
+            else if (!emitter.tag.Equals("MainCamera") && volume <= 0)
             {
                 //emitter.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                emitter.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                //emitter.EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                emitter.Stop();
             }
-            else if(!(state.Equals(FMOD.Studio.PLAYBACK_STATE.PLAYING)))
+            else if(!(emitter.IsPlaying()))
             {
+               
                 emitter.Play();
             }
         }

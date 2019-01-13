@@ -25,7 +25,7 @@ public class TimeManager : MonoBehaviour {
             cit.GetComponent<AudioSource>().pitch = time.value;
         }
 
-        GameObject camera = GameObject.Find("Main Camera");
+       /* GameObject camera = GameObject.Find("Main Camera");
 
         if(timeValue.text == "1.0")
         {
@@ -36,6 +36,7 @@ public class TimeManager : MonoBehaviour {
         {
             camera.GetComponent<AudioSource>().pitch = (time.value / 5) + 0.7f;
         }
+        */
         
     }
 }
