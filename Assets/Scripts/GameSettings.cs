@@ -35,48 +35,44 @@ public class GameSettings : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        FMODUnity.StudioEventEmitter emitter = mainTheme.GetComponent<FMODUnity.StudioEventEmitter>();
+        //FMODUnity.StudioEventEmitter emitter = mainTheme.GetComponent<FMODUnity.StudioEventEmitter>();
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            currentObjectif.text = "-1";
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            currentObjectif.text = "5";
+        }
+
+        if (int.Parse(currentObjectif.text) == -1)
+        {
+            defeat();
+        }
+
+        if (int.Parse(currentObjectif.text) == 5)
+        {
+            win();
+        }
+
         if (int.Parse(currentObjectif.text) == int.Parse(finalObjectif.text))
         {
-            Time.timeScale = 0;
-            GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
-            endScreenWin.SetActive(true);
-            GetComponent<AudioSource>().enabled = false;
-            mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().enabled = false;
+            win();
         }
 
         if(slideTrees.value == 0 ||int.Parse(days.text) >= maxDays)
         {
-            Time.timeScale = 0;
-            GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
-            endScreenLose.SetActive(true);
-            GetComponent<AudioSource>().enabled = false;
-            mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().enabled = false;
-            GameObject.Find("Sounds").GetComponentInChildren<Slider>().value = 0;
+            defeat();
         }
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             evenementManager.SetActive(true);
             evenementManager.GetComponent<AudioSource>().Play();
         }
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            Time.timeScale = 0;
-            GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
-            mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().Stop();
-            GameObject.Find("Sounds").GetComponentInChildren<Slider>().value = 0;
-            endScreenWin.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Time.timeScale = 0;
-            GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
-            mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().Stop();
-            GameObject.Find("Sounds").GetComponentInChildren<Slider>().value = 0;
-            endScreenLose.SetActive(true);   
-        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -112,6 +108,24 @@ public class GameSettings : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    
+    public void defeat()
+    {
+        FMODUnity.StudioEventEmitter emitter = mainTheme.GetComponent<FMODUnity.StudioEventEmitter>();
+        Time.timeScale = 0;
+        GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
+        endScreenLose.SetActive(true);
+        GetComponent<AudioSource>().enabled = false;
+        mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().Stop();
+        GameObject.Find("Sounds").GetComponentInChildren<Slider>().value = 0;
+    }
+
+    public void win()
+    {
+        Time.timeScale = 0;
+        GameObject.Find("TimePanel").GetComponentInChildren<Slider>().value = 0;
+        endScreenWin.SetActive(true);
+        GetComponent<AudioSource>().enabled = false;
+        mainTheme.GetComponent<FMODUnity.StudioEventEmitter>().Stop();
+    }
 
 }
